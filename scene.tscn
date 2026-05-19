@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_u3cyc"]
 [ext_resource type="Texture2D" uid="uid://cid1uqbjgwdnu" path="res://ciel.png" id="4_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_y2354"]
+[ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_ni31j"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
@@ -44,3 +46,17 @@ position = Vector2(726.99994, 359)
 [node name="Caillou4" parent="." unique_id=1565987860 instance=ExtResource("5_m7jmp")]
 position = Vector2(843.00006, 285)
 scale = Vector2(0.037381425, 0.035154633)
+
+[node name="Caillou5" parent="." unique_id=444818780 instance=ExtResource("5_m7jmp")]
+position = Vector2(312.00006, 542)
+scale = Vector2(0.037381425, 0.035154633)
+
+[node name="piege" parent="." unique_id=1079666792 instance=ExtResource("6_y2354")]
+position = Vector2(349, 711)
+scale = Vector2(27.640005, 1)
+
+[node name="checkpoint" parent="." unique_id=979885743 instance=ExtResource("7_ni31j")]
+position = Vector2(311, 465)
+
+[node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_ni31j")]
+position = Vector2(840, 206)

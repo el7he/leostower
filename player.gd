@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 # ============================================================
 #  CELESTE-STYLE PLATFORMER CONTROLLER — Godot 4.6.1
