@@ -198,3 +198,7 @@ func _update_facing(input_dir: float) -> void:
 		sprite = get_node_or_null("AnimatedSprite2D")
 	if sprite:
 		sprite.flip_h = (_facing_dir < 0.0)
+
+func die():
+	get_tree().reload_current_scene()
+	print("oui")

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://daucjcijq0uoa"]
+
+[ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_i2041"]
+[ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_xy4tn"]
+[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player.tscn" id="3_usj0q"]
+[ext_resource type="Texture2D" uid="uid://cid1uqbjgwdnu" path="res://ciel.png" id="4_5j5gb"]
+[ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_mx85b"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_hx44q"]
+[ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_n8vhr"]
+[ext_resource type="PackedScene" uid="uid://104pf6pksn6" path="res://pieges/saw.tscn" id="8_xy4tn"]
+
+[node name="Scene" type="Node2D" unique_id=1764518895]
+
+[node name="Heliopolis" type="Sprite2D" parent="." unique_id=342178201]
+position = Vector2(559, 336)
+texture = ExtResource("1_i2041")
+
+[node name="GeminiGeneratedImageR2q1Jdr2q1Jdr2q1" type="Sprite2D" parent="." unique_id=1078964543]
+position = Vector2(1415.0001, 324)
+scale = Vector2(0.44000065, 0.44000065)
+texture = ExtResource("2_xy4tn")
+
+[node name="Player" parent="." unique_id=1241671982 instance=ExtResource("3_usj0q")]
+z_index = 1
+position = Vector2(470, 342)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
+zoom = Vector2(1.635, 1.635)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2114573787]
+repeat_size = Vector2(768, 1020)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1749000870]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_5j5gb")
+
+[node name="Caillou" parent="." unique_id=31341220 instance=ExtResource("5_mx85b")]
+position = Vector2(461, 475)
+
+[node name="Caillou2" parent="." unique_id=1445777395 instance=ExtResource("5_mx85b")]
+position = Vector2(590, 419)
+
+[node name="Caillou3" parent="." unique_id=98172656 instance=ExtResource("5_mx85b")]
+position = Vector2(726.99994, 359)
+
+[node name="Caillou4" parent="." unique_id=1565987860 instance=ExtResource("5_mx85b")]
+position = Vector2(843.00006, 285)
+scale = Vector2(0.037381425, 0.035154633)
+
+[node name="Caillou5" parent="." unique_id=444818780 instance=ExtResource("5_mx85b")]
+position = Vector2(312.00006, 542)
+scale = Vector2(0.037381425, 0.035154633)
+
+[node name="Caillou6" parent="." unique_id=1368368443 instance=ExtResource("5_mx85b")]
+position = Vector2(1009.2605, -1.5)
+scale = Vector2(0.029206192, 0.23874839)
+
+[node name="Caillou8" parent="." unique_id=1356110532 instance=ExtResource("5_mx85b")]
+position = Vector2(816, -10)
+scale = Vector2(0.029206192, 0.09365623)
+
+[node name="Caillou7" parent="." unique_id=602780889 instance=ExtResource("5_mx85b")]
+position = Vector2(725.5, -95.49606)
+scale = Vector2(0.13159142, 0.027007237)
+
+[node name="Caillou9" parent="." unique_id=1990113076 instance=ExtResource("5_mx85b")]
+position = Vector2(419.25, -100.00001)
+scale = Vector2(0.097149625, 0.027007237)
+
+[node name="piege" parent="." unique_id=1079666792 instance=ExtResource("6_hx44q")]
+position = Vector2(349, 711)
+scale = Vector2(27.640005, 1)
+
+[node name="checkpoint" parent="." unique_id=979885743 instance=ExtResource("7_n8vhr")]
+position = Vector2(311, 465)
+
+[node name="Saw" parent="." unique_id=1972260605 instance=ExtResource("8_xy4tn")]
+position = Vector2(205.00002, -317)
+
+[node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_n8vhr")]
+position = Vector2(840, 206)
+
+[node name="Caillou10" parent="." unique_id=1581256641 instance=ExtResource("5_mx85b")]
+position = Vector2(52, -90.99999)
+
+[editable path="Caillou2"]
+[editable path="checkpoint"]
