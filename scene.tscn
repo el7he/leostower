@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://4v0hcu8jvaf0"]
+
+[ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_nxogm"]
+[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player.tscn" id="2_3253y"]
+[ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_u3cyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7jmp"]
+size = Vector2(92.60238, 43.367348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxogm"]
+size = Vector2(118.191345, 108.17607)
+
+[node name="Scene" type="Node2D" unique_id=1764518895]
+
+[node name="Heliopolis" type="Sprite2D" parent="." unique_id=342178201]
+position = Vector2(559, 336)
+texture = ExtResource("1_nxogm")
+
+[node name="GeminiGeneratedImageR2q1Jdr2q1Jdr2q1" type="Sprite2D" parent="." unique_id=1078964543]
+position = Vector2(1415.0001, 324)
+scale = Vector2(0.44000065, 0.44000065)
+texture = ExtResource("2_u3cyc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1372765249]
+position = Vector2(-43.295086, 1532.6729)
+scale = Vector2(8.619608, 4.1657524)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1157257729]
+position = Vector2(51.765354, -229.25063)
+scale = Vector2(0.9999999, 0.99999946)
+shape = SubResource("RectangleShape2D_m7jmp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=515447616]
+position = Vector2(-11, 504)
+scale = Vector2(2.935917, 2.0410175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1109895652]
+position = Vector2(294.1159, 13.911987)
+scale = Vector2(0.9999999, 0.9999996)
+shape = SubResource("RectangleShape2D_nxogm")
+
+[node name="Player" parent="." unique_id=1241671982 instance=ExtResource("2_3253y")]
+position = Vector2(339, 342)
