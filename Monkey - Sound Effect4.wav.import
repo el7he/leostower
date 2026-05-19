@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxgp3uwharldr"
+path="res://.godot/imported/Monkey - Sound Effect4.wav-88368be638c8c27758bf059417508e15.sample"
+
+[deps]
+
+source_file="res://Monkey - Sound Effect4.wav"
+dest_files=["res://.godot/imported/Monkey - Sound Effect4.wav-88368be638c8c27758bf059417508e15.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

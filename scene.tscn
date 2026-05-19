@@ -3,12 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_nxogm"]
 [ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player.tscn" id="2_3253y"]
 [ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_u3cyc"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7jmp"]
-size = Vector2(92.60238, 43.367348)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxogm"]
-size = Vector2(118.191345, 108.17607)
+[ext_resource type="Texture2D" uid="uid://cid1uqbjgwdnu" path="res://ciel.png" id="4_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_m7jmp"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
@@ -21,23 +17,30 @@ position = Vector2(1415.0001, 324)
 scale = Vector2(0.44000065, 0.44000065)
 texture = ExtResource("2_u3cyc")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1372765249]
-position = Vector2(-43.295086, 1532.6729)
-scale = Vector2(8.619608, 4.1657524)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1157257729]
-position = Vector2(51.765354, -229.25063)
-scale = Vector2(0.9999999, 0.99999946)
-shape = SubResource("RectangleShape2D_m7jmp")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=515447616]
-position = Vector2(-11, 504)
-scale = Vector2(2.935917, 2.0410175)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1109895652]
-position = Vector2(294.1159, 13.911987)
-scale = Vector2(0.9999999, 0.9999996)
-shape = SubResource("RectangleShape2D_nxogm")
-
 [node name="Player" parent="." unique_id=1241671982 instance=ExtResource("2_3253y")]
-position = Vector2(339, 342)
+z_index = 1
+position = Vector2(470, 342)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
+zoom = Vector2(1.635, 1.635)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2114573787]
+repeat_size = Vector2(768, 1020)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1749000870]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_u3cyc")
+
+[node name="Caillou" parent="." unique_id=31341220 instance=ExtResource("5_m7jmp")]
+position = Vector2(461, 475)
+
+[node name="Caillou2" parent="." unique_id=1445777395 instance=ExtResource("5_m7jmp")]
+position = Vector2(590, 419)
+
+[node name="Caillou3" parent="." unique_id=98172656 instance=ExtResource("5_m7jmp")]
+position = Vector2(726.99994, 359)
+
+[node name="Caillou4" parent="." unique_id=1565987860 instance=ExtResource("5_m7jmp")]
+position = Vector2(843.00006, 285)
+scale = Vector2(0.037381425, 0.035154633)

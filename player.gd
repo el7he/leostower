@@ -45,6 +45,7 @@ var _wall_jump_lock     : float = 0.0
 var _was_on_floor       : bool  = false
 var _facing_dir         : float = 1.0   # 1 = droite, -1 = gauche
 var _is_jumping         : bool  = false
+@onready var cri_macaque: AudioStreamPlayer2D = $cri_macaque
 
 
 func _ready() -> void:
@@ -87,6 +88,10 @@ func _update_timers(delta: float) -> void:
 
 	# Jump buffer : le joueur a appuyé sur saut récemment
 	if Input.is_action_just_pressed("jump"):
+		var randomcri = randi_range(1, 4)
+		var cri = "res://Monkey - Sound Effect"+str(randomcri)+".wav"
+		cri_macaque.stream = load(cri)
+		cri_macaque.play()
 		_jump_buffer_timer = jump_buffer_time
 	_jump_buffer_timer = maxf(_jump_buffer_timer - delta, 0.0)
 

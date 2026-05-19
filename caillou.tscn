@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cye08femprdbg"]
+
+[ext_resource type="Texture2D" uid="uid://dr1y04f3reyxr" path="res://caillou.png" id="1_fk344"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxogm"]
+size = Vector2(118.191345, 108.17607)
+
+[node name="Caillou" type="Sprite2D" unique_id=31341220]
+scale = Vector2(0.032, 0.032)
+texture = ExtResource("1_fk344")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1196613256]
+scale = Vector2(91.7474, 52.53172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=131410714]
+scale = Vector2(0.19423574, 0.4001434)
+shape = SubResource("RectangleShape2D_nxogm")

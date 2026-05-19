@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://4s8nt5qsra6c"]
 
 [ext_resource type="Script" uid="uid://b2lc8g33pmwvv" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://du2sj64siijnv" path="res://leo.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cnjql07s7u86" path="res://monkey.png" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://bw2aqx81r5b74" path="res://merde.mp3" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
 
@@ -9,9 +10,13 @@
 script = ExtResource("1_4flbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324127357]
-scale = Vector2(0.16666749, 0.056000374)
+position = Vector2(0, -1)
+scale = Vector2(0.242, 0.256)
 texture = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506887627]
 scale = Vector2(3.9600005, 2.5200002)
 shape = SubResource("CapsuleShape2D_i3pqv")
+
+[node name="cri_macaque" type="AudioStreamPlayer2D" parent="." unique_id=1541811620]
+stream = ExtResource("3_i3pqv")
