@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blbbmhs1mkt7b"
-path="res://.godot/imported/ciel.png-8510f26a8436bef65f7f5b36e9e9355d.ctex"
+uid="uid://cxd4qs0bt04of"
+path="res://.godot/imported/banane.png-1d813af52ad633106ddbb7a6e0640d3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ciel.png"
-dest_files=["res://.godot/imported/ciel.png-8510f26a8436bef65f7f5b36e9e9355d.ctex"]
+source_file="res://bananes/banane.png"
+dest_files=["res://.godot/imported/banane.png-1d813af52ad633106ddbb7a6e0640d3a.ctex"]
 
 [params]
 

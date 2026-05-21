@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Léo's Tower"
-run/main_scene="uid://4v0hcu8jvaf0"
+run/main_scene="uid://dojfdhfau5y7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="*uid://ca5ben081iqjs"
+Gamemanager="*uid://b2ooeu4e77ql1"
 
 [dotnet]
 

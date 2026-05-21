@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://7rhqmchhxeuc"]
+
+[ext_resource type="Texture2D" uid="uid://cxd4qs0bt04of" path="res://bananes/banane.png" id="1_okbe5"]
+[ext_resource type="Script" uid="uid://brvpihji5vyys" path="res://bananes/banane.gd" id="1_yudo1"]
+[ext_resource type="AudioStream" uid="uid://c4q2gyh4jwlpu" path="res://bananes/singemange.wav" id="3_jqu7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yudo1"]
+
+[node name="banane" type="Node2D" unique_id=767390559]
+script = ExtResource("1_yudo1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=124985005]
+scale = Vector2(0.7979068, 0.93969923)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1098038619]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_yudo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1386837457]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_okbe5")
+
+[node name="singemange" type="AudioStreamPlayer2D" parent="." unique_id=2102309997]
+stream = ExtResource("3_jqu7j")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

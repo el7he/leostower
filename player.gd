@@ -38,7 +38,7 @@ class_name Player
 @export var wall_slide_speed   : float = 80.0
 @export var wall_jump_force    : Vector2 = Vector2(320.0, -400.0)
 @export var wall_jump_lock_time: float = 0.15  # temps où le joueur ne contrôle pas l'horizontal
-
+@export var player_sprite : playersprite
 # ── Interne ──────────────────────────────────────────────────
 var _coyote_timer       : float = 0.0
 var _jump_buffer_timer  : float = 0.0
@@ -47,16 +47,48 @@ var _was_on_floor       : bool  = false
 var _facing_dir         : float = 1.0   # 1 = droite, -1 = gauche
 var _is_jumping         : bool  = false
 @onready var cri_macaque: AudioStreamPlayer2D = $cri_macaque
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
+var time_elapsed : float
+var banananumber : int =0;
+var isinrotation : bool = false;
+func _enter_tree():
+	Gamemanager.playervar = self
 
 func _ready() -> void:
-	# S'assure que le perso tombe dès le départ
-	velocity = Vector2.ZERO
+	setscalex()
+	
 
+	pass
+
+func setscalex(sizenumber : int = 0) ->void:
+	var xscale :float = 0.2 + (0.03 *  sizenumber)
+	sprite_2d.scale=Vector2(xscale,0.256)
+	velocity = Vector2.ZERO
+	
+func eat()->void:
+	banananumber+=1
+	if banananumber==8:
+		player_sprite.beginloop()
+		banananumber=0
+		setscalex()
+		isinrotation = true
+		var cri = "res://bananes/Monkey Noises SFX.wav"
+		cri_macaque.stream = load(cri)
+		cri_macaque.play()
+		await get_tree().create_timer(4.0).timeout
+		player_sprite.endloop()
+		isinrotation = false
+	setscalex(banananumber)
+	pass
+	
+func teleport(xvar:float,yvar:float) -> void : 
+	
+	self.global_position = Vector2(xvar, yvar)
 
 func _physics_process(delta: float) -> void:
 	var input_dir := _get_input_direction()
-
+	
 	_update_timers(delta)
 	_apply_gravity(delta)
 	_apply_horizontal_movement(delta, input_dir)
@@ -89,10 +121,16 @@ func _update_timers(delta: float) -> void:
 
 	# Jump buffer : le joueur a appuyé sur saut récemment
 	if Input.is_action_just_pressed("jump"):
-		var randomcri = randi_range(1, 4)
-		var cri = "res://Monkey - Sound Effect"+str(randomcri)+".wav"
-		cri_macaque.stream = load(cri)
-		cri_macaque.play()
+		#SaveManager.save_game({"clicks":clicks,"time_elapsed":time_elapsed})
+		#print("click : ",clicks)
+		if isinrotation==false : 
+			var randomcri = randi_range(1, 4)
+			var cri = "res://Monkey - Sound Effect"+str(randomcri)+".wav"
+			cri_macaque.stream = load(cri)
+			cri_macaque.play()
+			jump_force=-420
+		else :
+			jump_force=-800
 		_jump_buffer_timer = jump_buffer_time
 	_jump_buffer_timer = maxf(_jump_buffer_timer - delta, 0.0)
 
