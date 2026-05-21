@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://mgf84ns0fk0p" path="res://piege.gd" id="1_1jjqe"]
 [ext_resource type="Texture2D" uid="uid://f7024jow0yrb" path="res://saw.webp" id="2_oipic"]
+[ext_resource type="Script" uid="uid://bcci3tybeji6u" path="res://pieges/saw_sprite.gd" id="3_oipic"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghngh"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_oipic"]
+radius = 8.995412
 
 [node name="Saw" type="Node2D" unique_id=1972260605]
 scale = Vector2(0.43999994, 0.43999994)
@@ -14,7 +16,11 @@ scale = Vector2(5.4799986, 5.4799986)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1096423735]
 scale = Vector2(2.9999998, 2.9999998)
-shape = SubResource("RectangleShape2D_ghngh")
+shape = SubResource("CircleShape2D_oipic")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=853631789]
+position = Vector2(6.818183, 9.090911)
 texture = ExtResource("2_oipic")
+script = ExtResource("3_oipic")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
