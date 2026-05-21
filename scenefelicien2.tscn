@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://l54c1egqmnyx"]
+
+[ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_qxltl"]
+[ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_oho2l"]
+[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player.tscn" id="3_tawdl"]
+[ext_resource type="Texture2D" uid="uid://blbbmhs1mkt7b" path="res://ciel.png" id="4_nq1px"]
+[ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_i6u15"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_ye0hs"]
+[ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_xbylo"]
+
+[node name="Scene" type="Node2D" unique_id=1764518895]
+
+[node name="Heliopolis" type="Sprite2D" parent="." unique_id=342178201]
+position = Vector2(559, 336)
+texture = ExtResource("1_qxltl")
+
+[node name="GeminiGeneratedImageR2q1Jdr2q1Jdr2q1" type="Sprite2D" parent="." unique_id=1078964543]
+position = Vector2(1415.0001, 324)
+scale = Vector2(0.44000065, 0.44000065)
+texture = ExtResource("2_oho2l")
+
+[node name="Player" parent="." unique_id=1241671982 instance=ExtResource("3_tawdl")]
+z_index = 1
+position = Vector2(470, 342)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
+zoom = Vector2(1.635, 1.635)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2114573787]
+repeat_size = Vector2(768, 1020)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1749000870]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_nq1px")
+
+[node name="Caillou3" parent="." unique_id=98172656 instance=ExtResource("5_i6u15")]
+position = Vector2(808.00006, 419)
+scale = Vector2(0.032, 0.17630862)
+
+[node name="Caillou5" parent="." unique_id=444818780 instance=ExtResource("5_i6u15")]
+position = Vector2(572, 567)
+scale = Vector2(0.4870992, 0.035154633)
+
+[node name="Caillou6" parent="." unique_id=31341220 instance=ExtResource("5_i6u15")]
+position = Vector2(-626, 565)
+scale = Vector2(0.4870992, 0.035154633)
+
+[node name="piege" parent="." unique_id=1079666792 instance=ExtResource("6_ye0hs")]
+position = Vector2(-56, 711)
+scale = Vector2(126.16002, 1)
+
+[node name="checkpoint" parent="." unique_id=979885743 instance=ExtResource("7_xbylo")]
+position = Vector2(712, 476)
+
+[node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_xbylo")]
+position = Vector2(840, 206)
+index = 2

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dsa5my2y475j"]
 
 [ext_resource type="Script" uid="uid://b6e21cdc8tiwk" path="res://checkpoint/checkpoint.gd" id="1_q42b1"]
-[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="2_10gex"]
+[ext_resource type="Texture2D" uid="uid://05r5ke2kgkwu" path="res://flag.png" id="2_q42b1"]
+[ext_resource type="AudioStream" uid="uid://hrsm3xoce4fy" path="res://checkpoint/Children Yay Sound Effect (HD).wav" id="3_10gex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghngh"]
 
@@ -15,7 +16,10 @@ scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_ghngh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1444909074]
-scale = Vector2(6, 6)
-texture = ExtResource("2_10gex")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_q42b1")
+
+[node name="yay" type="AudioStreamPlayer2D" parent="." unique_id=1444848647]
+stream = ExtResource("3_10gex")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

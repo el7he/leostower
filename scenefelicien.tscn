@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_8ers3"]
 [ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_rl5rp"]
 [ext_resource type="PackedScene" uid="uid://7rhqmchhxeuc" path="res://bananes/banane.tscn" id="8_kbll4"]
+[ext_resource type="PackedScene" uid="uid://drig5lm1ij4xj" path="res://porte/porte.tscn" id="9_4l28a"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
@@ -81,3 +82,6 @@ position = Vector2(-691, 475)
 
 [node name="banane8" parent="." unique_id=1314957728 instance=ExtResource("8_kbll4")]
 position = Vector2(-759, 473)
+
+[node name="porte" parent="." unique_id=1731055503 instance=ExtResource("9_4l28a")]
+position = Vector2(601, 492)
