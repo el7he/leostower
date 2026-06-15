@@ -43,7 +43,11 @@ texture = ExtResource("4_d1wkb")
 position = Vector2(572, 567)
 scale = Vector2(0.4870992, 0.035154633)
 
-[node name="Caillou7" parent="." unique_id=31341220 instance=ExtResource("5_1sts7")]
+[node name="Caillou6" parent="." unique_id=31341220 instance=ExtResource("5_1sts7")]
+position = Vector2(-679.3711, 601.8958)
+scale = Vector2(0.4870992, 0.035154633)
+
+[node name="Caillou7" parent="." unique_id=90393316 instance=ExtResource("5_1sts7")]
 position = Vector2(4446.25, 1581.609)
 scale = Vector2(0.24837922, 0.035154633)
 
@@ -102,14 +106,6 @@ position = Vector2(4017.5405, 1144.5062)
 rotation = 4.712389
 scale = Vector2(0.24837922, 0.035154633)
 
-[node name="Caillou6" parent="." unique_id=878228463 instance=ExtResource("5_1sts7")]
-position = Vector2(-626, 565)
-scale = Vector2(0.4870992, 0.035154633)
-
-[node name="Caillou8" parent="." unique_id=1961414702 instance=ExtResource("5_1sts7")]
-position = Vector2(-620.6846, 24.116028)
-scale = Vector2(0.4870992, 0.035154633)
-
 [node name="piege" parent="." unique_id=1079666792 instance=ExtResource("6_8ers3")]
 position = Vector2(1872.9952, 1843.8708)
 scale = Vector2(200, 1)
@@ -128,24 +124,6 @@ index = 0
 [node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_rl5rp")]
 position = Vector2(4335.84, 8.038674)
 index = 2
-
-[node name="Arene" parent="." unique_id=1516630575 node_paths=PackedStringArray("porte1", "porte2", "enemyarena") instance=ExtResource("12_8ers3")]
-position = Vector2(-623.6686, 340.63882)
-scale = Vector2(1.0026064, 11.337908)
-porte1 = NodePath("../areneDoor")
-porte2 = NodePath("../areneDoor3")
-enemyarena = NodePath("../robinet")
-
-[node name="areneDoor" parent="." unique_id=1437960072 instance=ExtResource("13_rl5rp")]
-position = Vector2(-1024.5272, 259.2472)
-scale = Vector2(1.1132076, -9.022275)
-
-[node name="areneDoor3" parent="." unique_id=317935427 instance=ExtResource("13_rl5rp")]
-position = Vector2(-202.91614, 203.98131)
-scale = Vector2(1.1132076, -9.022275)
-
-[node name="robinet" parent="." unique_id=1416138769 instance=ExtResource("14_txm7a")]
-position = Vector2(-622.67395, 264.2714)
 
 [node name="fly" parent="." unique_id=773182916 instance=ExtResource("15_hutp1")]
 position = Vector2(3362.0415, 961.62634)
@@ -227,4 +205,35 @@ rotation = -1.5707964
 scale = Vector2(1.8753245, 1)
 
 [node name="aigletrigger" parent="." unique_id=1528500562 instance=ExtResource("13_txm7a")]
-position = Vector2(5169.3877, 1502.227)
+position = Vector2(-735.0736, 526.5332)
+rotation = 0.74157405
+
+[node name="Node2D" type="Node2D" parent="." unique_id=727052631]
+position = Vector2(-1963.5117, 343.65332)
+
+[node name="Arene" parent="Node2D" unique_id=1516630575 node_paths=PackedStringArray("porte1", "porte2", "enemyarena") instance=ExtResource("12_8ers3")]
+position = Vector2(-3.9786987, 35.16919)
+scale = Vector2(1.0026064, 11.337907)
+porte1 = NodePath("../areneDoor")
+porte2 = NodePath("../areneDoor3")
+enemyarena = NodePath("../robinet")
+
+[node name="areneDoor3" parent="Node2D" unique_id=317935427 instance=ExtResource("13_rl5rp")]
+position = Vector2(416.77374, -101.48831)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="areneDoor" parent="Node2D" unique_id=1437960072 instance=ExtResource("13_rl5rp")]
+position = Vector2(-404.83734, -46.222412)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="Caillou8" parent="Node2D" unique_id=1961414702 instance=ExtResource("5_1sts7")]
+position = Vector2(-0.99468994, -281.35358)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="Caillou6" parent="Node2D" unique_id=878228463 instance=ExtResource("5_1sts7")]
+position = Vector2(-6.3101196, 259.53033)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="robinet" parent="Node2D" unique_id=1416138769 instance=ExtResource("14_txm7a")]
+position = Vector2(-2.9840698, -41.19821)
+scale = Vector2(1, 0.99999994)

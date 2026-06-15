@@ -7,10 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wky"]
 
 [node name="aigletrigger" type="Node2D" unique_id=1079666792]
+position = Vector2(-1, 1)
 script = ExtResource("1_yfnyl")
 objet_a_spawner = ExtResource("2_yfnyl")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1801494616]
+rotation = 0.0021592793
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=52655442]
 scale = Vector2(3, 3)
@@ -23,7 +25,7 @@ texture = ExtResource("3_kx4ax")
 
 [node name="spawner" type="Sprite2D" parent="." unique_id=207203317]
 visible = false
-position = Vector2(-1212, 0)
+position = Vector2(-464, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("3_kx4ax")
 
