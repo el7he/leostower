@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cjqisge7hmg2a"]
+
+[ext_resource type="PackedScene" uid="uid://df1cwrhx28ecv" path="res://life/enemies/enemypar.tscn" id="1_5wf06"]
+[ext_resource type="Script" uid="uid://demrs84au5xbc" path="res://life/enemies/enemy1/enemy1.gd" id="2_f62v6"]
+[ext_resource type="AudioStream" uid="uid://d0vpomvm3ir12" path="res://life/enemies/enemy1/82077__benboncan__fly-1.wav" id="4_bpaoe"]
+
+[node name="fly" unique_id=1241671982 instance=ExtResource("1_5wf06")]
+script = ExtResource("2_f62v6")
+lifemax = 4.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2" unique_id=278440938]
+stream = ExtResource("4_bpaoe")
+volume_db = 4.0
+max_distance = 589.0

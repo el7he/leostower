@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3iknvtihovn2"]
+
+[ext_resource type="Script" uid="uid://b6lsttvsumwkv" path="res://player/sword.gd" id="1_hv1tj"]
+[ext_resource type="Texture2D" uid="uid://dxt2d2kqht571" path="res://player/sword.png" id="1_rk2yr"]
+[ext_resource type="PackedScene" uid="uid://dyksowb6nj82n" path="res://life/damagecube.tscn" id="3_3oxjh"]
+
+[node name="Sword" type="Node2D" unique_id=1354022255]
+script = ExtResource("1_hv1tj")
+
+[node name="Sword" type="Sprite2D" parent="." unique_id=1746331675]
+position = Vector2(0, 77)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_rk2yr")
+
+[node name="Damagecube" parent="Sword" unique_id=1373159643 instance=ExtResource("3_3oxjh")]
+scale = Vector2(6.5999913, 7.5999966)
+disabled = true
+iscontinue = false

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://4s8nt5qsra6c"]
+
+[ext_resource type="Script" uid="uid://b2lc8g33pmwvv" path="res://player/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://cnjql07s7u86" path="res://player/monkey.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://decmuc5nvq7mc" path="res://player/player_sprite.gd" id="3_hqtel"]
+[ext_resource type="AudioStream" uid="uid://bw2aqx81r5b74" path="res://merde.mp3" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://3iknvtihovn2" path="res://player/sword.tscn" id="5_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://dmsnuumsrbxn4" path="res://player/lifebar.png" id="6_g6k8r"]
+[ext_resource type="AudioStream" uid="uid://c7oeb2qd7ypcu" path="res://player/60013__qubodup__whoosh.wav" id="7_rgyib"]
+[ext_resource type="AudioStream" uid="uid://1u0j8y1ox0sq" path="res://player/175949__freefire66__my-sword-hit-1wav.wav" id="8_hg6s5"]
+[ext_resource type="AudioStream" uid="uid://i52ibf6q1f8c" path="res://player/Goofy Cartoon Sounds.wav" id="9_hg6s5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 5.3030295
+height = 27.777775
+
+[node name="Player" type="CharacterBody2D" unique_id=1241671982 node_paths=PackedStringArray("player_sprite")]
+script = ExtResource("1_4flbx")
+jump_force = -580.0
+player_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324127357]
+position = Vector2(0, -1)
+scale = Vector2(0.242, 0.256)
+texture = ExtResource("2_onrkg")
+script = ExtResource("3_hqtel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506887627]
+position = Vector2(0, 7.9999995)
+scale = Vector2(3.9600005, 2.5200002)
+shape = SubResource("CapsuleShape2D_i3pqv")
+
+[node name="cri_macaque" type="AudioStreamPlayer2D" parent="." unique_id=1541811620]
+stream = ExtResource("3_i3pqv")
+
+[node name="Sword2" parent="." unique_id=1354022255 node_paths=PackedStringArray("exception") instance=ExtResource("5_qjkh3")]
+exception = NodePath("..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=818239613]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1700661818]
+offset_right = 72.0
+offset_bottom = 44.0
+max_value = 50.0
+value = 50.0
+texture_progress = ExtResource("6_g6k8r")
+
+[node name="bruitattaque" type="AudioStreamPlayer2D" parent="." unique_id=198608534]
+stream = ExtResource("8_hg6s5")
+volume_db = -6.817
+
+[node name="bruitdash" type="AudioStreamPlayer2D" parent="." unique_id=1641580672]
+stream = ExtResource("7_rgyib")
+
+[node name="bruithit" type="AudioStreamPlayer2D" parent="." unique_id=1694866140]
+stream = ExtResource("9_hg6s5")
+volume_db = 15.0

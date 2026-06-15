@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dxykkul8bfd32"]
+
+[ext_resource type="Script" uid="uid://bj5urs2u7j4bn" path="res://pieges/camiontrigger.gd" id="1_uisw5"]
+[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/forward/camion.tscn" id="2_s8q8s"]
+[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="2_wotoo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wky"]
+
+[node name="camiontrigger" type="Node2D" unique_id=1079666792]
+script = ExtResource("1_uisw5")
+objet_a_spawner = ExtResource("2_s8q8s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1801494616]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=52655442]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_b2wky")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857331427]
+visible = false
+scale = Vector2(6, 6)
+texture = ExtResource("2_wotoo")
+
+[node name="spawner" type="Sprite2D" parent="." unique_id=207203317]
+visible = false
+position = Vector2(-1212, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_wotoo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

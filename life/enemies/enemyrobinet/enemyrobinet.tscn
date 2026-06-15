@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fnlrojn1ae7g"]
+
+[ext_resource type="PackedScene" uid="uid://df1cwrhx28ecv" path="res://life/enemies/enemypar.tscn" id="1_rb76o"]
+[ext_resource type="Texture2D" uid="uid://dgx2o4jo3lyvd" path="res://life/enemies/enemyrobinet/958bb6f6-7dce-4876-bc80-913f3d52a72a.png" id="2_0yce1"]
+[ext_resource type="Script" uid="uid://dvpjllbq83kmk" path="res://life/enemies/enemyrobinet/enemyrobinet.gd" id="2_wpxwn"]
+[ext_resource type="AudioStream" uid="uid://bo6jpywtd4olv" path="res://life/enemies/enemyrobinet/metal pipe falling sound effect.wav" id="5_6l0ta"]
+
+[node name="robinet" unique_id=1241671982 instance=ExtResource("1_rb76o")]
+script = ExtResource("2_wpxwn")
+lifemax = 14.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+position = Vector2(1, 12)
+scale = Vector2(0.12, 0.127)
+texture = ExtResource("2_0yce1")
+
+[node name="Onlanding" type="AudioStreamPlayer2D" parent="." index="3" unique_id=789234116]
+position = Vector2(-1, 0)
+stream = ExtResource("5_6l0ta")
+volume_db = 13.0

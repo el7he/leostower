@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_qxltl"]
 [ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_oho2l"]
-[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player.tscn" id="3_tawdl"]
+[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player/player.tscn" id="3_tawdl"]
 [ext_resource type="Texture2D" uid="uid://blbbmhs1mkt7b" path="res://ciel.png" id="4_nq1px"]
 [ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_i6u15"]
 [ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_ye0hs"]

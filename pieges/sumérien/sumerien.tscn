@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brd5qvsq1xs51"]
+
+[ext_resource type="Script" uid="uid://dr5pudidure3j" path="res://pieges/sumérien/sumerien.gd" id="1_btpin"]
+[ext_resource type="Texture2D" uid="uid://dplq028fqrbfg" path="res://pieges/sumérien/sumérien.png" id="2_j8xms"]
+[ext_resource type="AudioStream" uid="uid://bw2aqx81r5b74" path="res://merde.mp3" id="4_c2r6e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 9.595958
+height = 58.730152
+
+[node name="sumerien" type="CharacterBody2D" unique_id=1241671982]
+script = ExtResource("1_btpin")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324127357]
+position = Vector2(-0.9999981, -1.999999)
+scale = Vector2(0.12185011, 0.12889928)
+texture = ExtResource("2_j8xms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506887627]
+scale = Vector2(3.9600005, 2.5200002)
+shape = SubResource("CapsuleShape2D_i3pqv")
+
+[node name="cri_macaque" type="AudioStreamPlayer2D" parent="." unique_id=1541811620]
+stream = ExtResource("4_c2r6e")

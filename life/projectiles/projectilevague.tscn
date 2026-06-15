@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bnotb0et7wcaa"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_f847q"]
+[ext_resource type="Texture2D" uid="uid://b2n7gnfktxru7" path="res://life/projectiles/vague.png" id="2_f847q"]
+[ext_resource type="AudioStream" uid="uid://d8xuktgtl1hd" path="res://life/projectiles/Splash Sound Effect.wav" id="3_qapx5"]
+
+[node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_f847q")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=299494637]
+position = Vector2(-15.999997, 15)
+rotation = 4.712389
+scale = Vector2(0.423, 0.423)
+texture = ExtResource("2_f847q")
+
+[node name="Damagecube" parent="." index="1" unique_id=1373159643]
+position = Vector2(0, 1.9073486e-06)
+scale = Vector2(1.7862318, 2.1407018)
+
+[node name="Audio on start" parent="." index="2" unique_id=26550979]
+stream = ExtResource("3_qapx5")

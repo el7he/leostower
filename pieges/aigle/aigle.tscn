@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1y2bw1av6k2o"]
+
+[ext_resource type="Script" uid="uid://c1uf2vkreyjdd" path="res://pieges/aigle/aigle.gd" id="1_tgqtn"]
+[ext_resource type="Texture2D" uid="uid://c4y7kpyc6f5ue" path="res://pieges/aigle/aigle.png" id="2_tgqtn"]
+[ext_resource type="AudioStream" uid="uid://bje2d1da3m8vk" path="res://pieges/aigle/Eagle Sound Effect.wav" id="4_ewvji"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="4_tgqtn"]
+
+[node name="aigle" type="CharacterBody2D" unique_id=1241671982]
+script = ExtResource("1_tgqtn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324127357]
+position = Vector2(0, -1)
+scale = Vector2(0.142, 0.151)
+texture = ExtResource("2_tgqtn")
+
+[node name="piege" parent="." unique_id=1079666792 instance=ExtResource("4_tgqtn")]
+
+[node name="eagle" type="AudioStreamPlayer2D" parent="." unique_id=168060917]
+stream = ExtResource("4_ewvji")

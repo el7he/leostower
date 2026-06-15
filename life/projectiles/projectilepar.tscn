@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bjg75wn8pmkus"]
+
+[ext_resource type="PackedScene" uid="uid://dyksowb6nj82n" path="res://life/damagecube.tscn" id="1_yvptg"]
+[ext_resource type="Script" uid="uid://d28g4onm1t50m" path="res://life/projectiles/projectilepar.gd" id="2_44uhs"]
+[ext_resource type="Texture2D" uid="uid://ds8ljvklndbnv" path="res://life/projectiles/basketball.png" id="2_dh5tf"]
+[ext_resource type="AudioStream" uid="uid://b6ca5e6m2wa0" path="res://life/projectiles/Basketball Bounce - Sound Effect.wav" id="4_dh5tf"]
+
+[node name="projectilepar" type="CharacterBody2D" unique_id=1241671982]
+script = ExtResource("2_44uhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=299494637]
+position = Vector2(0, 9)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_dh5tf")
+
+[node name="Damagecube" parent="." unique_id=1373159643 instance=ExtResource("1_yvptg")]
+position = Vector2(0, 8)
+scale = Vector2(0.8506277, 0.8197025)
+disabled = true
+
+[node name="Audio on start" type="AudioStreamPlayer2D" parent="." unique_id=26550979]
+stream = ExtResource("4_dh5tf")
+volume_db = 8.0

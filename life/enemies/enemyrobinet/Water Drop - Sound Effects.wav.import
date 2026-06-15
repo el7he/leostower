@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dodyaxs4meox1"
+path="res://.godot/imported/Water Drop - Sound Effects.wav-83c4d62d5592e1a25cfec3833d4d8648.sample"
+
+[deps]
+
+source_file="res://life/enemies/enemyrobinet/Water Drop - Sound Effects.wav"
+dest_files=["res://.godot/imported/Water Drop - Sound Effects.wav-83c4d62d5592e1a25cfec3833d4d8648.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

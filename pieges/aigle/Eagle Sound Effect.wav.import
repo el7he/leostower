@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bje2d1da3m8vk"
+path="res://.godot/imported/Eagle Sound Effect.wav-b79c8798f407989b4952523fe1a2867f.sample"
+
+[deps]
+
+source_file="res://pieges/aigle/Eagle Sound Effect.wav"
+dest_files=["res://.godot/imported/Eagle Sound Effect.wav-b79c8798f407989b4952523fe1a2867f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

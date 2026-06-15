@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6e21cdc8tiwk" path="res://checkpoint/checkpoint.gd" id="1_q42b1"]
 [ext_resource type="Texture2D" uid="uid://05r5ke2kgkwu" path="res://flag.png" id="2_q42b1"]
-[ext_resource type="AudioStream" uid="uid://hrsm3xoce4fy" path="res://checkpoint/Children Yay Sound Effect (HD).wav" id="3_10gex"]
+[ext_resource type="AudioStream" uid="uid://dc3qqvxnahrgd" path="res://checkpoint/277022__sandermotions__applause-1.wav" id="3_10gex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghngh"]
 

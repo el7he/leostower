@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dfdgutwnvcwx"]
+
+[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="2_yh7qe"]
+
+[sub_resource type="GDScript" id="GDScript_fhyk1"]
+script/source = "extends Node2D
+class_name life_cube
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	#if body is Player:
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkory"]
+
+[node name="Lifecube" type="Node2D" unique_id=1812612181]
+script = SubResource("GDScript_fhyk1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1163843631]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1636015470]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_lkory")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2061100337]
+visible = false
+scale = Vector2(6, 6)
+texture = ExtResource("2_yh7qe")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

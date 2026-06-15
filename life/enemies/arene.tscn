@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cjvbodpj7113b"]
+
+[ext_resource type="Script" uid="uid://c4x6o8yowt65l" path="res://life/enemies/arene.gd" id="1_3b2ey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lil8c"]
+
+[node name="Arene" type="Node2D" unique_id=1516630575]
+script = ExtResource("1_3b2ey")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=505335183]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1786349009]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_lil8c")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

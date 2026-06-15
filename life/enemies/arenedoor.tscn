@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmrwba4wqv0i6"]
+
+[ext_resource type="Script" uid="uid://ewvsca5bx5tj" path="res://life/enemies/arenedoor.gd" id="1_yr5u0"]
+[ext_resource type="Texture2D" uid="uid://dr1y04f3reyxr" path="res://caillou.png" id="2_yr5u0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2osas"]
+size = Vector2(118.191345, 108.17607)
+
+[node name="areneDoor" type="Node2D" unique_id=1437960072]
+scale = Vector2(1.1132076, -3.6363633)
+script = ExtResource("1_yr5u0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1476434391]
+scale = Vector2(2.868, 1.643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1200465947]
+scale = Vector2(0.19423574, 0.4001434)
+shape = SubResource("RectangleShape2D_2osas")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=238429947]
+scale = Vector2(0.033, 0.033)
+texture = ExtResource("2_yr5u0")

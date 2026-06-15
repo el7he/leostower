@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dyksowb6nj82n"]
+
+[ext_resource type="Script" uid="uid://bncfhcgksk8ha" path="res://life/damagecube.gd" id="1_ay5iu"]
+[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="2_ecdk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6ib"]
+
+[node name="Damagecube" type="Node2D" unique_id=1373159643]
+script = ExtResource("1_ay5iu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1353499426]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=878798993]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_pl6ib")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=224957787]
+visible = false
+scale = Vector2(6, 6)
+texture = ExtResource("2_ecdk2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

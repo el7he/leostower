@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://4v0hcu8jvaf0"]
 
 [ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_nxogm"]
-[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player.tscn" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player/player.tscn" id="2_3253y"]
 [ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_u3cyc"]
-[ext_resource type="Texture2D" uid="uid://cid1uqbjgwdnu" path="res://ciel.png" id="4_u3cyc"]
+[ext_resource type="Texture2D" uid="uid://blbbmhs1mkt7b" path="res://ciel.png" id="4_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_m7jmp"]
 [ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_y2354"]
 [ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_ni31j"]
