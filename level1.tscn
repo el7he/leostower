@@ -3,26 +3,34 @@
 [ext_resource type="Texture2D" uid="uid://bftqfbq7sw83u" path="res://heliopolis.jpg" id="1_i2041"]
 [ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_xy4tn"]
 [ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player/player.tscn" id="3_usj0q"]
-[ext_resource type="Texture2D" uid="uid://blbbmhs1mkt7b" path="res://ciel.png" id="4_5j5gb"]
+[ext_resource type="Texture2D" uid="uid://dgayxmc217kqn" path="res://Sprites/pexels-francesco-ungaro-13427457.jpg" id="4_usj0q"]
 [ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="5_mx85b"]
 [ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_hx44q"]
 [ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_n8vhr"]
 [ext_resource type="PackedScene" uid="uid://104pf6pksn6" path="res://pieges/saw.tscn" id="8_xy4tn"]
+[ext_resource type="Texture2D" uid="uid://duht01c4rvplu" path="res://Sprites/Amethyst-Transparent-Images.png" id="9_usj0q"]
+[ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="10_5j5gb"]
+[ext_resource type="PackedScene" uid="uid://dvqksnbupx6t" path="res://keys.tscn" id="11_mx85b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5j5gb"]
+radius = 12.542737
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
 [node name="Heliopolis" type="Sprite2D" parent="." unique_id=342178201]
+visible = false
 position = Vector2(559, 336)
 texture = ExtResource("1_i2041")
 
 [node name="GeminiGeneratedImageR2q1Jdr2q1Jdr2q1" type="Sprite2D" parent="." unique_id=1078964543]
+visible = false
 position = Vector2(1415.0001, 324)
 scale = Vector2(0.44000065, 0.44000065)
 texture = ExtResource("2_xy4tn")
 
 [node name="Player" parent="." unique_id=1241671982 instance=ExtResource("3_usj0q")]
 z_index = 1
-position = Vector2(470, 342)
+position = Vector2(311, 379)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
 zoom = Vector2(1.635, 1.635)
@@ -33,7 +41,7 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1749000870]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_5j5gb")
+texture = ExtResource("4_usj0q")
 
 [node name="Caillou" parent="." unique_id=31341220 instance=ExtResource("5_mx85b")]
 position = Vector2(461, 475)
@@ -73,16 +81,174 @@ position = Vector2(349, 711)
 scale = Vector2(27.640005, 1)
 
 [node name="checkpoint" parent="." unique_id=979885743 instance=ExtResource("7_n8vhr")]
-position = Vector2(311, 465)
+position = Vector2(312, 482)
 
 [node name="Saw" parent="." unique_id=1972260605 instance=ExtResource("8_xy4tn")]
 position = Vector2(205.00002, -317)
 
+[node name="Saw2" parent="." unique_id=938183612 instance=ExtResource("8_xy4tn")]
+position = Vector2(-728.00006, -949.00006)
+
 [node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_n8vhr")]
 position = Vector2(840, 206)
+index = 2
+
+[node name="checkpoint3" parent="." unique_id=412577167 instance=ExtResource("7_n8vhr")]
+position = Vector2(34, -158)
+index = 3
+
+[node name="checkpoint4" parent="." unique_id=1364825743 instance=ExtResource("7_n8vhr")]
+position = Vector2(-1263, -599)
+index = 4
 
 [node name="Caillou10" parent="." unique_id=1581256641 instance=ExtResource("5_mx85b")]
-position = Vector2(52, -90.99999)
+position = Vector2(-72.15999, -90.99999)
+scale = Vector2(0.14996675, 0.032)
+
+[node name="Caillou17" parent="." unique_id=359363788 instance=ExtResource("5_mx85b")]
+position = Vector2(-620, -548)
+scale = Vector2(0.30654243, 0.028000033)
+
+[node name="Caillou18" parent="." unique_id=850154579 instance=ExtResource("5_mx85b")]
+position = Vector2(-1223, -548)
+scale = Vector2(0.30654243, 0.028000033)
+
+[node name="Caillou11" parent="." unique_id=1722105025 instance=ExtResource("5_mx85b")]
+position = Vector2(-87, -143.00002)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou11/StaticBody2D3" parent_id_path=PackedInt32Array(1722105025, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou12" parent="." unique_id=297486849 instance=ExtResource("5_mx85b")]
+position = Vector2(-298, -261)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou12/StaticBody2D3" parent_id_path=PackedInt32Array(297486849, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou13" parent="." unique_id=1272094331 instance=ExtResource("5_mx85b")]
+position = Vector2(-158, -399.00003)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou13/StaticBody2D3" parent_id_path=PackedInt32Array(1272094331, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou14" parent="." unique_id=415075172 instance=ExtResource("5_mx85b")]
+position = Vector2(-293, -581)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou14/StaticBody2D3" parent_id_path=PackedInt32Array(415075172, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou15" parent="." unique_id=1225520886 instance=ExtResource("5_mx85b")]
+position = Vector2(970, -193.99991)
+rotation = -0.8531444
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou15/StaticBody2D3" parent_id_path=PackedInt32Array(1225520886, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou16" parent="." unique_id=1056131766 instance=ExtResource("5_mx85b")]
+position = Vector2(1051.0001, -95)
+rotation = 0.891526
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou16/StaticBody2D3" parent_id_path=PackedInt32Array(1056131766, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Lightning" parent="." unique_id=1313747619 instance=ExtResource("10_5j5gb")]
+position = Vector2(-87, -169)
+
+[node name="Lightning7" parent="." unique_id=1624249453 instance=ExtResource("10_5j5gb")]
+position = Vector2(571, 358)
+
+[node name="Lightning8" parent="." unique_id=182112677 instance=ExtResource("10_5j5gb")]
+position = Vector2(608, 357)
+
+[node name="Lightning9" parent="." unique_id=272377268 instance=ExtResource("10_5j5gb")]
+position = Vector2(704, 300)
+
+[node name="Lightning10" parent="." unique_id=136642572 instance=ExtResource("10_5j5gb")]
+position = Vector2(739, 294)
+
+[node name="Lightning11" parent="." unique_id=2011014080 instance=ExtResource("10_5j5gb")]
+position = Vector2(459, 409)
+
+[node name="Lightning5" parent="." unique_id=902204017 instance=ExtResource("10_5j5gb")]
+position = Vector2(-299, -311)
+
+[node name="Lightning6" parent="." unique_id=1815966674 instance=ExtResource("10_5j5gb")]
+position = Vector2(-294, -621)
+
+[node name="Lightning12" parent="." unique_id=1888455045 instance=ExtResource("10_5j5gb")]
+position = Vector2(-1105, -614)
+
+[node name="Trigger" parent="Lightning12" index="2" unique_id=516350263]
+position = Vector2(104, 5)
+
+[node name="Lightning3" parent="." unique_id=1998807565 instance=ExtResource("10_5j5gb")]
+position = Vector2(646, -157)
+
+[node name="Sprite2D" parent="Lightning3" index="0" unique_id=7525776]
+position = Vector2(3, 7.999997)
+
+[node name="Trigger" parent="Lightning3" index="2" unique_id=516350263]
+position = Vector2(120, 3)
+
+[node name="Lightning4" parent="." unique_id=1698555695 instance=ExtResource("10_5j5gb")]
+position = Vector2(454, -169)
+
+[node name="Sprite2D" parent="Lightning4" index="0" unique_id=7525776]
+position = Vector2(3, 7.999997)
+
+[node name="Trigger" parent="Lightning4" index="2" unique_id=516350263]
+position = Vector2(120, 3)
+
+[node name="CollisionShape2D" parent="Lightning4/Trigger" index="0" unique_id=215311090]
+position = Vector2(-122, 9)
+
+[node name="Lightning2" parent="." unique_id=142228569 instance=ExtResource("10_5j5gb")]
+position = Vector2(870.0001, -18.000006)
+rotation = 1.543173
+
+[node name="Sprite2D" parent="Lightning2" index="0" unique_id=7525776]
+rotation = -1.5594947
+
+[node name="Trigger" parent="Lightning2" index="2" unique_id=516350263]
+position = Vector2(-127.24367, -101.553085)
+
+[node name="Keys" parent="." unique_id=49249734 instance=ExtResource("11_mx85b")]
+position = Vector2(-542, -588)
+
+[node name="CollisionShape2D" parent="Keys/Trigger" parent_id_path=PackedInt32Array(49249734, 1067647661) index="0" unique_id=1456569959]
+position = Vector2(-79, -66)
+
+[node name="Caillou" parent="Keys" index="1" unique_id=31341220]
+position = Vector2(-398, -131)
+scale = Vector2(0.032, 0.23200001)
+
+[node name="Caillou2" parent="Keys" unique_id=1911394822 instance=ExtResource("5_mx85b")]
+position = Vector2(-320, -359.00003)
+scale = Vector2(0.10295994, 0.028540613)
 
 [editable path="Caillou2"]
+[editable path="piege"]
 [editable path="checkpoint"]
+[editable path="Caillou11"]
+[editable path="Caillou12"]
+[editable path="Caillou13"]
+[editable path="Caillou14"]
+[editable path="Caillou15"]
+[editable path="Caillou16"]
+[editable path="Lightning12"]
+[editable path="Lightning3"]
+[editable path="Lightning4"]
+[editable path="Lightning2"]
+[editable path="Keys"]

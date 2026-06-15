@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dh5yys4051en5"]
+
+[ext_resource type="Script" uid="uid://cuyonrwa3qrw7" path="res://limbokey.gd" id="1_icchf"]
+[ext_resource type="Texture2D" uid="uid://b21qveuly2ue4" path="res://Sprites/greenkey.png" id="2_78mnq"]
+[ext_resource type="Texture2D" uid="uid://bn2ess6y82p2r" path="res://Sprites/regularkey.png" id="2_i4o6u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78mnq"]
+radius = 41.231052
+
+[node name="Sprite2D" type="Node2D" unique_id=1792000235]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_icchf")
+right_texture = ExtResource("2_78mnq")
+normal_texture = ExtResource("2_i4o6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2058404616]
+texture = ExtResource("2_i4o6u")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=683018855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1179613484]
+shape = SubResource("CircleShape2D_78mnq")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

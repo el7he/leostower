@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c8rptiqhfydwq"]
+
+[ext_resource type="Texture2D" uid="uid://wlvf5hufrvks" path="res://Sprites/—Pngtree—purple lightning bolt displaying nature_21115954.png" id="1_888k8"]
+[ext_resource type="Script" uid="uid://dle7pvqqpl82s" path="res://lightning.gd" id="1_mwoj2"]
+[ext_resource type="Texture2D" uid="uid://daqgnq6vgjffg" path="res://Sprites/warning.png" id="2_mwoj2"]
+[ext_resource type="AudioStream" uid="uid://b70csqawke7ko" path="res://thunder.mp3" id="4_auma5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx85b"]
+size = Vector2(34.22061, 455.83847)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx44q"]
+size = Vector2(52, 53)
+
+[node name="Lightning" type="Node2D" unique_id=1313747619]
+script = ExtResource("1_mwoj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=7525776]
+position = Vector2(-0.9999999, -1.9073486e-06)
+scale = Vector2(0.3200006, 0.3200006)
+texture = ExtResource("2_mwoj2")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=437833182]
+position = Vector2(-10, -303)
+scale = Vector2(2.7199967, 3.1085575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1999778842]
+position = Vector2(3.110306, -114.36173)
+shape = SubResource("RectangleShape2D_mx85b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox" unique_id=1906524873]
+position = Vector2(-10.294139, -138.32784)
+rotation = -0.9826775
+scale = Vector2(0.103169754, 0.13926958)
+texture = ExtResource("1_888k8")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=516350263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=215311090]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hx44q")
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=368715926]
+stream = ExtResource("4_auma5")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

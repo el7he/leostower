@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvqksnbupx6t"]
+
+[ext_resource type="Script" uid="uid://b5y5xrv2ctkfm" path="res://keys.gd" id="1_eqmi2"]
+[ext_resource type="PackedScene" uid="uid://dh5yys4051en5" path="res://limbokey.tscn" id="2_jm6nm"]
+[ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="3_7g4jd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm6nm"]
+size = Vector2(146, 149)
+
+[node name="Keys" type="Node2D" unique_id=49249734]
+script = ExtResource("1_eqmi2")
+key_scene = ExtResource("2_jm6nm")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=1067647661]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1456569959]
+shape = SubResource("RectangleShape2D_jm6nm")
+
+[node name="Caillou" parent="." unique_id=31341220 instance=ExtResource("3_7g4jd")]
+position = Vector2(-77.99999, -2.999999)
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
