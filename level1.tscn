@@ -11,12 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://duht01c4rvplu" path="res://Sprites/Amethyst-Transparent-Images.png" id="9_usj0q"]
 [ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="10_5j5gb"]
 [ext_resource type="PackedScene" uid="uid://dvqksnbupx6t" path="res://keys.tscn" id="11_mx85b"]
+[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/camiontrigger.tscn" id="12_hx44q"]
+[ext_resource type="PackedScene" uid="uid://bek6688hrjrg5" path="res://movingplatform.tscn" id="13_n8vhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx85b"]
 size = Vector2(62.05981, 103.50001)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j5gb"]
 radius = 12.542737
+
+[sub_resource type="Curve2D" id="Curve2D_n8vhr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, 0, 0, 0, 0, 0, -2, -214, 0, 0, 0, 0, 301, -210, 0, 0, 0, 0, 524, -136, 0, 0, 0, 0, 655, -53, 0, 0, 0, 0, 865, -75, 0, 0, 0, 0, 950, -182, 0, 0, 0, 0, 944, -340, 0, 0, 0, 0, 934, -569, 0, 0, 0, 0, 804, -695, 0, 0, 0, 0, 775, -941, 0, 0, 0, 0, 963, -1125, 0, 0, 0, 0, 976, -1280)
+}
+point_count = 13
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
@@ -315,6 +323,21 @@ scale = Vector2(0.032, 0.23200001)
 position = Vector2(-320, -359.00003)
 scale = Vector2(0.10295994, 0.028540613)
 
+[node name="camiontrigger" parent="." unique_id=1153321081 instance=ExtResource("12_hx44q")]
+position = Vector2(-2216, -846)
+
+[node name="movingplatform" parent="." unique_id=2054244855 instance=ExtResource("13_n8vhr")]
+position = Vector2(-2385, -795)
+
+[node name="Path2D" parent="movingplatform" index="1" unique_id=568485272]
+curve = SubResource("Curve2D_n8vhr")
+
+[node name="PathFollow2D" parent="movingplatform/Path2D" index="0" unique_id=765284047]
+position = Vector2(2, 0)
+
+[node name="Sprite2D" parent="movingplatform/Path2D/PathFollow2D" index="0" unique_id=1189776890]
+scale = Vector2(0.3210898, 0.20108981)
+
 [editable path="Caillou2"]
 [editable path="piege"]
 [editable path="checkpoint"]
@@ -335,3 +358,4 @@ scale = Vector2(0.10295994, 0.028540613)
 [editable path="Lightning4"]
 [editable path="Lightning2"]
 [editable path="Keys"]
+[editable path="movingplatform"]

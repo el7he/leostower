@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bek6688hrjrg5"]
+
+[ext_resource type="Script" uid="uid://bu3lvdwjhbecg" path="res://movingplatform.gd" id="1_lpq4i"]
+[ext_resource type="Texture2D" uid="uid://duuc3rr5y77fs" path="res://Sprites/Old_Tree_Log_PNG_Clipart.png" id="1_omtuw"]
+[ext_resource type="Texture2D" uid="uid://w8vjybttg3p7" path="res://Sprites/vecteezy_metallic-gear-icon-representing-interlocking-cogs_55160205.png" id="2_rwlvc"]
+[ext_resource type="Script" uid="uid://bcci3tybeji6u" path="res://pieges/saw_sprite.gd" id="3_lpq4i"]
+[ext_resource type="AudioStream" uid="uid://bq2fxmm14y4vn" path="res://sounds/elevator.mp3" id="5_4fltt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qba8"]
+size = Vector2(220, 45.5)
+
+[sub_resource type="Curve2D" id="Curve2D_rwlvc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 2, 0, 0, 0, 0, 1, -258)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omtuw"]
+size = Vector2(1094.0386, 258.5909)
+
+[node name="movingplatform" type="Node2D" unique_id=2054244855]
+script = ExtResource("1_lpq4i")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=821158024]
+position = Vector2(0, -36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=923326464]
+position = Vector2(0, 13.25)
+shape = SubResource("RectangleShape2D_7qba8")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=568485272]
+curve = SubResource("Curve2D_rwlvc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=765284047]
+position = Vector2(-1, 2)
+rotation = -1.5631042
+rotates = false
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1189776890]
+position = Vector2(2.007633, 0.98458624)
+rotation = 1.5631042
+scale = Vector2(0.20108981, 0.20108981)
+texture = ExtResource("1_omtuw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=801600176]
+position = Vector2(5.9281615e-07, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/StaticBody2D" unique_id=1780011975]
+position = Vector2(3.082644e-05, 4.972907)
+shape = SubResource("RectangleShape2D_omtuw")
+
+[node name="VecteezyMetallicGearIconRepresentingInterlockingCogs55160206" type="Sprite2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=77161762]
+position = Vector2(601.7212, 4.972902)
+scale = Vector2(0.99458045, 0.99458045)
+texture = ExtResource("2_rwlvc")
+script = ExtResource("3_lpq4i")
+spin_speed = -2
+
+[node name="VecteezyMetallicGearIconRepresentingInterlockingCogs55160205" type="Sprite2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1117236726]
+position = Vector2(-556.9651, 24.864511)
+scale = Vector2(0.99458045, 0.99458045)
+texture = ExtResource("2_rwlvc")
+script = ExtResource("3_lpq4i")
+spin_speed = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=750313716]
+stream = ExtResource("5_4fltt")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
