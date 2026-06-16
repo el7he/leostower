@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://duht01c4rvplu" path="res://Sprites/Amethyst-Transparent-Images.png" id="9_usj0q"]
 [ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="10_5j5gb"]
 [ext_resource type="PackedScene" uid="uid://dvqksnbupx6t" path="res://keys.tscn" id="11_mx85b"]
-[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/camiontrigger.tscn" id="12_hx44q"]
+[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/triggerpar.tscn" id="12_hx44q"]
 [ext_resource type="PackedScene" uid="uid://bek6688hrjrg5" path="res://movingplatform.tscn" id="13_n8vhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx85b"]
@@ -25,6 +25,15 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2, 0, 0, 0, 0, 0, -2, -214, 0, 0, 0, 0, 301, -210, 0, 0, 0, 0, 524, -136, 0, 0, 0, 0, 655, -53, 0, 0, 0, 0, 865, -75, 0, 0, 0, 0, 950, -182, 0, 0, 0, 0, 944, -340, 0, 0, 0, 0, 934, -569, 0, 0, 0, 0, 804, -695, 0, 0, 0, 0, 775, -941, 0, 0, 0, 0, 963, -1125, 0, 0, 0, 0, 976, -1280)
 }
 point_count = 13
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8vhr"]
+size = Vector2(277, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqrsh"]
+size = Vector2(277, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l65w"]
+size = Vector2(277, 27.5)
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
@@ -113,6 +122,21 @@ position = Vector2(-2045.0002, -762.00006)
 
 [node name="Saw4" parent="." unique_id=924235446 instance=ExtResource("8_xy4tn")]
 position = Vector2(-1706, -940.00006)
+
+[node name="Saw5" parent="." unique_id=1244773364 instance=ExtResource("8_xy4tn")]
+position = Vector2(-1670.0001, -1157)
+
+[node name="Saw6" parent="." unique_id=1734693665 instance=ExtResource("8_xy4tn")]
+position = Vector2(-1256.0001, -1367)
+
+[node name="Saw7" parent="." unique_id=498803342 instance=ExtResource("8_xy4tn")]
+position = Vector2(-1644.0001, -1547.0001)
+
+[node name="Saw8" parent="." unique_id=1590942588 instance=ExtResource("8_xy4tn")]
+position = Vector2(-1367.0001, -1646.0001)
+
+[node name="Saw9" parent="." unique_id=1812516506 instance=ExtResource("8_xy4tn")]
+position = Vector2(-1651.0001, -2123)
 
 [node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_n8vhr")]
 position = Vector2(840, 206)
@@ -338,6 +362,115 @@ position = Vector2(2, 0)
 [node name="Sprite2D" parent="movingplatform/Path2D/PathFollow2D" index="0" unique_id=1189776890]
 scale = Vector2(0.3210898, 0.20108981)
 
+[node name="LightningGroup" type="Node2D" parent="." unique_id=1914091380]
+position = Vector2(-2262, -1043)
+
+[node name="Lightning18" parent="LightningGroup" unique_id=780319518 instance=ExtResource("10_5j5gb")]
+
+[node name="CollisionShape2D" parent="LightningGroup/Lightning18/Trigger" parent_id_path=PackedInt32Array(780319518, 516350263) index="0" unique_id=215311090]
+position = Vector2(-143.5, 51)
+shape = SubResource("RectangleShape2D_n8vhr")
+
+[node name="Lightning17" parent="LightningGroup" unique_id=1839894539 instance=ExtResource("10_5j5gb")]
+position = Vector2(-93, 0)
+
+[node name="CollisionShape2D" parent="LightningGroup/Lightning17/Hitbox" parent_id_path=PackedInt32Array(1839894539, 437833182) index="0" unique_id=1999778842]
+position = Vector2(5.1470337, -115.32681)
+
+[node name="CollisionShape2D" parent="LightningGroup/Lightning17/Trigger" parent_id_path=PackedInt32Array(1839894539, 516350263) index="0" unique_id=215311090]
+position = Vector2(-51.5, 50.5)
+shape = SubResource("RectangleShape2D_eqrsh")
+
+[node name="Lightning16" parent="LightningGroup" unique_id=1512575332 instance=ExtResource("10_5j5gb")]
+position = Vector2(-244, -1)
+
+[node name="CollisionShape2D" parent="LightningGroup/Lightning16/Hitbox" parent_id_path=PackedInt32Array(1512575332, 437833182) index="0" unique_id=1999778842]
+position = Vector2(4.779419, -114.361755)
+
+[node name="CollisionShape2D" parent="LightningGroup/Lightning16/Trigger" parent_id_path=PackedInt32Array(1512575332, 516350263) index="0" unique_id=215311090]
+position = Vector2(99.5, 52)
+shape = SubResource("RectangleShape2D_3l65w")
+
+[node name="LightningGroup2" type="Node2D" parent="." unique_id=2101234838]
+position = Vector2(-1321, -1111)
+
+[node name="Lightning18" parent="LightningGroup2" unique_id=448041598 instance=ExtResource("10_5j5gb")]
+
+[node name="CollisionShape2D" parent="LightningGroup2/Lightning18/Trigger" parent_id_path=PackedInt32Array(448041598, 516350263) index="0" unique_id=215311090]
+position = Vector2(-143.5, 51)
+shape = SubResource("RectangleShape2D_n8vhr")
+
+[node name="Lightning17" parent="LightningGroup2" unique_id=1676588323 instance=ExtResource("10_5j5gb")]
+position = Vector2(-93, 0)
+
+[node name="CollisionShape2D" parent="LightningGroup2/Lightning17/Hitbox" parent_id_path=PackedInt32Array(1676588323, 437833182) index="0" unique_id=1999778842]
+position = Vector2(5.1470337, -115.32681)
+
+[node name="CollisionShape2D" parent="LightningGroup2/Lightning17/Trigger" parent_id_path=PackedInt32Array(1676588323, 516350263) index="0" unique_id=215311090]
+position = Vector2(-51.5, 50.5)
+shape = SubResource("RectangleShape2D_eqrsh")
+
+[node name="Lightning16" parent="LightningGroup2" unique_id=219934581 instance=ExtResource("10_5j5gb")]
+position = Vector2(-244, -1)
+
+[node name="CollisionShape2D" parent="LightningGroup2/Lightning16/Trigger" parent_id_path=PackedInt32Array(219934581, 516350263) index="0" unique_id=215311090]
+position = Vector2(99.5, 52)
+shape = SubResource("RectangleShape2D_3l65w")
+
+[node name="LightningGroup3" type="Node2D" parent="." unique_id=301479710]
+position = Vector2(-1226, -1455)
+
+[node name="Lightning18" parent="LightningGroup3" unique_id=1664095180 instance=ExtResource("10_5j5gb")]
+position = Vector2(-160, -1)
+
+[node name="CollisionShape2D" parent="LightningGroup3/Lightning18/Trigger" parent_id_path=PackedInt32Array(1664095180, 516350263) index="0" unique_id=215311090]
+position = Vector2(16, 52)
+shape = SubResource("RectangleShape2D_n8vhr")
+
+[node name="Lightning17" parent="LightningGroup3" unique_id=1444681088 instance=ExtResource("10_5j5gb")]
+position = Vector2(-93, 0)
+
+[node name="CollisionShape2D" parent="LightningGroup3/Lightning17/Hitbox" parent_id_path=PackedInt32Array(1444681088, 437833182) index="0" unique_id=1999778842]
+position = Vector2(5.1470337, -115.32681)
+
+[node name="CollisionShape2D" parent="LightningGroup3/Lightning17/Trigger" parent_id_path=PackedInt32Array(1444681088, 516350263) index="0" unique_id=215311090]
+position = Vector2(-51.5, 50.5)
+shape = SubResource("RectangleShape2D_eqrsh")
+
+[node name="Lightning16" parent="LightningGroup3" unique_id=479662068 instance=ExtResource("10_5j5gb")]
+position = Vector2(-244, -1)
+
+[node name="CollisionShape2D" parent="LightningGroup3/Lightning16/Trigger" parent_id_path=PackedInt32Array(479662068, 516350263) index="0" unique_id=215311090]
+position = Vector2(99.5, 52)
+shape = SubResource("RectangleShape2D_3l65w")
+
+[node name="LightningGroup4" type="Node2D" parent="." unique_id=1399283444]
+position = Vector2(-1367, -1785)
+
+[node name="Lightning18" parent="LightningGroup4" unique_id=1864678067 instance=ExtResource("10_5j5gb")]
+position = Vector2(-160, -1)
+
+[node name="CollisionShape2D" parent="LightningGroup4/Lightning18/Trigger" parent_id_path=PackedInt32Array(1864678067, 516350263) index="0" unique_id=215311090]
+position = Vector2(16, 52)
+shape = SubResource("RectangleShape2D_n8vhr")
+
+[node name="Lightning17" parent="LightningGroup4" unique_id=558060478 instance=ExtResource("10_5j5gb")]
+position = Vector2(-93, 0)
+
+[node name="CollisionShape2D" parent="LightningGroup4/Lightning17/Hitbox" parent_id_path=PackedInt32Array(558060478, 437833182) index="0" unique_id=1999778842]
+position = Vector2(5.1470337, -115.32681)
+
+[node name="CollisionShape2D" parent="LightningGroup4/Lightning17/Trigger" parent_id_path=PackedInt32Array(558060478, 516350263) index="0" unique_id=215311090]
+position = Vector2(-51.5, 50.5)
+shape = SubResource("RectangleShape2D_eqrsh")
+
+[node name="Lightning16" parent="LightningGroup4" unique_id=1514631005 instance=ExtResource("10_5j5gb")]
+position = Vector2(-17, -1)
+
+[node name="CollisionShape2D" parent="LightningGroup4/Lightning16/Trigger" parent_id_path=PackedInt32Array(1514631005, 516350263) index="0" unique_id=215311090]
+position = Vector2(-126, 52)
+shape = SubResource("RectangleShape2D_3l65w")
+
 [editable path="Caillou2"]
 [editable path="piege"]
 [editable path="checkpoint"]
@@ -359,3 +492,15 @@ scale = Vector2(0.3210898, 0.20108981)
 [editable path="Lightning2"]
 [editable path="Keys"]
 [editable path="movingplatform"]
+[editable path="LightningGroup/Lightning18"]
+[editable path="LightningGroup/Lightning17"]
+[editable path="LightningGroup/Lightning16"]
+[editable path="LightningGroup2/Lightning18"]
+[editable path="LightningGroup2/Lightning17"]
+[editable path="LightningGroup2/Lightning16"]
+[editable path="LightningGroup3/Lightning18"]
+[editable path="LightningGroup3/Lightning17"]
+[editable path="LightningGroup3/Lightning16"]
+[editable path="LightningGroup4/Lightning18"]
+[editable path="LightningGroup4/Lightning17"]
+[editable path="LightningGroup4/Lightning16"]
