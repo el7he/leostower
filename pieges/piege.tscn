@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="3_scppt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wky"]
+size = Vector2(13.410085, 13.472561)
 
 [node name="piege" type="Node2D" unique_id=1079666792]
 script = ExtResource("1_scppt")
