@@ -26,4 +26,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if getcheckpointint()!=index:
 			yay.play()
 			SaveManager.save_game({"checkpoint":index})
+			
 		#print("checkpoint ! ")

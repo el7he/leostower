@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://icb5k45jj6vm"]
+
+[ext_resource type="Script" uid="uid://dytd6qrgfqkm7" path="res://pieges/camion/camion.gd" id="1_e531d"]
+[ext_resource type="Texture2D" uid="uid://bjxqftsfgqes6" path="res://pieges/camion/camion.png" id="2_e531d"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="3_yccjh"]
+[ext_resource type="AudioStream" uid="uid://b1cpv6rbh2yab" path="res://pieges/camion/19026__han1__claxon.wav" id="4_wpfou"]
+
+[node name="forward" type="CharacterBody2D" unique_id=1241671982]
+script = ExtResource("1_e531d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324127357]
+position = Vector2(0, -1)
+scale = Vector2(0.282, 0.3)
+texture = ExtResource("2_e531d")
+
+[node name="piege" parent="." unique_id=1079666792 instance=ExtResource("3_yccjh")]
+scale = Vector2(3.72, 0.973)
+
+[node name="19026Han1Claxon" type="AudioStreamPlayer" parent="." unique_id=1564674559]
+stream = ExtResource("4_wpfou")
+autoplay = true

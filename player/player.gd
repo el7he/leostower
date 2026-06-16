@@ -54,6 +54,9 @@ var _is_jumping         : bool  = false
 @onready var bruitdash: AudioStreamPlayer2D = $bruitdash
 @onready var bruitattaque: AudioStreamPlayer2D = $bruitattaque
 @onready var bruithit: AudioStreamPlayer2D = $bruithit
+@onready var bruitdeath: AudioStreamPlayer2D = $bruitdeath
+@onready var inputmapping: Control = $GUI/Inputmapping
+
 
 
 var time_elapsed : float
@@ -65,6 +68,7 @@ var isattacking:bool=false
 var canattack: bool=true
 var isinpogo:bool = false
 var hasdashedinair : bool = false
+var gamepaused : bool = false
 
 
 func _enter_tree():
@@ -72,6 +76,7 @@ func _enter_tree():
 
 func _ready() -> void:
 	super();
+	hidepause()
 	sword_2.visible=false;
 	setscalex()
 
@@ -105,6 +110,7 @@ func teleport(xvar:float,yvar:float) -> void :
 func _physics_process(delta: float) -> void:
 	var input_dir := _get_input_direction()
 	
+	pause()
 	_update_timers(delta)
 	_apply_gravity(delta)
 	_apply_horizontal_movement(delta, input_dir)
@@ -203,6 +209,7 @@ func _update_timers(delta: float) -> void:
 
 	# Jump buffer : le joueur a appuyé sur saut récemment
 	if Input.is_action_just_pressed("jump"):
+		#SaveManager.reset_save()
 		#SaveManager.save_game({"clicks":clicks,"time_elapsed":time_elapsed})
 		#t("click : ",clicks) 
 		jumpfunc()
@@ -321,6 +328,11 @@ func sprite_dir() ->float:
 	return (_facing_dir < 0.0)
 func die():
 	super()
+	sprite_2d.visible=false
+	max_speed=0
+	bruitdeath.play()
+	jump_force=0
+	await get_tree().create_timer(0.3).timeout
 	get_tree().reload_current_scene()
 	#print("oui")
 
@@ -328,4 +340,23 @@ func set_life(new_life: float) -> void:
 	super(new_life)
 	lifebar.value = new_life*10;
 	
+
+
+func pause() -> void:
+	if Input.is_action_just_pressed("pause"):
+		gamepaused = !gamepaused
+		if gamepaused:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Engine.time_scale = 0
+			inputmapping.visible=true
+		else : 
+			hidepause(false)
+		get_tree().root.get_viewport().set_input_as_handled()
+	pass
 	
+func hidepause(gettreebool : bool = true) -> void : 
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Engine.time_scale = 1
+	inputmapping.visible=false
+	if gettreebool:
+		get_tree().root.get_viewport().set_input_as_handled()

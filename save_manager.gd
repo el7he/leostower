@@ -30,3 +30,5 @@ func load_game() -> Dictionary:
 
 func reset_save() -> void:
 	save_game(default_dictionary)
+	
+	
