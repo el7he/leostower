@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dr5pudidure3j" path="res://pieges/sumérien/sumerien.gd" id="1_btpin"]
 [ext_resource type="Texture2D" uid="uid://dplq028fqrbfg" path="res://pieges/sumérien/sumérien.png" id="2_j8xms"]
-[ext_resource type="AudioStream" uid="uid://bw2aqx81r5b74" path="res://merde.mp3" id="4_c2r6e"]
+[ext_resource type="AudioStream" uid="uid://be7umijfphu7b" path="res://pieges/sumérien/sumerien.wav" id="3_wd8rc"]
+[ext_resource type="AudioStream" uid="uid://dfe20app2dvu1" path="res://pieges/sumérien/sumerienfall.wav" id="4_5y0v5"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="4_wd8rc"]
+[ext_resource type="AudioStream" uid="uid://dah2bkap4ilfw" path="res://pieges/sumérien/sumerienslide.wav" id="5_c2r6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
 radius = 9.595958
@@ -20,5 +23,17 @@ texture = ExtResource("2_j8xms")
 scale = Vector2(3.9600005, 2.5200002)
 shape = SubResource("CapsuleShape2D_i3pqv")
 
-[node name="cri_macaque" type="AudioStreamPlayer2D" parent="." unique_id=1541811620]
-stream = ExtResource("4_c2r6e")
+[node name="sumerien" type="AudioStreamPlayer2D" parent="." unique_id=1541811620]
+stream = ExtResource("3_wd8rc")
+volume_db = 10.0
+
+[node name="sumerienfall" type="AudioStreamPlayer2D" parent="." unique_id=310448974]
+stream = ExtResource("4_5y0v5")
+volume_db = 10.0
+
+[node name="sumerienslide" type="AudioStreamPlayer2D" parent="." unique_id=1587130307]
+stream = ExtResource("5_c2r6e")
+volume_db = 10.0
+
+[node name="piege" parent="." unique_id=1079666792 instance=ExtResource("4_wd8rc")]
+scale = Vector2(2.299459, 3.8641362)

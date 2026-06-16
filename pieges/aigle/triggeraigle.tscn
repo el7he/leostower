@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://36rxrjf3dq8g"]
+
+[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/triggerpar.tscn" id="1_xiqn0"]
+[ext_resource type="PackedScene" uid="uid://1y2bw1av6k2o" path="res://pieges/aigle/aigle.tscn" id="2_v3vrt"]
+
+[node name="triggerpar" unique_id=1079666792 instance=ExtResource("1_xiqn0")]
+objet_a_spawner = ExtResource("2_v3vrt")
+
+[node name="spawner" parent="." index="2" unique_id=207203317]
+position = Vector2(-360, 0)

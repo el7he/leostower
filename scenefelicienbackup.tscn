@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="7_ampe2"]
 [ext_resource type="PackedScene" uid="uid://7rhqmchhxeuc" path="res://player/bananes/banane.tscn" id="8_5me8m"]
 [ext_resource type="PackedScene" uid="uid://drig5lm1ij4xj" path="res://porte/porte.tscn" id="9_nlpbq"]
-[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/camiontrigger.tscn" id="10_tabcd"]
+[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/triggerpar.tscn" id="10_tabcd"]
 [ext_resource type="PackedScene" uid="uid://brd5qvsq1xs51" path="res://pieges/sumérien/sumerien.tscn" id="11_j62qj"]
 [ext_resource type="PackedScene" uid="uid://cjvbodpj7113b" path="res://life/enemies/arene.tscn" id="12_oa612"]
 [ext_resource type="PackedScene" uid="uid://dmrwba4wqv0i6" path="res://life/enemies/arenedoor.tscn" id="13_w0gnh"]

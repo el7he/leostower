@@ -54,6 +54,8 @@ var _is_jumping         : bool  = false
 @onready var bruitdash: AudioStreamPlayer2D = $bruitdash
 @onready var bruitattaque: AudioStreamPlayer2D = $bruitattaque
 @onready var bruithit: AudioStreamPlayer2D = $bruithit
+@onready var bruitdeath: AudioStreamPlayer2D = $bruitdeath
+
 
 
 var time_elapsed : float
@@ -203,6 +205,7 @@ func _update_timers(delta: float) -> void:
 
 	# Jump buffer : le joueur a appuyé sur saut récemment
 	if Input.is_action_just_pressed("jump"):
+		#SaveManager.reset_save()
 		#SaveManager.save_game({"clicks":clicks,"time_elapsed":time_elapsed})
 		#t("click : ",clicks) 
 		jumpfunc()
@@ -321,6 +324,11 @@ func sprite_dir() ->float:
 	return (_facing_dir < 0.0)
 func die():
 	super()
+	sprite_2d.visible=false
+	max_speed=0
+	bruitdeath.play()
+	jump_force=0
+	await get_tree().create_timer(0.3).timeout
 	get_tree().reload_current_scene()
 	#print("oui")
 

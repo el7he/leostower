@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 800.0
+@export var speed = 600.0
 @export var follow_distance = 50.0  # Distance à laquelle le cube s'arrête
 @export var player_node: Node2D = null  # Référence au joueur
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -16,7 +16,7 @@ func _ready():
 	eagle.play()
 	eagle.finished.connect(_on_eagle_finished)
 	eagle.play()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
 func _on_eagle_finished():

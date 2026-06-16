@@ -17,3 +17,4 @@ texture = ExtResource("2_tgqtn")
 
 [node name="eagle" type="AudioStreamPlayer2D" parent="." unique_id=168060917]
 stream = ExtResource("4_ewvji")
+volume_db = 10.0

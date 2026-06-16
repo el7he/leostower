@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dsvu0h03w248"]
+
+[sub_resource type="GDScript" id="GDScript_c0ced"]
+script/source = "extends Button
+class_name remapbutton
+
+@export var action : String
+@export var action_event_index : int = 0
+
+const CONTROLLER_LABELS: Dictionary = {
+	JoyButton.JOY_BUTTON_A: \"A\"
+}
+
+func _ready() -> void:
+	toggle_mode = true
+"
+
+[node name="remapbutton" type="Button" unique_id=1447716904]
+offset_right = 8.0
+offset_bottom = 8.0
+script = SubResource("GDScript_c0ced")
