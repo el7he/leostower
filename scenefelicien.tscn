@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dojfdhfau5y7"]
 
+[ext_resource type="Script" uid="uid://c4okpk1copg5g" path="res://scenefelicien.gd" id="1_0vxif"]
 [ext_resource type="Texture2D" uid="uid://dxf8hrjahrxfe" path="res://Gemini_Generated_Image_r2q1jdr2q1jdr2q1.png" id="2_kbll4"]
 [ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player/player.tscn" id="3_4l28a"]
 [ext_resource type="Texture2D" uid="uid://blbbmhs1mkt7b" path="res://ciel.png" id="4_d1wkb"]
@@ -14,9 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://chsxuhdaorthb" path="res://pieges/resetgame.tscn" id="14_hutp1"]
 [ext_resource type="PackedScene" uid="uid://fnlrojn1ae7g" path="res://life/enemies/enemyrobinet/enemyrobinet.tscn" id="14_txm7a"]
 [ext_resource type="PackedScene" uid="uid://cjqisge7hmg2a" path="res://life/enemies/enemy1/enemy1.tscn" id="15_hutp1"]
+[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="16_aah3b"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 scale = Vector2(1.0053415, 0.995189)
+script = ExtResource("1_0vxif")
 
 [node name="GeminiGeneratedImageR2q1Jdr2q1Jdr2q1" type="Sprite2D" parent="." unique_id=1078964543]
 position = Vector2(1415.0001, 324)
@@ -236,3 +239,8 @@ trigger_type = 1
 position = Vector2(15377.93, 3639.2273)
 rotation = 1.5707964
 scale = Vector2(0.5644974, 0.07989678)
+
+[node name="CursorLayer" type="CanvasLayer" parent="." unique_id=322180949]
+
+[node name="cursor" type="Sprite2D" parent="CursorLayer" unique_id=265950721]
+texture = ExtResource("16_aah3b")

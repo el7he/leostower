@@ -55,6 +55,7 @@ var _is_jumping         : bool  = false
 @onready var bruitattaque: AudioStreamPlayer2D = $bruitattaque
 @onready var bruithit: AudioStreamPlayer2D = $bruithit
 @onready var bruitdeath: AudioStreamPlayer2D = $bruitdeath
+@onready var inputmapping: Control = $GUI/Inputmapping
 
 
 
@@ -67,6 +68,7 @@ var isattacking:bool=false
 var canattack: bool=true
 var isinpogo:bool = false
 var hasdashedinair : bool = false
+var gamepaused : bool = false
 
 
 func _enter_tree():
@@ -74,6 +76,7 @@ func _enter_tree():
 
 func _ready() -> void:
 	super();
+	hidepause()
 	sword_2.visible=false;
 	setscalex()
 
@@ -107,6 +110,7 @@ func teleport(xvar:float,yvar:float) -> void :
 func _physics_process(delta: float) -> void:
 	var input_dir := _get_input_direction()
 	
+	pause()
 	_update_timers(delta)
 	_apply_gravity(delta)
 	_apply_horizontal_movement(delta, input_dir)
@@ -336,4 +340,23 @@ func set_life(new_life: float) -> void:
 	super(new_life)
 	lifebar.value = new_life*10;
 	
+
+
+func pause() -> void:
+	if Input.is_action_just_pressed("pause"):
+		gamepaused = !gamepaused
+		if gamepaused:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Engine.time_scale = 0
+			inputmapping.visible=true
+		else : 
+			hidepause(false)
+		get_tree().root.get_viewport().set_input_as_handled()
+	pass
 	
+func hidepause(gettreebool : bool = true) -> void : 
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Engine.time_scale = 1
+	inputmapping.visible=false
+	if gettreebool:
+		get_tree().root.get_viewport().set_input_as_handled()
