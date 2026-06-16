@@ -27,6 +27,6 @@ func load_game() -> Dictionary:
 			return data
 		push_error("corrupted data")
 	return default_dictionary
-	
+
 func reset_save() -> void:
 	save_game(default_dictionary)
