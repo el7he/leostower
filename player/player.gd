@@ -2,10 +2,10 @@ extends lifecharacter
 class_name Player
 
 # ============================================================
-#  CELESTE-STYLE PLATFORMER CONTROLLER — Godot 4.6.1
-#  Features : coyote time, jump buffer, variable jump height,
-#             smooth acceleration, snappy direction changes,
-#             optional wall-slide & wall-jump (toggle below)
+#   CELESTE-STYLE PLATFORMER CONTROLLER — Godot 4.6.1
+#   Features : coyote time, jump buffer, variable jump height,
+#              smooth acceleration, snappy direction changes,
+#              optional wall-slide & wall-jump (toggle below)
 # ============================================================
 
 # ── Feature toggles ──────────────────────────────────────────
@@ -39,6 +39,7 @@ class_name Player
 @export var wall_jump_force    : Vector2 = Vector2(320.0, -400.0)
 @export var wall_jump_lock_time: float = 0.15  # temps où le joueur ne contrôle pas l'horizontal
 @export var player_sprite : playersprite
+@export var custom_cris: AudioStream
 # ── Interne ──────────────────────────────────────────────────
 var _coyote_timer       : float = 0.0
 var _jump_buffer_timer  : float = 0.0
@@ -57,8 +58,6 @@ var _is_jumping         : bool  = false
 @onready var bruitdeath: AudioStreamPlayer2D = $bruitdeath
 @onready var inputmapping: Control = $GUI/Inputmapping
 
-
-
 var time_elapsed : float
 var banananumber : int =0;
 var isinrotation : bool = false;
@@ -69,7 +68,7 @@ var canattack: bool=true
 var isinpogo:bool = false
 var hasdashedinair : bool = false
 var gamepaused : bool = false
-
+var is_stunned : bool = false
 
 func _enter_tree():
 	Gamemanager.playervar = self
@@ -83,7 +82,7 @@ func _ready() -> void:
 	pass
 
 func setscalex(sizenumber : int = 0) ->void:
-	var xscale :float = 0.2 + (0.03 *  sizenumber)
+	var xscale :float = 0.2 + (0.03 * sizenumber)
 	sprite_2d.scale=Vector2(xscale,0.256)
 	velocity = Vector2.ZERO
 	
@@ -113,15 +112,18 @@ func _physics_process(delta: float) -> void:
 	pause()
 	_update_timers(delta)
 	_apply_gravity(delta)
-	_apply_horizontal_movement(delta, input_dir)
+	
+	if is_stunned:
+		velocity.x = move_toward(velocity.x, 0.0, deceleration * delta)
+	else:
+		_apply_horizontal_movement(delta, input_dir)
+		if enable_wall_mechanics:
+			_handle_wall_slide(delta, input_dir)
+		_handle_jump(input_dir)
+		_update_facing(input_dir)
 	
 	if is_on_wall()==true && hasdashedinair==true:
 		hasdashedinair = false
-	if enable_wall_mechanics:
-		_handle_wall_slide(delta, input_dir)
-
-	_handle_jump(input_dir)
-	_update_facing(input_dir)
 
 	move_and_slide()
 
@@ -129,19 +131,14 @@ func _physics_process(delta: float) -> void:
 # ── Input ────────────────────────────────────────────────────
 
 func _get_input_direction() -> float:
+	if is_stunned:
+		return 0.0
 	return Input.get_axis("move_left", "move_right")
 
 
-
-
-
-
-	
-	
 func take_damage(damage: float) -> void:
 	super(damage)
 	bruithit.play()
-	
 	
 	
 func swordattack() ->void:
@@ -168,12 +165,17 @@ func swordattack() ->void:
 
 func pogo() -> void : 
 	_execute_jump(-850)
-	#await get_tree().create_timer(1.0).timeout
-	#isinpogo=false
+
 # ── Timers ───────────────────────────────────────────────────
 
 func _update_timers(delta: float) -> void:
-	
+	if is_stunned:
+		_coyote_timer = maxf(_coyote_timer - delta, 0.0)
+		_jump_buffer_timer = maxf(_jump_buffer_timer - delta, 0.0)
+		_wall_jump_lock = maxf(_wall_jump_lock - delta, 0.0)
+		_was_on_floor = is_on_floor()
+		return
+
 	if Input.is_action_just_pressed("sword"):
 		if canattack==true:
 			swordattack()
@@ -204,14 +206,11 @@ func _update_timers(delta: float) -> void:
 		_is_jumping = false
 		hasdashedinair = false
 	elif _was_on_floor and not _is_jumping:
-		pass  # le timer va décrémenter naturellement
+		pass # le timer va décrémenter naturellement
 	_coyote_timer = maxf(_coyote_timer - delta, 0.0)
 
 	# Jump buffer : le joueur a appuyé sur saut récemment
 	if Input.is_action_just_pressed("jump"):
-		#SaveManager.reset_save()
-		#SaveManager.save_game({"clicks":clicks,"time_elapsed":time_elapsed})
-		#t("click : ",clicks) 
 		jumpfunc()
 			
 	_jump_buffer_timer = maxf(_jump_buffer_timer - delta, 0.0)
@@ -223,8 +222,11 @@ func _update_timers(delta: float) -> void:
 
 func jumpfunc() -> void: 
 	var randomcri = randi_range(1, 4)
-	var cri = "res://Monkey - Sound Effect"+str(randomcri)+".wav"
-	cri_macaque.stream = load(cri)
+	if custom_cris == null:
+		var cri = "res://Monkey - Sound Effect"+str(randomcri)+".wav"
+		cri_macaque.stream = load(cri)
+	else:
+		cri_macaque.stream = custom_cris
 	cri_macaque.play()
 	_jump_buffer_timer = jump_buffer_time
 # ── Gravity ──────────────────────────────────────────────────
@@ -242,7 +244,7 @@ func _apply_gravity(delta: float) -> void:
 
 func _apply_horizontal_movement(delta: float, input_dir: float) -> void:
 	if _wall_jump_lock > 0.0:
-		return  # on bloque le contrôle horizontal pendant un wall jump
+		return # on bloque le contrôle horizontal pendant un wall jump
 
 	var on_ground := is_on_floor()
 	var accel := acceleration if on_ground else air_acceleration
@@ -263,7 +265,7 @@ func _apply_horizontal_movement(delta: float, input_dir: float) -> void:
 func _handle_jump(input_dir: float) -> void:
 	var can_ground_jump := _coyote_timer > 0.0
 	var can_wall_jump   := enable_wall_mechanics and is_on_wall() and not is_on_floor()
-	var buffered        := _jump_buffer_timer > 0.0
+	var buffered         := _jump_buffer_timer > 0.0
 
 	# ── Ground / coyote jump ──
 	if buffered and can_ground_jump:
@@ -303,7 +305,7 @@ func _handle_wall_slide(_delta: float, input_dir: float) -> void:
 	if not is_on_wall() or is_on_floor():
 		return
 	if velocity.y < 0.0:
-		return  # on monte, pas de slide
+		return # on monte, pas de slide
 
 	# Slide seulement si le joueur pousse vers le mur
 	var wall_dir := -get_wall_normal().x   # direction du mur
@@ -326,6 +328,7 @@ func _update_facing(input_dir: float) -> void:
 
 func sprite_dir() ->float:
 	return (_facing_dir < 0.0)
+
 func die():
 	super()
 	sprite_2d.visible=false
@@ -334,7 +337,6 @@ func die():
 	jump_force=0
 	await get_tree().create_timer(0.3).timeout
 	get_tree().reload_current_scene()
-	#print("oui")
 
 func set_life(new_life: float) -> void:
 	super(new_life)

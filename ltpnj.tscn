@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://eyhf3vcrjn2y"]
+
+[ext_resource type="Texture2D" uid="uid://bte2snkpqkfsv" path="res://Sprites/image_2026-06-17_110511345-removebg-preview.png" id="1_gjhlo"]
+[ext_resource type="Script" uid="uid://du2n7ua8xi47h" path="res://ltpnj.gd" id="1_ikcp8"]
+[ext_resource type="Texture2D" uid="uid://cufm06udm6p8k" path="res://Sprites/pngtree-real-explosion-isolated-on-white-background-png-image_13149464.png" id="3_mcuks"]
+[ext_resource type="AudioStream" uid="uid://cu5g5lg5drto1" path="res://sounds/dragon-studio-explosion-with-debris-494320.mp3" id="4_mcuks"]
+[ext_resource type="AudioStream" uid="uid://crh3a57k7njln" path="res://sounds/Monologue eff.mp3" id="5_osbg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osbg2"]
+size = Vector2(147.7943, 75.59776)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p05v5"]
+radius = 62.072536
+
+[sub_resource type="Animation" id="Animation_osbg2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3, 0.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mcuks"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.6390157, 2.4622848),
+"update": 1,
+"values": [Vector2(0.35, 0.25), Vector2(0.25, 0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3263765701229394, -0.1884955592153878]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_osbg2"]
+_data = {
+&"RESET": SubResource("Animation_osbg2"),
+&"idle": SubResource("Animation_mcuks")
+}
+
+[node name="LTPNJ" type="Node2D" unique_id=2046594884]
+script = ExtResource("1_ikcp8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1460706720]
+position = Vector2(0, 61)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_gjhlo")
+offset = Vector2(0, -203.33333)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1789866144]
+position = Vector2(-10, -303)
+scale = Vector2(2.7199967, 3.1085575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=192715890]
+position = Vector2(2.861023e-06, 80.584)
+shape = SubResource("RectangleShape2D_osbg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox" unique_id=1434216047]
+position = Vector2(3.3088284, 88.46548)
+scale = Vector2(0.18878907, 0.1887891)
+texture = ExtResource("3_mcuks")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=620482682]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1353235856]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_p05v5")
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=234789715]
+stream = ExtResource("4_mcuks")
+volume_db = 10.0
+
+[node name="Monologue" type="AudioStreamPlayer2D" parent="." unique_id=873312052]
+stream = ExtResource("5_osbg2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1360249641]
+libraries/ = SubResource("AnimationLibrary_osbg2")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
