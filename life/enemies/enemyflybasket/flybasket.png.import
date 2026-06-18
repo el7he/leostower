@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjxqftsfgqes6"
-path="res://.godot/imported/camion.png-2186c324323767441e9be485ce4b6fc8.ctex"
+uid="uid://b6m0r2uv4guwc"
+path="res://.godot/imported/flybasket.png-15f460d324e594fd82a0ea48b35b7cfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pieges/camion/camion.png"
-dest_files=["res://.godot/imported/camion.png-2186c324323767441e9be485ce4b6fc8.ctex"]
+source_file="res://life/enemies/enemyflybasket/flybasket.png"
+dest_files=["res://.godot/imported/flybasket.png-15f460d324e594fd82a0ea48b35b7cfc.ctex"]
 
 [params]
 

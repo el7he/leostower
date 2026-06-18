@@ -1,4 +1,91 @@
 extends enemy
+#@export var doudoutest : Array[float] = []
+@onready var onlandingsfx: AudioStreamPlayer2D = $Onlanding
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	super()
+	#print("objet a spawn : ",objet_a_spawner.size())
+	print("robinet lifemax : ",lifemax, " life : ",life)
+	
+	
+	#global_position = Vector2(player_node.global_position.x, global_position.y)
+	#havegravity = true;
+	pass # Replace with function body.
+	#teleportloop()
+
+func spawnprojectilesalve(projectileclass : String= 'res://life/projectiles/projectilegoutte.tscn', shotspeed : float = 500) ->void:
+	spawnprojectile(aim_at_player_angle(),projectileclass,shotspeed)
+	#, cadence : float = 0.3, projectilenumber:int = 6
+	
+func onsalve(salveindex : int =0) ->void:
+	super(salveindex)
+	match salveindex:
+		0:
+			robinettp()
+			pass
+		1:
+			spawnprojectilesalve()
+			pass
+		2:
+			pass
+			spawnprojectilesalve('res://life/projectiles/projectilevague.tscn',300) #2,2
+		_:
+			print("Autre valeur")  # Cas par défaut
+
+func robinettp() -> void:
+	velocity = Vector2(0, 0)
+	gravity = 6
+	global_position = Vector2(player_node.global_position.x, player_node.global_position.y-300)
+	
+	#advancement+=1
+	
+	#await get_tree().create_timer(1.0).timeout
+	'''
+	if advancement==3:
+		chooseteleportpoint()
+	else :
+		robinettp()
+	'''
+	pass
+	
+func onendsalve(salveindex : int ) -> void:
+	super(salveindex)
+	match salveindex:
+		0:
+			gravity = 0
+			pass
+		1:
+			#spawnprojectilesalve()
+			pass
+		2:
+			pass
+			#spawnprojectilesalve('res://life/projectiles/projectilevague.tscn',300,2,2)
+		_:
+			pass
+			#print("Autre valeur")  # Cas par défaut
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	super(delta)
+	#move_toward_player()
+	#global_position = Vector2(player_node.global_position.x, global_position.y)
+	#global_position = Vector2(global_position.x,global_position.y+1)
+	pass
+
+func onlanding() ->void:
+	super()
+	onlandingsfx.play()
+	#print("SOL")
+	
+
+
+
+
+
+
+'''
+extends enemy
 var teleportpoints : Array[Vector2] = []
 #@export var doudoutest : Array[float] = []
 var advancement : int = 0;
@@ -89,3 +176,5 @@ func onlanding() ->void:
 	onlandingsfx.play()
 	#print("SOL")
 	
+
+'''

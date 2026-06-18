@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bbmlip6ew56n0"]
+
+[ext_resource type="PackedScene" uid="uid://dxykkul8bfd32" path="res://pieges/triggerpar.tscn" id="1_igmxg"]
+[ext_resource type="PackedScene" uid="uid://bk340sarcipd8" path="res://pieges/forward/paquebot/paquebot.tscn" id="2_56b5u"]
+
+[node name="triggerpar" unique_id=1079666792 instance=ExtResource("1_igmxg")]
+objet_a_spawner = ExtResource("2_56b5u")
+
+[node name="spawner" parent="." index="2" unique_id=207203317]
+visible = true
+position = Vector2(-3349, 30)

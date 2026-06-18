@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bqoe53ydwl1xv" path="res://pieges/sumérien/triggersumérien.gd" id="2_m1nge"]
 [ext_resource type="PackedScene" uid="uid://brd5qvsq1xs51" path="res://pieges/sumérien/sumerien.tscn" id="3_tvest"]
 
-[node name="triggerpar" unique_id=1079666792 instance=ExtResource("1_86w13")]
+[node name="triggersumerien" unique_id=1079666792 instance=ExtResource("1_86w13")]
 script = ExtResource("2_m1nge")
 objet_a_spawner = ExtResource("3_tvest")
 

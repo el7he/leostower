@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://rjtyc02yqrtp"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_lfwar"]
+[ext_resource type="Texture2D" uid="uid://c75hf8he43f6r" path="res://life/projectiles/abeilleballe.png" id="2_lfwar"]
+[ext_resource type="AudioStream" uid="uid://k421a7wer7x2" path="res://life/projectiles/Water Drop - Sound Effects.wav" id="3_li55b"]
+
+[node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_lfwar")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=299494637]
+rotation = 3.1415927
+scale = Vector2(0.102, 0.179)
+texture = ExtResource("2_lfwar")
+
+[node name="Damagecube" parent="." index="1" unique_id=1373159643]
+position = Vector2(-0.085, 8.595)
+scale = Vector2(0.245, 0.109)
+
+[node name="Audio on start" parent="." index="2" unique_id=26550979]
+stream = ExtResource("3_li55b")
+volume_db = -80.0

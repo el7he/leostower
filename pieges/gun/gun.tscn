@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2nwkei4t4apn"]
+
+[ext_resource type="Texture2D" uid="uid://ce4bf3e2q62pi" path="res://pieges/gun/gun.png" id="1_7o2qg"]
+[ext_resource type="Script" uid="uid://44vyrdjm8noo" path="res://pieges/gun/gun.gd" id="1_k1i54"]
+[ext_resource type="PackedScene" uid="uid://e5vqrymh4hgr" path="res://pieges/gun/balle.tscn" id="2_kjxaf"]
+[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="4_0tn2p"]
+
+[node name="Gun" type="Node2D" unique_id=434476804]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_k1i54")
+objet_a_spawner = ExtResource("2_kjxaf")
+
+[node name="Gun" type="Sprite2D" parent="." unique_id=1897631939]
+position = Vector2(-81, 38)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_7o2qg")
+
+[node name="spawner" type="Sprite2D" parent="." unique_id=1256912662]
+visible = false
+position = Vector2(1.4285713, 4.285717)
+scale = Vector2(2, 2)
+texture = ExtResource("4_0tn2p")

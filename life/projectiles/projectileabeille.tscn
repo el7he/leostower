@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ct5xkf6vm15uc"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_bqsu6"]
+[ext_resource type="Texture2D" uid="uid://b6jqvh3aycwho" path="res://life/projectiles/abeilleprojectile.png" id="2_bqsu6"]
+[ext_resource type="AudioStream" uid="uid://c5akev4dt11k4" path="res://life/projectiles/abeilleprojectile.wav" id="3_bqsu6"]
+
+[node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_bqsu6")]
+fixsprite = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=299494637]
+rotation = 4.712389
+scale = Vector2(0.012, 0.016)
+texture = ExtResource("2_bqsu6")
+
+[node name="Damagecube" parent="." index="1" unique_id=1373159643]
+scale = Vector2(0.6, 0.6)
+
+[node name="Audio on start" parent="." index="2" unique_id=26550979]
+stream = ExtResource("3_bqsu6")

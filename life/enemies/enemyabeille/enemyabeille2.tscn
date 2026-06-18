@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://fuco2iyn0gc4"]
+
+[ext_resource type="PackedScene" uid="uid://df1cwrhx28ecv" path="res://life/enemies/enemypar.tscn" id="1_prx5u"]
+[ext_resource type="Script" uid="uid://cd4fk8kmyxc0o" path="res://life/enemies/enemyabeille/enemyabeille.gd" id="2_itln6"]
+[ext_resource type="Texture2D" uid="uid://hyxjx1t3ow2i" path="res://life/enemies/enemyabeille/abeilles.png" id="3_itln6"]
+[ext_resource type="Texture2D" uid="uid://8essqmpbvgpu" path="res://life/enemies/enemyabeille/abeillemitraillette.png" id="4_cwwob"]
+[ext_resource type="Texture2D" uid="uid://cy0t8kj4i3x3p" path="res://life/enemies/enemyabeille/abeillecamion.png" id="5_veuux"]
+[ext_resource type="AudioStream" uid="uid://beh7hbascha0k" path="res://life/enemies/enemyabeille/abeille2.wav" id="6_o8p5n"]
+[ext_resource type="AudioStream" uid="uid://51kbu6douhfd" path="res://life/enemies/enemyabeille/19026__han1__claxonabeille.wav" id="7_veuux"]
+[ext_resource type="AudioStream" uid="uid://2mp6dqge1qdq" path="res://life/enemies/enemyabeille/Submachine gun sound effects.wav" id="8_17ud0"]
+
+[node name="abeille2" unique_id=1241671982 instance=ExtResource("1_prx5u")]
+script = ExtResource("2_itln6")
+isboss = true
+boss_salve_number = Array[int]([4, 4, 1])
+boss_salve_cadence = Array[float]([0.3, 0.15, 2.0])
+boss_salve_timebeforesalve = Array[float]([2.0, 2.0, 2.0])
+lifemax = 15.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+position = Vector2(1, 12)
+scale = Vector2(0.12, 0.127)
+texture = ExtResource("3_itln6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="1" unique_id=783100434]
+position = Vector2(8, -6)
+scale = Vector2(0.28485116, 0.28368443)
+texture = ExtResource("4_cwwob")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="2" unique_id=1134352338]
+position = Vector2(-71, -6)
+scale = Vector2(0.24278525, 0.2662359)
+texture = ExtResource("5_veuux")
+
+[node name="abeille" type="AudioStreamPlayer2D" parent="." index="5" unique_id=789234116]
+position = Vector2(-1, 0)
+stream = ExtResource("6_o8p5n")
+volume_db = -5.0
+
+[node name="moto" type="AudioStreamPlayer2D" parent="." index="6" unique_id=36752392]
+position = Vector2(-1, 0)
+stream = ExtResource("7_veuux")
+volume_db = 10.0
+
+[node name="mitraillette" type="AudioStreamPlayer2D" parent="." index="7" unique_id=1974173466]
+position = Vector2(-1, 0)
+stream = ExtResource("8_17ud0")
+volume_db = 8.0
+
+[node name="Damagecube" parent="." index="8" unique_id=1373159643]
+position = Vector2(1.9999999, -4)
+scale = Vector2(1.720181, 1.2714734)

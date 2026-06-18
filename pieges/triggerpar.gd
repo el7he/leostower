@@ -25,8 +25,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			var nouvelle_instance = objet_a_spawner.instantiate()
 			nouvelle_instance.global_position = spawner.global_position
 			get_tree().current_scene.add_child(nouvelle_instance)
+			
 			if nouvelle_instance is camion:
 				nouvelle_instance.beginforward(rotation)
 			if nouvelle_instance is sumerienpiege:
 				nouvelle_instance.set_sumerien_type(trigger_type)
+			if nouvelle_instance is gun : 
+				nouvelle_instance.beginforward(rotation)
 			pass 

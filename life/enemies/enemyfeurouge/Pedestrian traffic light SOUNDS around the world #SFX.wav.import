@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bj2wfbqwub6da"
+path="res://.godot/imported/Pedestrian traffic light SOUNDS around the world #SFX.wav-73d6fe2673dc29b31620686419b42a3d.sample"
+
+[deps]
+
+source_file="res://life/enemies/enemyfeurouge/Pedestrian traffic light SOUNDS around the world #SFX.wav"
+dest_files=["res://.godot/imported/Pedestrian traffic light SOUNDS around the world #SFX.wav-73d6fe2673dc29b31620686419b42a3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

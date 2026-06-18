@@ -11,11 +11,22 @@
 [ext_resource type="PackedScene" uid="uid://104pf6pksn6" path="res://pieges/saw.tscn" id="11_1sts7"]
 [ext_resource type="PackedScene" uid="uid://cjvbodpj7113b" path="res://life/enemies/arene.tscn" id="12_8ers3"]
 [ext_resource type="PackedScene" uid="uid://dmrwba4wqv0i6" path="res://life/enemies/arenedoor.tscn" id="13_rl5rp"]
-[ext_resource type="PackedScene" uid="uid://brn7ohl1dwhwv" path="res://pieges/sumérien/triggersumérien.tscn" id="14_0vxif"]
+[ext_resource type="PackedScene" uid="uid://brn7ohl1dwhwv" path="res://pieges/sumérien/triggersumerien.tscn" id="14_0vxif"]
 [ext_resource type="PackedScene" uid="uid://chsxuhdaorthb" path="res://pieges/resetgame.tscn" id="14_hutp1"]
 [ext_resource type="PackedScene" uid="uid://fnlrojn1ae7g" path="res://life/enemies/enemyrobinet/enemyrobinet.tscn" id="14_txm7a"]
 [ext_resource type="PackedScene" uid="uid://cjqisge7hmg2a" path="res://life/enemies/enemy1/enemy1.tscn" id="15_hutp1"]
+[ext_resource type="PackedScene" uid="uid://fuco2iyn0gc4" path="res://life/enemies/enemyabeille/enemyabeille2.tscn" id="15_sqlnm"]
 [ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="16_aah3b"]
+[ext_resource type="PackedScene" uid="uid://dld4s0atqi3ni" path="res://life/enemies/enemyfeurouge/enemyfeurouge.tscn" id="17_aah3b"]
+[ext_resource type="PackedScene" uid="uid://p4rtxogk2jam" path="res://pieges/forward/triggersouris.tscn" id="18_h18p2"]
+[ext_resource type="PackedScene" uid="uid://crimqbul3x2hg" path="res://pieges/forward/triggermongol.tscn" id="19_jv317"]
+[ext_resource type="PackedScene" uid="uid://ciupg3oqqoct1" path="res://pieges/gun/triggergun.tscn" id="21_vqvl6"]
+[ext_resource type="PackedScene" uid="uid://dng3ipk6cujng" path="res://life/enemies/enemyflybasket/enemyflybasket.tscn" id="22_ggyf6"]
+[ext_resource type="PackedScene" uid="uid://cj6udpu82jiyk" path="res://pieges/chinois/chinois.tscn" id="23_yo8x4"]
+[ext_resource type="PackedScene" uid="uid://bbmlip6ew56n0" path="res://pieges/forward/paquebot/triggerpaquebot.tscn" id="24_ccfgc"]
+[ext_resource type="PackedScene" uid="uid://dlcy80vpmldje" path="res://pieges/nuage/nuage.tscn" id="25_nhaw6"]
+[ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="26_vluw7"]
+[ext_resource type="PackedScene" uid="uid://36rxrjf3dq8g" path="res://pieges/aigle/triggeraigle.tscn" id="27_mni3b"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 scale = Vector2(1.0053415, 0.995189)
@@ -28,16 +39,16 @@ texture = ExtResource("2_kbll4")
 
 [node name="Player" parent="." unique_id=1241671982 instance=ExtResource("3_4l28a")]
 z_index = 1
-position = Vector2(4455.2026, 1456.0048)
+position = Vector2(14030.059, 17516.27)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
 position = Vector2(0.4868708, -85.767265)
 zoom = Vector2(1.635, 1.635)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2114573787]
-scroll_offset = Vector2(-498.3381, 17.08218)
+scroll_offset = Vector2(-564.9821, 81.39148)
 repeat_size = Vector2(768, 1020)
-repeat_times = 20
+repeat_times = 40
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1749000870]
 scale = Vector2(0.25, 0.25)
@@ -56,7 +67,267 @@ position = Vector2(-3111.3804, 609.9344)
 scale = Vector2(0.4870992, 0.035154633)
 
 [node name="Caillou7" parent="." unique_id=90393316 instance=ExtResource("5_1sts7")]
-position = Vector2(4446.25, 1581.609)
+position = Vector2(14094.712, 17607.71)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou24" parent="." unique_id=1897537200 instance=ExtResource("5_1sts7")]
+position = Vector2(13490.9375, 17607.71)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou25" parent="." unique_id=543439585 instance=ExtResource("5_1sts7")]
+position = Vector2(12885.173, 17607.71)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou28" parent="." unique_id=1745299598 instance=ExtResource("5_1sts7")]
+position = Vector2(10838.106, 17591.633)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou34" parent="." unique_id=2128697634 instance=ExtResource("5_1sts7")]
+position = Vector2(10291.03, 17591.633)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou35" parent="." unique_id=642425652 instance=ExtResource("5_1sts7")]
+position = Vector2(7797.3506, 17591.633)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou37" parent="." unique_id=1748926429 instance=ExtResource("5_1sts7")]
+position = Vector2(7369.635, 17486.125)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou38" parent="." unique_id=1479840013 instance=ExtResource("5_1sts7")]
+position = Vector2(7097.091, 17378.611)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou39" parent="." unique_id=1070002588 instance=ExtResource("5_1sts7")]
+position = Vector2(6851.404, 17254.008)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou40" parent="." unique_id=677904258 instance=ExtResource("5_1sts7")]
+position = Vector2(7121.9585, 17095.244)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou44" parent="." unique_id=1739242508 instance=ExtResource("5_1sts7")]
+position = Vector2(7392.513, 17095.244)
+scale = Vector2(0.084, 0.02)
+
+[node name="Caillou45" parent="." unique_id=1791185122 instance=ExtResource("5_1sts7")]
+position = Vector2(7474.077, 16886.238)
+rotation = -1.5707964
+scale = Vector2(0.234, 0.02)
+
+[node name="Caillou46" parent="." unique_id=2054997464 instance=ExtResource("5_1sts7")]
+position = Vector2(6505.252, 16281.332)
+rotation = 1.5707964
+scale = Vector2(0.234, 0.02)
+
+[node name="Caillou41" parent="." unique_id=1447397104 instance=ExtResource("5_1sts7")]
+position = Vector2(7148.8145, 16838.008)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou42" parent="." unique_id=421370574 instance=ExtResource("5_1sts7")]
+position = Vector2(6910.0903, 16707.383)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou43" parent="." unique_id=1445849929 instance=ExtResource("5_1sts7")]
+position = Vector2(6683.3013, 16584.79)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou47" parent="." unique_id=1945316702 instance=ExtResource("5_1sts7")]
+position = Vector2(6426.6714, 16073.328)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou51" parent="." unique_id=33488309 instance=ExtResource("5_1sts7")]
+position = Vector2(10975.376, 16109.503)
+rotation = 1.5707964
+scale = Vector2(0.201, -0.035)
+
+[node name="Caillou48" parent="." unique_id=736848236 instance=ExtResource("5_1sts7")]
+position = Vector2(6746.961, 15943.705)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou49" parent="." unique_id=2037080927 instance=ExtResource("5_1sts7")]
+position = Vector2(6960.8184, 16044.188)
+scale = Vector2(0.083551906, 0.035154633)
+
+[node name="Caillou36" parent="." unique_id=1326416709 instance=ExtResource("5_1sts7")]
+position = Vector2(8710.473, 16105.482)
+scale = Vector2(1.6807282, 0.035154633)
+
+[node name="Caillou50" parent="." unique_id=1569378388 instance=ExtResource("5_1sts7")]
+position = Vector2(14553.262, 16098.449)
+scale = Vector2(0.28816175, 0.035154633)
+
+[node name="Caillou52" parent="." unique_id=856577138 instance=ExtResource("5_1sts7")]
+position = Vector2(14238.942, 15209.171)
+scale = Vector2(0.4870991, 0.035154633)
+
+[node name="Caillou55" parent="." unique_id=2130322847 instance=ExtResource("5_1sts7")]
+position = Vector2(12204.808, 15209.171)
+scale = Vector2(0.18196677, 0.035154633)
+
+[node name="Caillou56" parent="." unique_id=607936615 instance=ExtResource("5_1sts7")]
+position = Vector2(11249.908, 15209.171)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou60" parent="." unique_id=1581236658 instance=ExtResource("5_1sts7")]
+position = Vector2(8998.932, 15203.141)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou63" parent="." unique_id=1897683044 instance=ExtResource("5_1sts7")]
+position = Vector2(7912.7324, 15203.141)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou64" parent="." unique_id=1422923165 instance=ExtResource("5_1sts7")]
+position = Vector2(5298.6963, 15203.141)
+scale = Vector2(2.4498477, 0.035154633)
+
+[node name="Caillou61" parent="." unique_id=82596988 instance=ExtResource("5_1sts7")]
+position = Vector2(8642.833, 14973.034)
+rotation = -3.1415927
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou65" parent="." unique_id=44295066 instance=ExtResource("5_1sts7")]
+position = Vector2(861.39844, 15203.141)
+scale = Vector2(2.4498477, 0.035154633)
+
+[node name="Caillou66" parent="." unique_id=727499265 instance=ExtResource("5_1sts7")]
+position = Vector2(-3111.3809, 15203.141)
+scale = Vector2(2.4498477, 0.035154633)
+
+[node name="Caillou67" parent="." unique_id=405619011 instance=ExtResource("5_1sts7")]
+position = Vector2(-7613.333, 15203.141)
+scale = Vector2(2.4498477, 0.035154633)
+
+[node name="Caillou58" parent="." unique_id=1973386370 instance=ExtResource("5_1sts7")]
+position = Vector2(10123.923, 15007.198)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou53" parent="." unique_id=230624637 instance=ExtResource("5_1sts7")]
+position = Vector2(14895.437, 15557.849)
+rotation = -1.5707964
+scale = Vector2(0.5268866, 0.035154633)
+
+[node name="Caillou54" parent="." unique_id=144722616 instance=ExtResource("5_1sts7")]
+position = Vector2(14701.473, 15559.859)
+rotation = -4.712389
+scale = Vector2(0.36769783, 0.035154633)
+
+[node name="Caillou57" parent="." unique_id=171117562 instance=ExtResource("5_1sts7")]
+position = Vector2(10689.9, 15091.606)
+rotation = -4.712389
+scale = Vector2(0.12897299, 0.035154633)
+
+[node name="Caillou62" parent="." unique_id=1719549916 instance=ExtResource("5_1sts7")]
+position = Vector2(9221.742, 14695.7)
+rotation = -4.712389
+scale = Vector2(0.25570995, 0.059226736)
+
+[node name="Caillou59" parent="." unique_id=914038284 instance=ExtResource("5_1sts7")]
+position = Vector2(9563.914, 15091.6045)
+rotation = -7.853982
+scale = Vector2(0.12897299, 0.035154633)
+
+[node name="Caillou68" parent="." unique_id=1877918503 instance=ExtResource("5_1sts7")]
+position = Vector2(-9913.049, 15062.464)
+rotation = -10.995575
+scale = Vector2(0.12897299, 0.035154633)
+
+[node name="Caillou69" parent="." unique_id=1506298505 instance=ExtResource("5_1sts7")]
+position = Vector2(-10140.832, 14969.018)
+rotation = -12.566371
+scale = Vector2(0.24833542, 0.035154633)
+
+[node name="Caillou72" parent="." unique_id=212377876 instance=ExtResource("5_1sts7")]
+position = Vector2(-8653.775, 13960.163)
+rotation = -12.566371
+scale = Vector2(1.0043073, 0.035154633)
+
+[node name="Caillou74" parent="." unique_id=1913239524 instance=ExtResource("5_1sts7")]
+position = Vector2(-8675.659, 13888.818)
+rotation = -12.566371
+scale = Vector2(0.30785507, 0.109174095)
+
+[node name="Caillou73" parent="." unique_id=48761752 instance=ExtResource("5_1sts7")]
+position = Vector2(-9830.49, 13960.163)
+rotation = -12.566371
+scale = Vector2(0.2881328, 0.035154633)
+
+[node name="Caillou77" parent="." unique_id=2008086976 instance=ExtResource("5_1sts7")]
+position = Vector2(-8135.545, 13034.711)
+rotation = -12.566371
+scale = Vector2(0.2881328, 0.035154633)
+
+[node name="Caillou78" parent="." unique_id=57275587 instance=ExtResource("5_1sts7")]
+position = Vector2(-10251.243, 13034.711)
+rotation = -12.566371
+scale = Vector2(0.76558244, 0.035154633)
+
+[node name="Caillou70" parent="." unique_id=1829571190 instance=ExtResource("5_1sts7")]
+position = Vector2(-10281.084, 14169.168)
+rotation = -10.995575
+scale = Vector2(0.80536, 0.035154633)
+
+[node name="Caillou75" parent="." unique_id=1842038671 instance=ExtResource("5_1sts7")]
+position = Vector2(-7683.956, 13307.021)
+rotation = -10.995575
+scale = Vector2(0.80536, 0.035154633)
+
+[node name="Caillou71" parent="." unique_id=1372217716 instance=ExtResource("5_1sts7")]
+position = Vector2(-10113.975, 14352.048)
+rotation = -14.137167
+scale = Vector2(0.4074853, 0.035154633)
+
+[node name="Caillou76" parent="." unique_id=87713668 instance=ExtResource("5_1sts7")]
+position = Vector2(-7858.0244, 13417.552)
+rotation = -14.137167
+scale = Vector2(-0.407, -0.035)
+
+[node name="Caillou29" parent="." unique_id=125922501 instance=ExtResource("5_1sts7")]
+position = Vector2(12417.67, 17153.525)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou30" parent="." unique_id=1489303751 instance=ExtResource("5_1sts7")]
+position = Vector2(11874.571, 17153.525)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou31" parent="." unique_id=421327544 instance=ExtResource("5_1sts7")]
+position = Vector2(11343.407, 17153.525)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou26" parent="." unique_id=1063981452 instance=ExtResource("5_1sts7")]
+position = Vector2(12639.487, 17380.617)
+rotation = 1.5707964
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou32" parent="." unique_id=1725955084 instance=ExtResource("5_1sts7")]
+position = Vector2(11086.78, 17368.559)
+rotation = 1.5707964
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou33" parent="." unique_id=2049717096 instance=ExtResource("5_1sts7")]
+position = Vector2(10873.916, 17149.504)
+rotation = 1.5707964
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou27" parent="." unique_id=277232354 instance=ExtResource("5_1sts7")]
+position = Vector2(12821.515, 17217.834)
+rotation = -1.5707964
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou17" parent="." unique_id=705973159 instance=ExtResource("5_1sts7")]
+position = Vector2(5340.5654, 1589.6478)
+scale = Vector2(0.55088925, 0.035154633)
+
+[node name="Caillou23" parent="." unique_id=359937217 instance=ExtResource("5_1sts7")]
+position = Vector2(5340.5654, 1589.6478)
+scale = Vector2(0.55088925, 0.035154633)
+
+[node name="Caillou21" parent="." unique_id=1975842295 instance=ExtResource("5_1sts7")]
+position = Vector2(4343.7974, 2000.625)
+scale = Vector2(0.24837922, 0.035154633)
+
+[node name="Caillou22" parent="." unique_id=596882311 instance=ExtResource("5_1sts7")]
+position = Vector2(3599.7717, 2000.6251)
 scale = Vector2(0.24837922, 0.035154633)
 
 [node name="Caillou12" parent="." unique_id=2031765916 instance=ExtResource("5_1sts7")]
@@ -107,22 +378,56 @@ rotation = 4.712389
 scale = Vector2(0.24837922, 0.035154633)
 
 [node name="piege" parent="." unique_id=1079666792 instance=ExtResource("6_8ers3")]
-position = Vector2(1872.9955, 2282.9834)
-scale = Vector2(200, 1)
-
-[node name="checkpoint" parent="." unique_id=979885743 instance=ExtResource("7_rl5rp")]
-position = Vector2(183.02237, 493.3736)
+position = Vector2(1241.3691, 18022.707)
+scale = Vector2(1003.83386, 3.2398896)
 
 [node name="checkpoint3" parent="." unique_id=1098594180 instance=ExtResource("7_rl5rp")]
-position = Vector2(4363.6914, 1504.2368)
+position = Vector2(14102.671, 17534.357)
 index = 0
 
-[node name="checkpoint2" parent="." unique_id=641053293 instance=ExtResource("7_rl5rp")]
-position = Vector2(4335.84, 8.038674)
+[node name="checkpoint4" parent="." unique_id=979885743 instance=ExtResource("7_rl5rp")]
+position = Vector2(10180.62, 17523.305)
+
+[node name="checkpoint7" parent="." unique_id=1014462001 instance=ExtResource("7_rl5rp")]
+position = Vector2(10599.383, 16181.851)
+index = 4
+
+[node name="checkpoint5" parent="." unique_id=669800514 instance=ExtResource("7_rl5rp")]
+position = Vector2(7766.5146, 17519.285)
 index = 2
+
+[node name="checkpoint6" parent="." unique_id=164519720 instance=ExtResource("7_rl5rp")]
+position = Vector2(7792.3765, 16038.159)
+index = 3
+
+[node name="checkpoint8" parent="." unique_id=1086386044 instance=ExtResource("7_rl5rp")]
+position = Vector2(10978.359, 15865.328)
+index = 5
+
+[node name="checkpoint9" parent="." unique_id=203710861 instance=ExtResource("7_rl5rp")]
+position = Vector2(13869.914, 15112.707)
+index = 6
+
+[node name="checkpoint10" parent="." unique_id=381254942 instance=ExtResource("7_rl5rp")]
+position = Vector2(12333.122, 15112.707)
+index = 7
+
+[node name="checkpoint11" parent="." unique_id=80932567 instance=ExtResource("7_rl5rp")]
+position = Vector2(-9906.087, 14890.639)
+index = 8
+
+[node name="checkpoint12" parent="." unique_id=1373431834 instance=ExtResource("7_rl5rp")]
+position = Vector2(-8076.857, 12963.367)
+index = 9
+
+[node name="checkpoint13" parent="." unique_id=1872824393 instance=ExtResource("7_rl5rp")]
+position = Vector2(-10661.054, 12963.367)
+index = 10
 
 [node name="fly" parent="." unique_id=773182916 instance=ExtResource("15_hutp1")]
 position = Vector2(3362.0415, 961.62634)
+boss_salve_number = Array[int]([])
+boss_salve_cadence = Array[int]([])
 
 [node name="Saw" parent="." unique_id=1972260605 instance=ExtResource("11_1sts7")]
 position = Vector2(3743.0066, 1071.1533)
@@ -157,7 +462,75 @@ position = Vector2(1408.4766, 615.9635)
 scale = Vector2(0.221, 0.392)
 
 [node name="Saw14" parent="." unique_id=1854869443 instance=ExtResource("11_1sts7")]
-position = Vector2(1099.1289, 629.02625)
+position = Vector2(13470.049, 17554.455)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw19" parent="." unique_id=1088267352 instance=ExtResource("11_1sts7")]
+position = Vector2(12516.145, 17082.186)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw20" parent="." unique_id=1103624041 instance=ExtResource("11_1sts7")]
+position = Vector2(11821.854, 17084.191)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw21" parent="." unique_id=1319767778 instance=ExtResource("11_1sts7")]
+position = Vector2(8364.321, 16054.236)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw23" parent="." unique_id=674237832 instance=ExtResource("11_1sts7")]
+position = Vector2(9972.729, 16050.217)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw25" parent="." unique_id=1158064084 instance=ExtResource("11_1sts7")]
+position = Vector2(9299.326, 14733.885)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw27" parent="." unique_id=279215716 instance=ExtResource("11_1sts7")]
+position = Vector2(8008.2236, 14960.979)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw28" parent="." unique_id=1718365240 instance=ExtResource("11_1sts7")]
+position = Vector2(-9183.943, 13775.273)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw29" parent="." unique_id=1756527325 instance=ExtResource("11_1sts7")]
+position = Vector2(-9949.853, 13919.969)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw31" parent="." unique_id=498283080 instance=ExtResource("11_1sts7")]
+position = Vector2(-10215.434, 13374.345)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw32" parent="." unique_id=1849977535 instance=ExtResource("11_1sts7")]
+position = Vector2(-7905.7695, 13727.042)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw33" parent="." unique_id=878655470 instance=ExtResource("11_1sts7")]
+position = Vector2(-7905.7705, 13584.355)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw34" parent="." unique_id=518748038 instance=ExtResource("11_1sts7")]
+position = Vector2(-7905.7705, 13584.355)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw30" parent="." unique_id=892301649 instance=ExtResource("11_1sts7")]
+position = Vector2(-9485.334, 13923.987)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw26" parent="." unique_id=705472461 instance=ExtResource("11_1sts7")]
+position = Vector2(9290.374, 14577.131)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw22" parent="." unique_id=400689188 instance=ExtResource("11_1sts7")]
+position = Vector2(8826.85, 16054.236)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw17" parent="." unique_id=2139676394 instance=ExtResource("11_1sts7")]
+position = Vector2(12896.114, 17407.748)
+scale = Vector2(0.221, 0.392)
+
+[node name="Saw18" parent="." unique_id=665924317 instance=ExtResource("11_1sts7")]
+position = Vector2(12916.009, 16916.385)
 scale = Vector2(0.221, 0.392)
 
 [node name="Saw7" parent="." unique_id=2077474401 instance=ExtResource("11_1sts7")]
@@ -168,8 +541,14 @@ scale = Vector2(0.221, 0.392)
 position = Vector2(2678.6917, 863.15265)
 scale = Vector2(0.2212771, 0.29165143)
 
-[node name="piegetrigger" parent="." unique_id=571795275 instance=ExtResource("10_d1wkb")]
+[node name="piegecamion" parent="." unique_id=571795275 instance=ExtResource("10_d1wkb")]
 position = Vector2(2748.3198, 988.75684)
+
+[node name="piegecamion2" parent="." unique_id=1938240632 instance=ExtResource("10_d1wkb")]
+position = Vector2(7326.8633, 16079.357)
+
+[node name="piegecamion3" parent="." unique_id=1422977940 instance=ExtResource("10_d1wkb")]
+position = Vector2(9627.574, 16059.261)
 
 [node name="piegetrigger3" parent="." unique_id=316017362 instance=ExtResource("10_d1wkb")]
 position = Vector2(384.94382, 441.1222)
@@ -209,12 +588,105 @@ scale = Vector2(0.4870992, 0.03515463)
 [node name="robinet" parent="Node2D" unique_id=1416138769 instance=ExtResource("14_txm7a")]
 position = Vector2(-2.9840698, -41.19821)
 scale = Vector2(1, 0.99999994)
+boss_salve_number = Array[int]([])
+boss_salve_cadence = Array[int]([])
+
+[node name="Node2D3" type="Node2D" parent="." unique_id=1766278887]
+position = Vector2(-8922.341, 12779.481)
+
+[node name="Arene" parent="Node2D3" unique_id=213535764 node_paths=PackedStringArray("porte1", "porte2", "enemyarena") instance=ExtResource("12_8ers3")]
+position = Vector2(-3.9786987, 35.16919)
+scale = Vector2(1.0026064, 11.337907)
+porte1 = NodePath("../areneDoor")
+porte2 = NodePath("../areneDoor3")
+enemyarena = NodePath("../feurouge")
+
+[node name="areneDoor3" parent="Node2D3" unique_id=1918916059 instance=ExtResource("13_rl5rp")]
+position = Vector2(416.77374, -101.48831)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="areneDoor" parent="Node2D3" unique_id=1453453219 instance=ExtResource("13_rl5rp")]
+position = Vector2(-404.83734, -46.222412)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="Caillou8" parent="Node2D3" unique_id=487209238 instance=ExtResource("5_1sts7")]
+position = Vector2(-0.99468994, -281.35358)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="Caillou6" parent="Node2D3" unique_id=344735809 instance=ExtResource("5_1sts7")]
+position = Vector2(-6.3101196, 259.53033)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="feurouge" parent="Node2D3" unique_id=866332870 instance=ExtResource("17_aah3b")]
+position = Vector2(-3.9780273, -70.33838)
+scale = Vector2(1, 0.9999999)
+boss_salve_number = Array[int]([])
+boss_salve_cadence = Array[int]([])
+
+[node name="Node2D4" type="Node2D" parent="." unique_id=1325860975]
+position = Vector2(8620.951, 17370.57)
+
+[node name="Arene" parent="Node2D4" unique_id=393432360 node_paths=PackedStringArray("porte1", "porte2", "enemyarena") instance=ExtResource("12_8ers3")]
+position = Vector2(-3.9786987, 35.16919)
+scale = Vector2(1.0026064, 11.337907)
+porte1 = NodePath("../areneDoor")
+porte2 = NodePath("../areneDoor3")
+enemyarena = NodePath("../robinet")
+
+[node name="areneDoor3" parent="Node2D4" unique_id=1523236478 instance=ExtResource("13_rl5rp")]
+position = Vector2(416.77374, -101.48831)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="areneDoor" parent="Node2D4" unique_id=121865044 instance=ExtResource("13_rl5rp")]
+position = Vector2(-404.83734, -46.222412)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="Caillou8" parent="Node2D4" unique_id=839029237 instance=ExtResource("5_1sts7")]
+position = Vector2(-0.99468994, -281.35358)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="Caillou6" parent="Node2D4" unique_id=1720474009 instance=ExtResource("5_1sts7")]
+position = Vector2(-6.3101196, 259.53033)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="robinet" parent="Node2D4" unique_id=119544925 instance=ExtResource("14_txm7a")]
+boss_salve_number = Array[int]([])
+boss_salve_cadence = Array[int]([])
+
+[node name="Node2D5" type="Node2D" parent="." unique_id=1242712437]
+position = Vector2(12974.695, 14943.895)
+
+[node name="Arene" parent="Node2D5" unique_id=316304726 node_paths=PackedStringArray("porte1", "porte2", "enemyarena") instance=ExtResource("12_8ers3")]
+position = Vector2(-3.9786987, 35.16919)
+scale = Vector2(1.0026064, 11.337907)
+porte1 = NodePath("../areneDoor")
+porte2 = NodePath("../areneDoor3")
+enemyarena = NodePath("../abeille2")
+
+[node name="areneDoor3" parent="Node2D5" unique_id=1249977312 instance=ExtResource("13_rl5rp")]
+position = Vector2(416.77374, -101.48831)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="areneDoor" parent="Node2D5" unique_id=1421411220 instance=ExtResource("13_rl5rp")]
+position = Vector2(-404.83734, -46.222412)
+scale = Vector2(1.1132076, -9.022274)
+
+[node name="Caillou8" parent="Node2D5" unique_id=1297281843 instance=ExtResource("5_1sts7")]
+position = Vector2(-0.99468994, -281.35358)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="Caillou6" parent="Node2D5" unique_id=383003273 instance=ExtResource("5_1sts7")]
+position = Vector2(-6.3101196, 259.53033)
+scale = Vector2(0.4870992, 0.03515463)
+
+[node name="abeille2" parent="Node2D5" unique_id=1897059712 instance=ExtResource("15_sqlnm")]
+position = Vector2(-0.9942012, -66.31906)
 
 [node name="resetgame" parent="." unique_id=1486302036 instance=ExtResource("14_hutp1")]
 position = Vector2(-2099.784, 489.35425)
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=1827304431]
-position = Vector2(1364.7104, 315.51794)
+position = Vector2(7518.838, 14713.788)
 scale = Vector2(0.44000065, 0.44000062)
 
 [node name="Caillou21" parent="Node2D2" unique_id=268309278 instance=ExtResource("5_1sts7")]
@@ -244,3 +716,124 @@ scale = Vector2(0.5644974, 0.07989678)
 
 [node name="cursor" type="Sprite2D" parent="CursorLayer" unique_id=265950721]
 texture = ExtResource("16_aah3b")
+
+[node name="triggerpar" parent="." unique_id=1757240860 instance=ExtResource("19_jv317")]
+position = Vector2(4247.313, 1924.2574)
+
+[node name="triggerpar3" parent="." unique_id=503760341 instance=ExtResource("21_vqvl6")]
+position = Vector2(5425.022, 996.79565)
+rotation = 0.081036
+
+[node name="enemyflybasket" parent="." unique_id=634481259 instance=ExtResource("22_ggyf6")]
+position = Vector2(5869.647, 1128.4288)
+
+[node name="Chinois" parent="." unique_id=1959747063 instance=ExtResource("23_yo8x4")]
+position = Vector2(5899.488, 1494.1885)
+scale = Vector2(1, 4.537017)
+
+[node name="triggerpar4" parent="." unique_id=2068712071 instance=ExtResource("24_ccfgc")]
+position = Vector2(4889.8804, 1504.2368)
+rotation = 1.5707964
+
+[node name="Nuage" parent="." unique_id=123721758 instance=ExtResource("25_nhaw6")]
+position = Vector2(4690.9434, 1481.1256)
+
+[node name="Nuage2" parent="." unique_id=1460008167 instance=ExtResource("25_nhaw6")]
+position = Vector2(4859.0454, 1394.71)
+
+[node name="Nuage3" parent="." unique_id=1729288704 instance=ExtResource("25_nhaw6")]
+position = Vector2(5001.2856, 1336.4296)
+
+[node name="Nuage4" parent="." unique_id=1894445445 instance=ExtResource("25_nhaw6")]
+position = Vector2(5127.611, 1422.8452)
+
+[node name="Nuage5" parent="." unique_id=1968660129 instance=ExtResource("25_nhaw6")]
+position = Vector2(5295.713, 1336.4296)
+
+[node name="Nuage6" parent="." unique_id=370098964 instance=ExtResource("25_nhaw6")]
+position = Vector2(5437.953, 1278.1492)
+
+[node name="fly2" parent="." unique_id=67851133 instance=ExtResource("15_hutp1")]
+position = Vector2(12158.058, 16926.434)
+
+[node name="triggersouris" parent="." unique_id=1488198393 instance=ExtResource("18_h18p2")]
+position = Vector2(11201.169, 17081.178)
+
+[node name="triggersouris3" parent="." unique_id=623088187 instance=ExtResource("18_h18p2")]
+position = Vector2(-9154.104, 15137.828)
+
+[node name="triggersouris4" parent="." unique_id=87370465 instance=ExtResource("18_h18p2")]
+position = Vector2(-10298.987, 12962.361)
+
+[node name="triggersouris2" parent="." unique_id=13962314 instance=ExtResource("18_h18p2")]
+position = Vector2(13620.247, 17534.357)
+
+[node name="triggermongol" parent="." unique_id=484144640 instance=ExtResource("19_jv317")]
+position = Vector2(10511.851, 17513.254)
+
+[node name="triggermongol2" parent="." unique_id=1101125053 instance=ExtResource("19_jv317")]
+position = Vector2(-9735.995, 13888.819)
+
+[node name="Lightning" parent="." unique_id=1313747619 instance=ExtResource("26_vluw7")]
+position = Vector2(12821.515, 17526.318)
+rotation = -1.5724885
+
+[node name="Nuage7" parent="." unique_id=152537600 instance=ExtResource("25_nhaw6")]
+position = Vector2(9933.939, 17579.572)
+
+[node name="Nuage9" parent="." unique_id=1410378713 instance=ExtResource("25_nhaw6")]
+position = Vector2(9619.616, 17566.512)
+
+[node name="Nuage10" parent="." unique_id=111198533 instance=ExtResource("25_nhaw6")]
+position = Vector2(9438.584, 17455.98)
+
+[node name="Nuage11" parent="." unique_id=482878700 instance=ExtResource("25_nhaw6")]
+position = Vector2(9255.561, 17551.44)
+
+[node name="Nuage12" parent="." unique_id=1787451582 instance=ExtResource("25_nhaw6")]
+position = Vector2(10497.926, 15998.971)
+
+[node name="Nuage13" parent="." unique_id=241063812 instance=ExtResource("25_nhaw6")]
+position = Vector2(10678.958, 15998.971)
+
+[node name="Nuage14" parent="." unique_id=770201807 instance=ExtResource("25_nhaw6")]
+position = Vector2(10828.161, 15998.971)
+
+[node name="Nuage8" parent="." unique_id=1540361059 instance=ExtResource("25_nhaw6")]
+position = Vector2(9795.676, 17469.045)
+
+[node name="triggersumerien" parent="." unique_id=138465492 instance=ExtResource("14_0vxif")]
+position = Vector2(8015.187, 16039.163)
+
+[node name="enemyflybasket2" parent="." unique_id=778058372 instance=ExtResource("22_ggyf6")]
+position = Vector2(8598.074, 15841.21)
+
+[node name="enemyflybasket4" parent="." unique_id=1283838472 instance=ExtResource("22_ggyf6")]
+position = Vector2(9748.926, 14882.6)
+
+[node name="triggerpar5" parent="." unique_id=263292490 instance=ExtResource("21_vqvl6")]
+position = Vector2(9156.093, 16010.022)
+rotation = 1.8005514
+
+[node name="triggerpar6" parent="." unique_id=1570687899 instance=ExtResource("21_vqvl6")]
+position = Vector2(14534.364, 15996.96)
+rotation = 2.0785413
+
+[node name="triggerpar7" parent="." unique_id=1441550757 instance=ExtResource("27_mni3b")]
+position = Vector2(10930.613, 15104.667)
+rotation = 0.9021188
+
+[node name="fly3" parent="." unique_id=1019343740 instance=ExtResource("15_hutp1")]
+position = Vector2(9861.325, 14902.697)
+
+[node name="Chinois2" parent="." unique_id=1551300693 instance=ExtResource("23_yo8x4")]
+position = Vector2(8737.329, 15095.624)
+scale = Vector2(1, 4.6575966)
+
+[node name="triggerpar2" parent="." unique_id=1059547976 instance=ExtResource("24_ccfgc")]
+position = Vector2(-9183.943, 13876.761)
+rotation = 1.5707964
+scale = Vector2(1.7957494, 1)
+
+[node name="resetgame2" parent="." unique_id=1616513825 instance=ExtResource("14_hutp1")]
+position = Vector2(-10930.613, 12961.356)

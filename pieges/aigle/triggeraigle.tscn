@@ -7,4 +7,4 @@
 objet_a_spawner = ExtResource("2_v3vrt")
 
 [node name="spawner" parent="." index="2" unique_id=207203317]
-position = Vector2(-360, 0)
+position = Vector2(-251, 0)

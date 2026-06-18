@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cj6udpu82jiyk"]
+
+[ext_resource type="Script" uid="uid://deglx2fhd8mgu" path="res://pieges/chinois/chinois.gd" id="1_wmpus"]
+[ext_resource type="AudioStream" uid="uid://cpy3uqcxkxflg" path="res://pieges/chinois/如何让自己爱上读书.mp3" id="2_4twyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4twyr"]
+size = Vector2(13.410085, 13.472561)
+
+[node name="Chinois" type="Node2D" unique_id=1959747063]
+script = ExtResource("1_wmpus")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1474548399]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1525382838]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_4twyr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area2D" unique_id=910268714]
+stream = ExtResource("2_4twyr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -26,6 +26,7 @@ shape = SubResource("CapsuleShape2D_i3pqv")
 [node name="sumerien" type="AudioStreamPlayer2D" parent="." unique_id=1541811620]
 stream = ExtResource("3_wd8rc")
 volume_db = 10.0
+max_distance = 1000.0
 
 [node name="sumerienfall" type="AudioStreamPlayer2D" parent="." unique_id=310448974]
 stream = ExtResource("4_5y0v5")
@@ -34,6 +35,7 @@ volume_db = 10.0
 [node name="sumerienslide" type="AudioStreamPlayer2D" parent="." unique_id=1587130307]
 stream = ExtResource("5_c2r6e")
 volume_db = 10.0
+max_distance = 1000.0
 
 [node name="piege" parent="." unique_id=1079666792 instance=ExtResource("4_wd8rc")]
 scale = Vector2(2.299459, 3.8641362)

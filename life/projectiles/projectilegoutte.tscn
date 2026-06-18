@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://k421a7wer7x2" path="res://life/projectiles/Water Drop - Sound Effects.wav" id="3_hx5px"]
 
 [node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_kwxpy")]
+fixsprite = true
 
 [node name="Sprite2D" parent="." index="0" unique_id=299494637]
 rotation = 4.712389

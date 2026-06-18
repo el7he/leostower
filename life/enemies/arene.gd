@@ -35,6 +35,9 @@ func spawnboss() -> void :
 		nouvelle_instance.global_position = baseenemyspawn
 		#nouvelle_instance.rotation = deg_to_rad(angle)
 		get_tree().current_scene.add_child(nouvelle_instance)
+		nouvelle_instance.global_position = baseenemyspawn
+		if nouvelle_instance is enemy :
+			nouvelle_instance.begin_boss()
 		nouvelle_instance.arene = self
 		#nouvelle_instance.begin_projectile(self,shotspeed)
 	pass

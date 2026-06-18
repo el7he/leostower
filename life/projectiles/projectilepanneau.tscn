@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://db2ckhvkd7e0e"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_ubi2p"]
+[ext_resource type="Texture2D" uid="uid://bxq8qfn7hj2n0" path="res://life/projectiles/panneau.png" id="2_ubi2p"]
+
+[node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_ubi2p")]
+fixsprite = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=299494637]
+rotation = 1.5707964
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_ubi2p")
+
+[node name="Damagecube" parent="." index="1" unique_id=1373159643]
+scale = Vector2(0.47906366, 0.4878179)
+
+[node name="Audio on start" parent="." index="2" unique_id=26550979]
+volume_db = -80.0

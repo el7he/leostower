@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcnnifrpejik2"
+path="res://.godot/imported/Batzorig Vaanchig- Mongolian Throat Singing.wav-c8f180df4a2c0a19cf7c1fd763557e55.sample"
+
+[deps]
+
+source_file="res://pieges/forward/Batzorig Vaanchig- Mongolian Throat Singing.wav"
+dest_files=["res://.godot/imported/Batzorig Vaanchig- Mongolian Throat Singing.wav-c8f180df4a2c0a19cf7c1fd763557e55.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

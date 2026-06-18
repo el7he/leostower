@@ -18,8 +18,7 @@ func beginloop() -> void :
 
 func endloop() -> void : 
 	tween.kill()
-	rotation=0
-	
+	rotation=0	
 
 func _process(delta: float) -> void:
 	pass

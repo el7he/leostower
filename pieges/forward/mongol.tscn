@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bmsh687tpojqu"]
+
+[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/forward/forward.tscn" id="1_0q7am"]
+[ext_resource type="Texture2D" uid="uid://de3pk6px0dl6p" path="res://pieges/forward/mongol.png" id="2_0q7am"]
+[ext_resource type="AudioStream" uid="uid://dcnnifrpejik2" path="res://pieges/forward/Batzorig Vaanchig- Mongolian Throat Singing.wav" id="3_0q7am"]
+
+[node name="forward" unique_id=1241671982 instance=ExtResource("1_0q7am")]
+speed = 1500.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+scale = Vector2(0.20611398, 0.24000762)
+texture = ExtResource("2_0q7am")
+
+[node name="piege" parent="." index="1" unique_id=1079666792]
+position = Vector2(-9, 32)
+scale = Vector2(1.8661903, 2.1732755)
+
+[node name="beginsound1D" parent="." index="2" unique_id=1564674559]
+stream = ExtResource("3_0q7am")
+volume_db = -80.0
+
+[node name="beginsound2D" parent="." index="3" unique_id=1619317521]
+stream = ExtResource("3_0q7am")
+volume_db = 20.0

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bk340sarcipd8"]
+
+[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/forward/forward.tscn" id="1_7pdug"]
+[ext_resource type="Texture2D" uid="uid://x85xycnqn8mg" path="res://pieges/forward/paquebot/paquebot.png" id="2_t8xew"]
+[ext_resource type="AudioStream" uid="uid://bdawluhh3umnd" path="res://pieges/forward/paquebot/Sound Effects - Boat Horn.wav" id="3_t8xew"]
+
+[node name="forward" unique_id=1241671982 instance=ExtResource("1_7pdug")]
+speed = 2500.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+rotation = -1.5707964
+scale = Vector2(1, 1)
+texture = ExtResource("2_t8xew")
+
+[node name="piege" parent="." index="1" unique_id=1079666792]
+position = Vector2(28, 73)
+rotation = -1.5707964
+scale = Vector2(41.212105, 8.385622)
+
+[node name="beginsound1D" parent="." index="2" unique_id=1564674559]
+volume_db = -80.0
+
+[node name="beginsound2D" parent="." index="3" unique_id=1619317521]
+stream = ExtResource("3_t8xew")
+volume_db = 20.0
+pitch_scale = 0.7
+max_distance = 5000.0

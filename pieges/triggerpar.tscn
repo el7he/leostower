@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxykkul8bfd32"]
 
 [ext_resource type="Script" uid="uid://bj5urs2u7j4bn" path="res://pieges/triggerpar.gd" id="1_uisw5"]
-[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/camion/camion.tscn" id="2_s8q8s"]
+[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/forward/forward.tscn" id="2_s8q8s"]
 [ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="2_wotoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wky"]

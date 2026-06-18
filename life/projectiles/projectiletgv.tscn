@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d1d5fllnqoin2"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_58ujg"]
+[ext_resource type="Texture2D" uid="uid://bbwvpobei30mj" path="res://pieges/squarered.png" id="2_6ywqv"]
+[ext_resource type="Texture2D" uid="uid://bgqr4itn2yscv" path="res://life/projectiles/tgv.png" id="2_58ujg"]
+[ext_resource type="AudioStream" uid="uid://dh2cuk0vubep0" path="res://life/projectiles/346957__gundamu__train-in-motion-moving-on-tracks-sound-effect-sfx.wav" id="3_58ujg"]
+
+[node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_58ujg")]
+scale = Vector2(0.7083335, 0.7693486)
+audioloop = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0" unique_id=1413913103]
+position = Vector2(45002.813, -1.1695665e-11)
+rotation = 1.5707964
+scale = Vector2(1.5000005, 10000.003)
+texture = ExtResource("2_6ywqv")
+
+[node name="Sprite2D" parent="." index="1" unique_id=299494637]
+position = Vector2(9.536743e-07, 0.9999999)
+rotation = 6.2831855
+scale = Vector2(4.8, 1.2)
+texture = ExtResource("2_58ujg")
+
+[node name="Damagecube" parent="." index="2" unique_id=1373159643]
+position = Vector2(0, 1.9073486e-06)
+rotation = 1.5707964
+scale = Vector2(2.832, 315.144)
+
+[node name="Audio on start" parent="." index="3" unique_id=26550979]
+scale = Vector2(0.9879341, 1.0097536)
+stream = ExtResource("3_58ujg")
+volume_db = 20.0
+max_distance = 15000.0

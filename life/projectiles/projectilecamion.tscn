@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://df65l0noj52a0"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_g77gn"]
+[ext_resource type="Texture2D" uid="uid://bjxqftsfgqes6" path="res://pieges/forward/camion.png" id="2_g77gn"]
+[ext_resource type="AudioStream" uid="uid://b1cpv6rbh2yab" path="res://pieges/forward/19026__han1__claxon.wav" id="3_g77gn"]
+
+[node name="projectilepar" unique_id=1241671982 instance=ExtResource("1_g77gn")]
+scale = Vector2(0.7083335, 0.7693486)
+
+[node name="Sprite2D" parent="." index="0" unique_id=299494637]
+position = Vector2(9.536743e-07, 0.9999999)
+rotation = 6.2831855
+scale = Vector2(0.322, 0.322)
+texture = ExtResource("2_g77gn")
+
+[node name="Damagecube" parent="." index="1" unique_id=1373159643]
+position = Vector2(0, 1.9073486e-06)
+rotation = 1.5707964
+scale = Vector2(1.077, 4.719)
+
+[node name="Audio on start" parent="." index="2" unique_id=26550979]
+stream = ExtResource("3_g77gn")
+volume_db = 4.0

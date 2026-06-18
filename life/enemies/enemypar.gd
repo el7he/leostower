@@ -15,12 +15,43 @@ var was_on_floor: bool = false
 var arene : arena
 var detectedplayer : bool = false
 
+var advancement : int = 0;
+var teleportpoints : Array[Vector2] = []
+@export var isboss : bool = false
+@export var boss_salve_number : Array[int] = []
+@export var boss_salve_cadence : Array[float] = []
+@export var boss_salve_timeaftersalve : Array[float] = []
+@export var boss_salve_timebeforesalve : Array[float] = []
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var damagecube: damage_cube = $Damagecube
+
+
+func setdamagevalue(damagevalue : int) -> void : 
+	damagecube.damage_value=damagevalue
+	
+	
+	
 func _ready() -> void:
 	super()
 	if player_node == null:
 		player_node = Gamemanager.playervar
+	
+		
 	#projectilecadence()
 		
+func begin_boss() -> void :
+	if isboss == true :
+		var decalage : float = 150
+		teleportpoints.append(global_position);
+		teleportpoints.append(Vector2(global_position.x+decalage,global_position.y));
+		teleportpoints.append(Vector2(global_position.x-decalage,global_position.y));
+		chooseteleportpoint()
+	pass
+func aim_at_player_angle() -> float :
+	var direction = player_node.global_position - global_position
+	var angle_rad = atan2(direction.y, direction.x)
+	var angle_deg = rad_to_deg(angle_rad)
+	return angle_deg
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -111,7 +142,7 @@ func projectilecadence()->void:
 	projectilecadence()
 	
 	
-func spawnprojectile(angle : float,  projectileclass : String = 'res://life/projectiles/projectilepar.tscn',shotspeed : float = 300) ->void: 
+func spawnprojectile(angle : float,  projectileclass : String = 'res://life/projectiles/projectilepar.tscn',shotspeed : float = 300, damage : int = 1) ->void: 
 	var path : String = projectileclass
 	if ResourceLoader.exists(path):
 		var scene: PackedScene = load(path)
@@ -119,12 +150,69 @@ func spawnprojectile(angle : float,  projectileclass : String = 'res://life/proj
 		nouvelle_instance.global_position = global_position
 		nouvelle_instance.rotation = deg_to_rad(angle)
 		get_tree().current_scene.add_child(nouvelle_instance)
-		nouvelle_instance.begin_projectile(self,shotspeed)
+		nouvelle_instance.global_position = global_position
+		nouvelle_instance.begin_projectile(self,shotspeed, damage)
 	#nouvelle_instance.beginforward(rotation)
 	
+func spawnprojectile_circle(nb_projectiles : int = 8,  offset_angle : float = 0.0 ,  projectileclass : String = 'res://life/projectiles/projectilepar.tscn',shotspeed : float = 300, damage : int = 1) -> void:
+	var rayon : float = 360.0
+	var angle_step : float = rayon / nb_projectiles
+	
+	for i in range(nb_projectiles):
+		var current_angle : float = offset_angle + (angle_step * i)
+		
+		spawnprojectile(current_angle, projectileclass, shotspeed, damage)
 
 
 func _on_detection_body_entered(body: Node2D) -> void:
 	if body is Player:
-		detectedplayer = true
+		if detectedplayer==false:
+			detectedplayer = true
+			onplayerdetected()
 	pass # Replace with function body.
+	
+func onplayerdetected() -> void:
+	pass
+func onsalve(salveindex : int =0) ->void:
+	print("salve :",salveindex)
+	pass
+func salvebegin(salveindex : int =0)->void:
+	pass
+func salve(salveindex : int =0) ->void:
+	var direction = player_node.global_position - global_position
+	var angle_rad = atan2(direction.y, direction.x)
+	var angle_deg = rad_to_deg(angle_rad)
+	
+	#spawnprojectile(angle_deg,projectileclass,shotspeed)
+	onsalve(salveindex)
+	advancement+=1
+	
+	await get_tree().create_timer(boss_salve_cadence[salveindex]).timeout
+	if advancement==boss_salve_number[salveindex]:
+		onendsalve(salveindex)
+		await get_tree().create_timer(boss_salve_timeaftersalve[salveindex]).timeout
+		chooseteleportpoint()
+	else :
+		salve(salveindex)
+		#spawnprojectilesalve(projectileclass,shotspeed,cadence,projectilenumber)
+	pass
+
+func onendsalve(salveindex : int ) -> void :
+	pass
+	
+func chooseteleportpoint() -> void :
+	velocity = Vector2(0, 0)
+	advancement = 0
+	var random_index = randi_range(0, teleportpoints.size() - 1)
+	global_position = teleportpoints[random_index]
+	#spawnprojectilesalve()
+	
+	
+	await get_tree().create_timer(boss_salve_timebeforesalve[random_index]).timeout
+	
+	salvebegin(random_index)
+	salve(random_index)
+	
+	
+	
+	pass

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2mp6dqge1qdq"
+path="res://.godot/imported/Submachine gun sound effects.wav-313d8c2edef71956c17e0db4ab8b6552.sample"
+
+[deps]
+
+source_file="res://life/enemies/enemyabeille/Submachine gun sound effects.wav"
+dest_files=["res://.godot/imported/Submachine gun sound effects.wav-313d8c2edef71956c17e0db4ab8b6552.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

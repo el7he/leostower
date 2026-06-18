@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dld4s0atqi3ni"]
+
+[ext_resource type="PackedScene" uid="uid://df1cwrhx28ecv" path="res://life/enemies/enemypar.tscn" id="1_3pfst"]
+[ext_resource type="Script" uid="uid://nfi5tt1iomv6" path="res://life/enemies/enemyfeurouge/enemyfeurouge.gd" id="2_xyw70"]
+[ext_resource type="Texture2D" uid="uid://ccsn4f67mjgsj" path="res://life/enemies/enemyfeurouge/trafficfeurouge.png" id="3_xyw70"]
+[ext_resource type="AudioStream" uid="uid://bj2wfbqwub6da" path="res://life/enemies/enemyfeurouge/Pedestrian traffic light SOUNDS around the world #SFX.wav" id="5_yuu1x"]
+
+[node name="feurouge" unique_id=1241671982 instance=ExtResource("1_3pfst")]
+script = ExtResource("2_xyw70")
+isboss = true
+boss_salve_number = Array[int]([6, 1, 1])
+boss_salve_cadence = Array[float]([0.7, 5.0, 2.0])
+boss_salve_timebeforesalve = Array[float]([1.0, 4.0, 2.5])
+lifemax = 22.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+position = Vector2(1, 12)
+scale = Vector2(0.12, 0.127)
+texture = ExtResource("3_xyw70")
+
+[node name="pieton" type="AudioStreamPlayer2D" parent="." index="3" unique_id=1790593992]
+position = Vector2(-1, 0)
+stream = ExtResource("5_yuu1x")
+volume_db = 3.0

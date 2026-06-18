@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dng3ipk6cujng"]
+
+[ext_resource type="PackedScene" uid="uid://df1cwrhx28ecv" path="res://life/enemies/enemypar.tscn" id="1_4i76f"]
+[ext_resource type="Script" uid="uid://fg2uulljg4cl" path="res://life/enemies/enemyflybasket/flybasket.gd" id="2_uwqhe"]
+[ext_resource type="AudioStream" uid="uid://d0vpomvm3ir12" path="res://life/enemies/enemy1/82077__benboncan__fly-1.wav" id="3_u0jvm"]
+[ext_resource type="Texture2D" uid="uid://b6m0r2uv4guwc" path="res://life/enemies/enemyflybasket/flybasket.png" id="3_uwqhe"]
+
+[node name="enemyflybasket" unique_id=1241671982 instance=ExtResource("1_4i76f")]
+script = ExtResource("2_uwqhe")
+speed = 20.0
+boss_salve_number = Array[int]([])
+boss_salve_cadence = Array[int]([])
+boss_salve_timeaftersalve = Array[int]([])
+boss_salve_timebeforesalve = Array[int]([])
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+texture = ExtResource("3_uwqhe")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2" unique_id=278440938]
+stream = ExtResource("3_u0jvm")
+volume_db = 4.0
+max_distance = 589.0

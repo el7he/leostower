@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://br3i21uapqtb1"]
+
+[ext_resource type="PackedScene" uid="uid://bjg75wn8pmkus" path="res://life/projectiles/projectilepar.tscn" id="1_jye6w"]
+
+[node name="projectilebasket" unique_id=1241671982 instance=ExtResource("1_jye6w")]
+fixsprite = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=299494637]
+scale = Vector2(0.105, 0.105)
+
+[node name="Damagecube" parent="." index="1" unique_id=1373159643]
+scale = Vector2(0.596, 0.574)
+
+[node name="Audio on start" parent="." index="2" unique_id=26550979]
+volume_db = 15.0

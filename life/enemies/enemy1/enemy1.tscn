@@ -12,3 +12,6 @@ lifemax = 4.0
 stream = ExtResource("4_bpaoe")
 volume_db = 4.0
 max_distance = 589.0
+
+[node name="Damagecube" parent="." index="4" unique_id=1373159643]
+scale = Vector2(1.4801819, 1.9914736)

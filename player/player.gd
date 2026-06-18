@@ -332,7 +332,8 @@ func sprite_dir() ->float:
 
 func die():
 	super()
-	sprite_2d.visible=false
+	#sprite_2d.visible=falseqq
+	sprite_2d.texture=load("res://player/monkeydead.png")
 	max_speed=0
 	bruitdeath.play()
 	jump_force=0

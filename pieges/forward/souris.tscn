@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bx3r73dbnr87y"]
+
+[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/forward/forward.tscn" id="1_u0rr4"]
+[ext_resource type="Texture2D" uid="uid://b4r0nyk6teexp" path="res://pieges/forward/souris.png" id="2_hticn"]
+[ext_resource type="AudioStream" uid="uid://hh0e25ntmkq2" path="res://pieges/forward/souris.wav" id="3_rpuxo"]
+
+[node name="forward" unique_id=1241671982 instance=ExtResource("1_u0rr4")]
+speed = 1500.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+scale = Vector2(0.5220916, 0.38797116)
+texture = ExtResource("2_hticn")
+
+[node name="piege" parent="." index="1" unique_id=1079666792]
+scale = Vector2(5.0399976, 0.7964996)
+
+[node name="beginsound1D" parent="." index="2" unique_id=1564674559]
+stream = ExtResource("3_rpuxo")
+volume_db = -80.0
+
+[node name="beginsound2D" parent="." index="3" unique_id=1619317521]
+stream = ExtResource("3_rpuxo")
+volume_db = 10.0

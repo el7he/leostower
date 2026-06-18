@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://e5vqrymh4hgr"]
+
+[ext_resource type="PackedScene" uid="uid://icb5k45jj6vm" path="res://pieges/forward/forward.tscn" id="1_7ny6p"]
+[ext_resource type="Texture2D" uid="uid://b7snarkylnuti" path="res://pieges/gun/balle.png" id="2_qevra"]
+[ext_resource type="AudioStream" uid="uid://rx3miyt4gopv" path="res://pieges/gun/gunsfx.wav" id="3_qevra"]
+
+[node name="forward" unique_id=1241671982 instance=ExtResource("1_7ny6p")]
+speed = 1000.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+rotation = 3.1415927
+scale = Vector2(0.152, 0.209)
+texture = ExtResource("2_qevra")
+
+[node name="piege" parent="." index="1" unique_id=1079666792]
+scale = Vector2(0.756, 0.333)
+
+[node name="beginsound1D" parent="." index="2" unique_id=1564674559]
+stream = ExtResource("3_qevra")
+volume_db = 5.0
