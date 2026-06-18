@@ -27,8 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://dlcy80vpmldje" path="res://pieges/nuage/nuage.tscn" id="25_nhaw6"]
 [ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="26_vluw7"]
 [ext_resource type="PackedScene" uid="uid://36rxrjf3dq8g" path="res://pieges/aigle/triggeraigle.tscn" id="27_mni3b"]
+[ext_resource type="PackedScene" uid="uid://drig5lm1ij4xj" path="res://porte/porte.tscn" id="28_8n00c"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
+position = Vector2(377, -245.99998)
 scale = Vector2(1.0053415, 0.995189)
 script = ExtResource("1_0vxif")
 
@@ -261,6 +263,11 @@ scale = Vector2(0.2881328, 0.035154633)
 position = Vector2(-10251.243, 13034.711)
 rotation = -12.566371
 scale = Vector2(0.76558244, 0.035154633)
+
+[node name="Caillou79" parent="." unique_id=143433695 instance=ExtResource("5_1sts7")]
+position = Vector2(-11278.754, 13032.7)
+rotation = -12.566371
+scale = Vector2(0.24834526, 0.035154633)
 
 [node name="Caillou70" parent="." unique_id=1829571190 instance=ExtResource("5_1sts7")]
 position = Vector2(-10281.084, 14169.168)
@@ -767,6 +774,7 @@ position = Vector2(-10298.987, 12962.361)
 
 [node name="triggersouris2" parent="." unique_id=13962314 instance=ExtResource("18_h18p2")]
 position = Vector2(13620.247, 17534.357)
+scale = Vector2(0.9933324, 0.9867378)
 
 [node name="triggermongol" parent="." unique_id=484144640 instance=ExtResource("19_jv317")]
 position = Vector2(10511.851, 17513.254)
@@ -835,5 +843,38 @@ position = Vector2(-9183.943, 13876.761)
 rotation = 1.5707964
 scale = Vector2(1.7957494, 1)
 
-[node name="resetgame2" parent="." unique_id=1616513825 instance=ExtResource("14_hutp1")]
-position = Vector2(-10930.613, 12961.356)
+[node name="porte" parent="." unique_id=1456788149 instance=ExtResource("28_8n00c")]
+position = Vector2(-11831.8, 13026.671)
+
+[node name="Label" type="Label" parent="." unique_id=2001097468]
+offset_left = -11379.218
+offset_top = 12850.825
+offset_right = -11254.218
+offset_bottom = 12873.825
+text = "Congratulation ! You beat the level !"
+
+[node name="Label3" type="Label" parent="." unique_id=533874115]
+offset_left = 10028.433
+offset_top = 17357.506
+offset_right = 10348.433
+offset_bottom = 17380.506
+text = "Bosses have 3 attacks : Left, Right, Center"
+
+[node name="Label2" type="Label" parent="." unique_id=681331369]
+offset_left = -11379.218
+offset_top = 12952.313
+offset_right = -11254.218
+offset_bottom = 12975.313
+text = "< Cave of pain (very hard !)"
+
+[node name="porte2" parent="." unique_id=1947350919 instance=ExtResource("28_8n00c")]
+position = Vector2(-11422.983, 12960.352)
+scenetoload = "res://level1.tscn"
+
+[node name="porte3" parent="." unique_id=1799757330 instance=ExtResource("28_8n00c")]
+position = Vector2(14310.56, 17529.334)
+scenetoload = "res://level1.tscn"
+
+[node name="Chinois3" parent="." unique_id=777553454 instance=ExtResource("23_yo8x4")]
+position = Vector2(-11045.003, 12917.1455)
+scale = Vector2(1, 7.5609484)

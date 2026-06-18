@@ -1,6 +1,8 @@
 extends Control
 @onready var input_button_scene = preload("res://ui/inputbutton.tscn")
 @onready var actionlist = $PanelContainer2/Actionlist
+@onready var buttonexit: Button = $PanelContainer3/Button
+
 
 var is_remapping = false
 var action_to_remap = null
@@ -22,6 +24,12 @@ func _ready() -> void:
 	InputMap.load_from_project_settings()
 	SaveManager.load_inputs(input_actions)  # adapte "SaveManager" au nom de ton autoload
 	_create_action_list()
+	buttonexit.pressed.connect(_on_buttonexit_pressed)
+
+func _on_buttonexit_pressed():
+	#print("Bouton cliqué !")
+	Gamemanager.playervar.hidepause(false)
+	# Votre code ici
 	
 func _create_action_list() -> void:
 	# [MODIFIÉ] Le load_from_project_settings() a été retiré d'ici

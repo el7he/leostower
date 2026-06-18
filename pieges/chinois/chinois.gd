@@ -1,9 +1,10 @@
 extends Node2D
 @onready var audio_stream_player: AudioStreamPlayer = $Area2D/AudioStreamPlayer
 var isactivated : bool = false
-
+@export var audiostring : String = "res://pieges/chinois/如何让自己爱上读书.mp3"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audio_stream_player.stream=load(audiostring)
 	pass # Replace with function body.
 
 
