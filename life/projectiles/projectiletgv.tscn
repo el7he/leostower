@@ -29,5 +29,5 @@ scale = Vector2(2.832, 315.144)
 [node name="Audio on start" parent="." index="3" unique_id=26550979]
 scale = Vector2(0.9879341, 1.0097536)
 stream = ExtResource("3_58ujg")
-volume_db = 20.0
+volume_db = 14.0
 max_distance = 15000.0

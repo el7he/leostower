@@ -61,12 +61,84 @@ offset_right = 197.0
 offset_bottom = 111.0
 scale = Vector2(2.6799994, 0.6400003)
 
-[node name="Button" type="Button" parent="PanelContainer3" unique_id=729292565]
+[node name="Exit" type="Button" parent="PanelContainer3" unique_id=729292565]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer3/Button" unique_id=984860109]
+[node name="Label" type="Label" parent="PanelContainer3/Exit" unique_id=984860109]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(0.4400012, 1.7200007)
 text = "Exit"
+
+[node name="PanelContainer4" type="PanelContainer" parent="." unique_id=1382560150]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 70.99999
+offset_right = 332.0
+offset_bottom = 110.99999
+scale = Vector2(2.6799994, 0.6400003)
+
+[node name="Main menu" type="Button" parent="PanelContainer4" unique_id=1212242058]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer4/Main menu" unique_id=32117334]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.4400012, 1.7200007)
+text = "Main menu"
+
+[node name="PanelContainer5" type="PanelContainer" parent="." unique_id=1832115234]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 70.99999
+offset_right = 483.0
+offset_bottom = 110.99999
+scale = Vector2(2.6799994, 0.6400003)
+
+[node name="Plein ecran" type="Button" parent="PanelContainer5" unique_id=1393934558]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer5/Plein ecran" unique_id=815366911]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.4400012, 1.7200007)
+text = "Fullscreen"
+
+[node name="PanelContainer6" type="PanelContainer" parent="." unique_id=1946862733]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 71.0
+offset_right = 871.0
+offset_bottom = 111.0
+scale = Vector2(2.6799994, 0.6400003)
+
+[node name="audio +" type="Button" parent="PanelContainer6" unique_id=1673102698]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer6/audio +" unique_id=797615278]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.4400012, 1.7200007)
+text = "audio +"
+
+[node name="PanelContainer7" type="PanelContainer" parent="." unique_id=1948114640]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 70.99999
+offset_right = 736.0
+offset_bottom = 110.99999
+scale = Vector2(2.6799994, 0.6400003)
+
+[node name="audio -" type="Button" parent="PanelContainer7" unique_id=963623594]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer7/audio -" unique_id=411386966]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.4400012, 1.7200007)
+text = "audio -"

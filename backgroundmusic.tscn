@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c3gigvnclulrg"]
+
+[ext_resource type="Script" uid="uid://e0msw24wvvr8" path="res://backgroundmusic.gd" id="1_2bmh7"]
+[ext_resource type="AudioStream" uid="uid://dhl1vy1pc5v5f" path="res://352514__inspectorj__ambience-night-wildlife-a.wav" id="2_a53xp"]
+
+[node name="Backgroundmusic" type="Node2D" unique_id=65074349]
+script = ExtResource("1_2bmh7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1964119291]
+stream = ExtResource("2_a53xp")
+volume_db = -28.0

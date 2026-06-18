@@ -9,7 +9,7 @@
 script = ExtResource("2_wpxwn")
 isboss = true
 boss_salve_number = Array[int]([3, 6, 2])
-boss_salve_cadence = Array[float]([1.0, 0.3, 2.0])
+boss_salve_cadence = Array[float]([1.0, 0.4, 2.0])
 lifemax = 22.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1324127357]

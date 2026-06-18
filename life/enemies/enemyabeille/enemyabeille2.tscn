@@ -35,7 +35,6 @@ texture = ExtResource("5_veuux")
 [node name="abeille" type="AudioStreamPlayer2D" parent="." index="5" unique_id=789234116]
 position = Vector2(-1, 0)
 stream = ExtResource("6_o8p5n")
-volume_db = -5.0
 
 [node name="moto" type="AudioStreamPlayer2D" parent="." index="6" unique_id=36752392]
 position = Vector2(-1, 0)

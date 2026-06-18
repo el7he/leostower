@@ -1,4 +1,8 @@
 extends Control
+@onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var labeloption: Label = $Labeloption
+@onready var labelcredit: Label = $Labelcredit
+
 
 func _ready() -> void:
 	# optionnel : désactive le bouton "continuer" si aucune save n'existe
@@ -15,7 +19,20 @@ func _on_continue_pressed() -> void:
 	get_tree().change_scene_to_file(level_path)
 
 func _on_options_pressed() -> void:
+	if labeloption.visible==false :
+		labeloption.visible=true
+		await get_tree().create_timer(2.0).timeout
+		labeloption.visible=false
 	pass
 
 func _on_credits_pressed() -> void:
+	DisplayServer.clipboard_set(rich_text_label.text)
+	if labelcredit.visible==false:
+		labelcredit.visible=true
+		await get_tree().create_timer(2.0).timeout
+		labelcredit.visible=false
 	pass
+	
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.

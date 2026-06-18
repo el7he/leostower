@@ -13,4 +13,4 @@ scale = Vector2(2.448, 2.825)
 scale = Vector2(1, 1)
 
 [node name="spawner" parent="." index="2" unique_id=207203317]
-position = Vector2(-102, 0)
+position = Vector2(-70, 0)

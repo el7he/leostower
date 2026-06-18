@@ -138,6 +138,7 @@ func set_life(new_life: float) -> void:
 	
 func projectilecadence()->void:
 	spawnprojectile(0)
+	#if isalive:
 	await get_tree().create_timer(1.30).timeout
 	projectilecadence()
 	
@@ -186,10 +187,11 @@ func salve(salveindex : int =0) ->void:
 	#spawnprojectile(angle_deg,projectileclass,shotspeed)
 	onsalve(salveindex)
 	advancement+=1
-	
+	#if isalive:
 	await get_tree().create_timer(boss_salve_cadence[salveindex]).timeout
 	if advancement==boss_salve_number[salveindex]:
 		onendsalve(salveindex)
+			#if isalive:
 		await get_tree().create_timer(boss_salve_timeaftersalve[salveindex]).timeout
 		chooseteleportpoint()
 	else :
@@ -207,7 +209,7 @@ func chooseteleportpoint() -> void :
 	global_position = teleportpoints[random_index]
 	#spawnprojectilesalve()
 	
-	
+	#if isalive:
 	await get_tree().create_timer(boss_salve_timebeforesalve[random_index]).timeout
 	
 	salvebegin(random_index)

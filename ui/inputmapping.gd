@@ -1,7 +1,12 @@
 extends Control
 @onready var input_button_scene = preload("res://ui/inputbutton.tscn")
 @onready var actionlist = $PanelContainer2/Actionlist
-@onready var buttonexit: Button = $PanelContainer3/Button
+@onready var main_menu: Button = $"PanelContainer4/Main menu"
+@onready var exit: Button = $PanelContainer3/Exit
+@onready var plein_ecran: Button = $"PanelContainer5/Plein ecran"
+@onready var audioplus: Button = $"PanelContainer6/audio +"
+@onready var audiomoins: Button = $"PanelContainer7/audio -"
+
 
 
 var is_remapping = false
@@ -24,11 +29,35 @@ func _ready() -> void:
 	InputMap.load_from_project_settings()
 	SaveManager.load_inputs(input_actions)  # adapte "SaveManager" au nom de ton autoload
 	_create_action_list()
-	buttonexit.pressed.connect(_on_buttonexit_pressed)
+	exit.pressed.connect(_on_buttonexit_pressed)
+	main_menu.pressed.connect(_on_buttonmainmenu_pressed)
+	plein_ecran.pressed.connect(_on_buttonpleincran_pressed)
+	audiomoins.pressed.connect(_on_audiomoins_pressed)
+	audioplus.pressed.connect(_on_audioplus_pressed)
+	
+func _on_audiomoins_pressed():
+	adjust_volume(-1)
+	pass
+
+func _on_audioplus_pressed():
+	adjust_volume(1)
+	pass
+
+func _on_buttonpleincran_pressed():
+	#print("Bouton cliqué !")
+	toggle_fullscreen()
+	# Votre code ici
 
 func _on_buttonexit_pressed():
 	#print("Bouton cliqué !")
 	Gamemanager.playervar.hidepause(false)
+	# Votre code ici
+
+func _on_buttonmainmenu_pressed():
+	get_tree().change_scene_to_file('res://menu.tscn')
+	pass
+	#print("Bouton cliqué !")
+	#Gamemanager.playervar.hidepause(false)
 	# Votre code ici
 	
 func _create_action_list() -> void:
@@ -100,3 +129,41 @@ func _remove_keyboard_mouse_events(action: String) -> void:
 
 func _update_action_list(button, event):
 	button.find_child("LabelInput").text = event.as_text().trim_suffix(" - Physical")
+	
+	
+	
+	
+	
+func toggle_fullscreen():
+	var window = get_window()
+	
+	# Basculer le mode plein écran
+	if window.mode == Window.MODE_FULLSCREEN:
+		window.mode = Window.MODE_WINDOWED
+	else:
+		window.mode = Window.MODE_FULLSCREEN
+	
+	
+func adjust_volume(audioint : int = 1):
+	var bus_index = AudioServer.get_bus_index("Master")
+	var current_volume = AudioServer.get_bus_volume_db(bus_index)
+	var new_volume = current_volume + (3*audioint)
+	new_volume = clamp(new_volume, -80.0, 10.0)  # -80dB = muet, 10dB = max
+	AudioServer.set_bus_volume_db(bus_index, new_volume)
+	'''
+	# Récupérer le bus maître (ou un bus spécifique)
+	var bus_index = AudioServer.get_bus_index("Master")
+	var current_volume = AudioServer.get_bus_volume_db(bus_index)
+	
+	# Calculer le nouveau volume
+	var new_volume = current_volume + (volume_step if is_increase else -volume_step)
+	
+	# Limiter le volume (optionnel)
+	new_volume = clamp(new_volume, -80.0, 10.0)  # -80dB = muet, 10dB = max
+	
+	# Appliquer le nouveau volume
+	AudioServer.set_bus_volume_db(bus_index, new_volume)
+	
+	# Émettre un signal pour mettre à jour un affichage si nécessaire
+	volume_changed.emit(new_volume)
+	'''

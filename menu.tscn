@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bci3au70m1wt2" path="res://Sprites/logo.webp" id="2_ouk20"]
 [ext_resource type="AudioStream" uid="uid://bw2aqx81r5b74" path="res://merde.mp3" id="3_mae5d"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_4hy44"]
+font_size = 33
+
 [node name="Menu" type="Control" unique_id=1498362662]
 layout_mode = 3
 anchors_preset = 15
@@ -80,12 +83,101 @@ theme_override_font_sizes/font_size = 32
 text = "Credits
 "
 
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1998575791]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Quit
+"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1639802064]
 stream = ExtResource("3_mae5d")
 volume_db = -4.86
 autoplay = true
 
+[node name="Labeloption" type="Label" parent="." unique_id=323636875]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "You can change options in game"
+label_settings = SubResource("LabelSettings_4hy44")
+
+[node name="Labelcredit" type="Label" parent="." unique_id=2085873736]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -514.0
+offset_bottom = 46.0
+grow_horizontal = 0
+text = "Credits copied to the clipboard"
+label_settings = SubResource("LabelSettings_4hy44")
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1505677440]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "credits : 
+
+développement : 
+-AsunaUwU
+-ElThé 🙂
+-Fbrgames
+
+moteur de jeu :
+Godot 4.6
+
+images et sons : 
+caillou: https://commons.wikimedia.org/wiki/File:H%C3%BAsafell_Stone.png
+banane: https://www.needpix.com/photo/1360100/banana-fruit-food-yellow-isolated-white-background-art-illustration
+ciel: https://www.pexels.com/fr-fr/photo/nuages-ciel-bleu-paysage-de-nuages-formation-de-nuages-12455435/
+singe: https://universe.roboflow.com/uthm-vxyjz/monkey-1
+sfx singe: https://www.youtube.com/watch?v=COa8vyPHoy8 ||| https://www.youtube.com/watch?v=_bmcwEK4a1A
+mongol : https://www.pexels.com/fr-fr/photo/gens-ethniques-a-cheval-dans-le-desert-5275362/
+mange : https://freesound.org/people/InspectorJ/sounds/412068/
+aigle : https://www.youtube.com/watch?v=y2O3_d0vnAA
+amerique: https://www.youtube.com/watch?v=ed4fpb06h_U&list=RDed4fpb06h_U&start_radio=1
+yay: https://www.youtube.com/watch?v=5gsp7eNmT-c
+truck : https://pxhere.com/fr/photo/1609140
+sword : https://www.shutterstock.com/fr/image-photo/highquality-png-old-sword-medieval-weapon-2603446107
+helmet : https://www.shutterstock.com/fr/image-illustration/realistic-3d-render-medieval-helmet-634499765
+sumérien : https://fr.wikipedia.org/wiki/Fichier:SUPPILULIUMA.jpg
+mouche : https://www.freepnglogos.com/images/fly-35347.html
+robinet : <a href=\"https://www.magnific.com/free-psd/elegant-chrome-bathroom-faucet-modern-design-luxury-home-decor_409983640.htm#fromView=keyword&page=1&position=2&uuid=21a41031-03e1-432d-9d4e-c9cede5201ef&query=Faucets+png\">Image by tohamina on Magnific</a>
+tennis : <a href=\"https://www.freeiconspng.com/img/43444\">Tennis Ball png Picture</a>
+goutte : https://www.vecteezy.com/png/44570540-single-water-drop-on-transparent-background
+vague : https://pngtree.com/element/down?id=MTcyNzk4MjM=&type=1&time=1781341920&token=ZjI5YjQ2ZWExZGEzMWMxMmJmYjFmNDMxNmQyOWU1NzE=&t=0
+sfx ennemi dégat : https://freesound.org/people/JustInvoke/sounds/446115/
+sfx mouche : https://freesound.org/people/Benboncan/sounds/82077/
+sfx dash : https://freesound.org/people/qubodup/sounds/60013/
+sfx epee : https://freesound.org/people/freefire66/sounds/175949/
+sfx singe prends dégats : https://www.youtube.com/watch?v=WyGZyoWl7uo 
+basketball : https://fr.wikinews.org/wiki/Fichier:Basketball.png
+sumerien sfx : https://www.youtube.com/watch?v=YiQPjpbMiDY&list=RDYiQPjpbMiDY&start_radio=1
+feu rouge : https://pixabay.com/fr/photos/feu-de-circulation-vert-193658/
+panneau : https://pixabay.com/fr/photos/rue-architecture-daffaires-3317786/
+train : https://en.wikipedia.org/wiki/File:TGV_Duplex_in_profile.JPG
+train sfx : https://freesound.org/people/gundamu/sounds/346957/
+panneau sfx : https://youtu.be/ORPGr4m2-Sw?t=523
+train horn : https://www.youtube.com/watch?v=9Ptcd5O1i7E
+abeille : https://pixabay.com/fr/illustrations/ai-g%C3%A9n%C3%A9r%C3%A9-abeille-bourdon-insecte-8673955/
+moto : www.youtube.com/watch?v=0GENoZjw9Wk 
+balle : https://pixabay.com/fr/photos/munition-tirer-balle-militaire-2428627/
+gunsfx : https://www.youtube.com/watch?v=bdjxBg55mRk
+chinois : https://www.youtube.com/watch?v=DdiXunzH4VA
+boat horn : https://www.youtube.com/watch?v=Zx6DDVGE6nA
+angry cat : https://www.youtube.com/watch?v=HQRLuREwEoo
+party horn : https://www.youtube.com/watch?v=pB0Uiq4NTs0
+loud horn : https://www.youtube.com/watch?v=UaUa_0qPPgc
+plate breaking : https://www.youtube.com/watch?v=s14LA_fbMoI"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

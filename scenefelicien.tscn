@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="26_vluw7"]
 [ext_resource type="PackedScene" uid="uid://36rxrjf3dq8g" path="res://pieges/aigle/triggeraigle.tscn" id="27_mni3b"]
 [ext_resource type="PackedScene" uid="uid://drig5lm1ij4xj" path="res://porte/porte.tscn" id="28_8n00c"]
+[ext_resource type="PackedScene" uid="uid://dq5trphj7or61" path="res://téléporteur.tscn" id="29_kgn2n"]
+[ext_resource type="PackedScene" uid="uid://c3gigvnclulrg" path="res://backgroundmusic.tscn" id="30_yg42a"]
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 position = Vector2(377, -245.99998)
@@ -104,39 +106,14 @@ scale = Vector2(0.083551906, 0.035154633)
 position = Vector2(6851.404, 17254.008)
 scale = Vector2(0.083551906, 0.035154633)
 
-[node name="Caillou40" parent="." unique_id=677904258 instance=ExtResource("5_1sts7")]
-position = Vector2(7121.9585, 17095.244)
-scale = Vector2(0.083551906, 0.035154633)
-
-[node name="Caillou44" parent="." unique_id=1739242508 instance=ExtResource("5_1sts7")]
-position = Vector2(7392.513, 17095.244)
-scale = Vector2(0.084, 0.02)
-
-[node name="Caillou45" parent="." unique_id=1791185122 instance=ExtResource("5_1sts7")]
-position = Vector2(7474.077, 16886.238)
-rotation = -1.5707964
-scale = Vector2(0.234, 0.02)
-
-[node name="Caillou46" parent="." unique_id=2054997464 instance=ExtResource("5_1sts7")]
-position = Vector2(6505.252, 16281.332)
-rotation = 1.5707964
-scale = Vector2(0.234, 0.02)
-
-[node name="Caillou41" parent="." unique_id=1447397104 instance=ExtResource("5_1sts7")]
-position = Vector2(7148.8145, 16838.008)
-scale = Vector2(0.083551906, 0.035154633)
-
-[node name="Caillou42" parent="." unique_id=421370574 instance=ExtResource("5_1sts7")]
-position = Vector2(6910.0903, 16707.383)
-scale = Vector2(0.083551906, 0.035154633)
-
-[node name="Caillou43" parent="." unique_id=1445849929 instance=ExtResource("5_1sts7")]
-position = Vector2(6683.3013, 16584.79)
-scale = Vector2(0.083551906, 0.035154633)
-
 [node name="Caillou47" parent="." unique_id=1945316702 instance=ExtResource("5_1sts7")]
-position = Vector2(6426.6714, 16073.328)
-scale = Vector2(0.083551906, 0.035154633)
+position = Vector2(6371.172, 16073.328)
+scale = Vector2(0.13628288, 0.035154633)
+
+[node name="Caillou80" parent="." unique_id=551536308 instance=ExtResource("5_1sts7")]
+position = Vector2(6296.3677, 15907.532)
+rotation = 1.5707964
+scale = Vector2(0.13628288, 0.035154633)
 
 [node name="Caillou51" parent="." unique_id=33488309 instance=ExtResource("5_1sts7")]
 position = Vector2(10975.376, 16109.503)
@@ -160,8 +137,8 @@ position = Vector2(14553.262, 16098.449)
 scale = Vector2(0.28816175, 0.035154633)
 
 [node name="Caillou52" parent="." unique_id=856577138 instance=ExtResource("5_1sts7")]
-position = Vector2(14238.942, 15209.171)
-scale = Vector2(0.4870991, 0.035154633)
+position = Vector2(14148.426, 15209.171)
+scale = Vector2(0.76267165, 0.035154633)
 
 [node name="Caillou55" parent="." unique_id=2130322847 instance=ExtResource("5_1sts7")]
 position = Vector2(12204.808, 15209.171)
@@ -209,11 +186,6 @@ position = Vector2(14895.437, 15557.849)
 rotation = -1.5707964
 scale = Vector2(0.5268866, 0.035154633)
 
-[node name="Caillou54" parent="." unique_id=144722616 instance=ExtResource("5_1sts7")]
-position = Vector2(14701.473, 15559.859)
-rotation = -4.712389
-scale = Vector2(0.36769783, 0.035154633)
-
 [node name="Caillou57" parent="." unique_id=171117562 instance=ExtResource("5_1sts7")]
 position = Vector2(10689.9, 15091.606)
 rotation = -4.712389
@@ -257,12 +229,17 @@ scale = Vector2(0.2881328, 0.035154633)
 [node name="Caillou77" parent="." unique_id=2008086976 instance=ExtResource("5_1sts7")]
 position = Vector2(-8135.545, 13034.711)
 rotation = -12.566371
-scale = Vector2(0.2881328, 0.035154633)
+scale = Vector2(0.523, 0.035)
 
 [node name="Caillou78" parent="." unique_id=57275587 instance=ExtResource("5_1sts7")]
 position = Vector2(-10251.243, 13034.711)
 rotation = -12.566371
 scale = Vector2(0.76558244, 0.035154633)
+
+[node name="Caillou81" parent="." unique_id=793644561 instance=ExtResource("5_1sts7")]
+position = Vector2(-10984.327, 12993.513)
+rotation = -12.566371
+scale = Vector2(0.03, 0.03)
 
 [node name="Caillou79" parent="." unique_id=143433695 instance=ExtResource("5_1sts7")]
 position = Vector2(-11278.754, 13032.7)
@@ -283,11 +260,6 @@ scale = Vector2(0.80536, 0.035154633)
 position = Vector2(-10113.975, 14352.048)
 rotation = -14.137167
 scale = Vector2(0.4074853, 0.035154633)
-
-[node name="Caillou76" parent="." unique_id=87713668 instance=ExtResource("5_1sts7")]
-position = Vector2(-7858.0244, 13417.552)
-rotation = -14.137167
-scale = Vector2(-0.407, -0.035)
 
 [node name="Caillou29" parent="." unique_id=125922501 instance=ExtResource("5_1sts7")]
 position = Vector2(12417.67, 17153.525)
@@ -420,7 +392,7 @@ position = Vector2(12333.122, 15112.707)
 index = 7
 
 [node name="checkpoint11" parent="." unique_id=80932567 instance=ExtResource("7_rl5rp")]
-position = Vector2(-9906.087, 14890.639)
+position = Vector2(-10132.875, 14893.653)
 index = 8
 
 [node name="checkpoint12" parent="." unique_id=1373431834 instance=ExtResource("7_rl5rp")]
@@ -506,18 +478,6 @@ scale = Vector2(0.221, 0.392)
 
 [node name="Saw31" parent="." unique_id=498283080 instance=ExtResource("11_1sts7")]
 position = Vector2(-10215.434, 13374.345)
-scale = Vector2(0.221, 0.392)
-
-[node name="Saw32" parent="." unique_id=1849977535 instance=ExtResource("11_1sts7")]
-position = Vector2(-7905.7695, 13727.042)
-scale = Vector2(0.221, 0.392)
-
-[node name="Saw33" parent="." unique_id=878655470 instance=ExtResource("11_1sts7")]
-position = Vector2(-7905.7705, 13584.355)
-scale = Vector2(0.221, 0.392)
-
-[node name="Saw34" parent="." unique_id=518748038 instance=ExtResource("11_1sts7")]
-position = Vector2(-7905.7705, 13584.355)
 scale = Vector2(0.221, 0.392)
 
 [node name="Saw30" parent="." unique_id=892301649 instance=ExtResource("11_1sts7")]
@@ -783,7 +743,7 @@ position = Vector2(10511.851, 17513.254)
 position = Vector2(-9735.995, 13888.819)
 
 [node name="Lightning" parent="." unique_id=1313747619 instance=ExtResource("26_vluw7")]
-position = Vector2(12821.515, 17526.318)
+position = Vector2(13115.941, 17518.28)
 rotation = -1.5724885
 
 [node name="Nuage7" parent="." unique_id=152537600 instance=ExtResource("25_nhaw6")]
@@ -827,8 +787,12 @@ rotation = 1.8005514
 position = Vector2(14534.364, 15996.96)
 rotation = 2.0785413
 
+[node name="triggerpar8" parent="." unique_id=313813323 instance=ExtResource("21_vqvl6")]
+position = Vector2(14675.61, 16060.266)
+rotation = 4.087809
+
 [node name="triggerpar7" parent="." unique_id=1441550757 instance=ExtResource("27_mni3b")]
-position = Vector2(10930.613, 15104.667)
+position = Vector2(11015.164, 15108.688)
 rotation = 0.9021188
 
 [node name="fly3" parent="." unique_id=1019343740 instance=ExtResource("15_hutp1")]
@@ -851,7 +815,7 @@ offset_left = -11379.218
 offset_top = 12850.825
 offset_right = -11254.218
 offset_bottom = 12873.825
-text = "Congratulation ! You beat the level !"
+text = "Congratulation ! You silked the kong !"
 
 [node name="Label3" type="Label" parent="." unique_id=533874115]
 offset_left = 10028.433
@@ -871,10 +835,94 @@ text = "< Cave of pain (very hard !)"
 position = Vector2(-11422.983, 12960.352)
 scenetoload = "res://level1.tscn"
 
-[node name="porte3" parent="." unique_id=1799757330 instance=ExtResource("28_8n00c")]
-position = Vector2(14310.56, 17529.334)
-scenetoload = "res://level1.tscn"
-
 [node name="Chinois3" parent="." unique_id=777553454 instance=ExtResource("23_yo8x4")]
 position = Vector2(-11045.003, 12917.1455)
 scale = Vector2(1, 7.5609484)
+audiostring = "res://victory.mp3"
+
+[node name="Node2D6" type="Node2D" parent="." unique_id=1642996753]
+position = Vector2(12681.263, 17296.21)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D6" unique_id=1076373092 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-228.15234, 33.433594)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur2")
+
+[node name="téléporteur2" parent="Node2D6" unique_id=1500982709 instance=ExtResource("29_kgn2n")]
+position = Vector2(268.34766, -32.371094)
+rotation = 1.5724885
+
+[node name="Node2D9" type="Node2D" parent="." unique_id=214661502]
+position = Vector2(10741.624, 14903.701)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D9" unique_id=2126646657 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-228.15234, 33.433594)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur4")
+
+[node name="téléporteur4" parent="Node2D9" unique_id=1585583002 instance=ExtResource("29_kgn2n")]
+position = Vector2(9.196442, -90.50253)
+rotation = 1.5724885
+
+[node name="Node2D10" type="Node2D" parent="." unique_id=1140163137]
+position = Vector2(-9844.417, 14904.706)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D10" unique_id=95368149 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-228.15234, 33.433594)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur4")
+
+[node name="téléporteur4" parent="Node2D10" unique_id=1225809736 instance=ExtResource("29_kgn2n")]
+position = Vector2(9.196442, -90.50253)
+rotation = 1.5724885
+
+[node name="Node2D11" type="Node2D" parent="." unique_id=1128225535]
+position = Vector2(-7785.414, 13665.746)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D11" unique_id=384701246 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-228.15234, 33.433594)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur4")
+
+[node name="téléporteur4" parent="Node2D11" unique_id=1352582309 instance=ExtResource("29_kgn2n")]
+position = Vector2(711.55273, -76.381584)
+rotation = 1.5724885
+
+[node name="Node2D7" type="Node2D" parent="." unique_id=542982744]
+position = Vector2(6790.7275, 16913.371)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D7" unique_id=509061731 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-228.15234, 33.433594)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur3")
+
+[node name="téléporteur3" parent="Node2D7" unique_id=1096299040 instance=ExtResource("29_kgn2n")]
+position = Vector2(948.2661, -416.1649)
+rotation = 1.5724885
+
+[node name="Node2D8" type="Node2D" parent="." unique_id=350192686]
+position = Vector2(14750.212, 15778.912)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D8" unique_id=2119474630 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-232.24097, 73.213234)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur3")
+
+[node name="téléporteur3" parent="Node2D8" unique_id=861614406 instance=ExtResource("29_kgn2n")]
+position = Vector2(666.4834, -163.99089)
+rotation = 1.5724885
+
+[node name="Backgroundmusic" parent="." unique_id=65074349 instance=ExtResource("30_yg42a")]
+position = Vector2(-10816.225, 11940.444)
