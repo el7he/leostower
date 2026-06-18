@@ -25,7 +25,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			var nouvelle_instance = objet_a_spawner.instantiate()
 			nouvelle_instance.global_position = spawner.global_position
 			get_tree().current_scene.add_child(nouvelle_instance)
-			
+			nouvelle_instance.global_position = Vector2(spawner.global_position.x,spawner.global_position.y-70)
 			if nouvelle_instance is camion:
 				nouvelle_instance.beginforward(rotation)
 			if nouvelle_instance is sumerienpiege:

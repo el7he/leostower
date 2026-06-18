@@ -17,6 +17,9 @@ position = Vector2(1, 12)
 scale = Vector2(0.12, 0.127)
 texture = ExtResource("2_0yce1")
 
+[node name="CollisionShape2D" parent="." index="1" unique_id=506887627]
+scale = Vector2(2.0001092, 1.7182277)
+
 [node name="Onlanding" type="AudioStreamPlayer2D" parent="." index="3" unique_id=789234116]
 position = Vector2(-1, 0)
 stream = ExtResource("5_6l0ta")

@@ -69,4 +69,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(0.4400012, 1.7200007)
-text = "Main menu"
+text = "Exit"

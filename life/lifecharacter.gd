@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name lifecharacter
 var life : float = 5;
 @export var lifemax : float = 5;
+var isalive : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +18,12 @@ func _process(delta: float) -> void:
 
 
 func set_life(new_life: float) -> void:
-	life = clamp(new_life, 0, lifemax)
-	#print("life",life)
-	if life==0:
-		die()
+	if isalive==true:
+		life = clamp(new_life, 0, lifemax)
+		#print("life",life)
+		if life==0:
+			isalive=false
+			die()
 	
 
 func change_life(amount: float) -> void:
