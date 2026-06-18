@@ -1,10 +1,12 @@
 extends Node
-const save_file_name : String = "user://save.json"
-const default_dictionary : Dictionary = {"checkpoint":0}
 
-func save_game(data: Dictionary) ->void:
+const save_file_name : String = "user://save.json"
+const FIRST_LEVEL_PATH : String = "res://scenefelicien.tscn"
+const default_dictionary : Dictionary = {"checkpoint": 0, "level": FIRST_LEVEL_PATH}
+
+func save_game(data: Dictionary) -> void:
 	var save_file : FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)
-	if save_file==null:
+	if save_file == null:
 		push_error("Error opening file")
 		return
 	var string_data : String = JSON.stringify(data)
@@ -13,8 +15,8 @@ func save_game(data: Dictionary) ->void:
 
 func load_game() -> Dictionary:
 	if FileAccess.file_exists(save_file_name):
-		var save_file: FileAccess = FileAccess.open(save_file_name,FileAccess.READ)
-		if save_file==null:
+		var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.READ)
+		if save_file == null:
 			push_error("Error reading file")
 			return default_dictionary
 		var json = JSON.new()
@@ -29,6 +31,19 @@ func load_game() -> Dictionary:
 func reset_save() -> void:
 	save_game(default_dictionary)
 
+# [NOUVEAU] Merge des données dans la save existante au lieu de l'écraser.
+# A utiliser à la place de save_game() partout où tu sauvegardes
+# UNE partie des données (checkpoint, level, etc).
+func update_save(data: Dictionary) -> void:
+	var save_data : Dictionary = load_game()
+	for key in data:
+		save_data[key] = data[key]
+	save_game(save_data)
+
+# [NOUVEAU] Sait-on si une partie a déjà été commencée ?
+func has_save() -> bool:
+	return FileAccess.file_exists(save_file_name)
+	
 # [NOUVEAU] Sauvegarde les remappings clavier/souris dans le fichier de save.
 # On récupère d'abord la save existante pour ne pas écraser les autres données
 # (checkpoint, etc.), puis on y injecte la clé "input_map".

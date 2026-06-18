@@ -54,7 +54,7 @@ size = Vector2(36, 38)
 size = Vector2(1999.1067, 2198.023)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e4cv"]
-size = Vector2(477, 261)
+size = Vector2(862, 1191)
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
@@ -82,9 +82,13 @@ jump_force = -560.0
 pogo_height = -450
 wall_jump_force = Vector2(220, -450)
 custom_cris = ExtResource("4_beq0j")
+death_texture = ExtResource("4_1idop")
 
 [node name="Sprite2D" parent="Player" index="0" unique_id=1324127357]
 texture = ExtResource("4_1idop")
+
+[node name="bruitdeath" parent="Player" index="8" unique_id=1777386169]
+volume_db = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
 zoom = Vector2(1.635, 1.635)
@@ -287,8 +291,32 @@ position = Vector2(-95, -3980)
 scale = Vector2(0.092787646, 0.028000033)
 
 [node name="Caillou43" parent="." unique_id=356413532 instance=ExtResource("5_mx85b")]
-position = Vector2(-125, -4458)
-scale = Vector2(0.092787646, 0.028000033)
+position = Vector2(-458.1705, -4458)
+scale = Vector2(0.40933916, 0.028000033)
+
+[node name="Caillou44" parent="." unique_id=2000837527 instance=ExtResource("5_mx85b")]
+position = Vector2(-918, -4910.169)
+scale = Vector2(0.038954917, 0.41134256)
+
+[node name="Caillou45" parent="." unique_id=1706979946 instance=ExtResource("5_mx85b")]
+position = Vector2(-695, -4886)
+scale = Vector2(0.038954917, 0.18252496)
+
+[node name="Caillou46" parent="." unique_id=1139225069 instance=ExtResource("5_mx85b")]
+position = Vector2(-503.00006, -4710.042)
+scale = Vector2(0.22137767, 0.031682435)
+
+[node name="Caillou47" parent="." unique_id=1577770685 instance=ExtResource("5_mx85b")]
+position = Vector2(-326.00003, -5037.521)
+scale = Vector2(0.052019008, 0.3098832)
+
+[node name="Caillou48" parent="." unique_id=27948216 instance=ExtResource("5_mx85b")]
+position = Vector2(-753.1875, -5349.0005)
+scale = Vector2(0.1968527, 0.039005592)
+
+[node name="Caillou49" parent="." unique_id=833502767 instance=ExtResource("5_mx85b")]
+position = Vector2(-523, -5165)
+scale = Vector2(0.040855095, 0.19695707)
 
 [node name="Caillou33" parent="." unique_id=765057043 instance=ExtResource("5_mx85b")]
 position = Vector2(1268.8352, -2369.0002)
@@ -792,6 +820,30 @@ position = Vector2(-4, -3933.0005)
 [node name="Saw60" parent="." unique_id=1962823720 instance=ExtResource("8_xy4tn")]
 position = Vector2(-427, -4109)
 
+[node name="Saw77" parent="." unique_id=1306863875 instance=ExtResource("8_xy4tn")]
+position = Vector2(-435, -4478.0005)
+
+[node name="Saw78" parent="." unique_id=1645805367 instance=ExtResource("8_xy4tn")]
+position = Vector2(-669.00006, -4482)
+
+[node name="Saw79" parent="." unique_id=1723875134 instance=ExtResource("8_xy4tn")]
+position = Vector2(-888.00006, -4803)
+
+[node name="Saw80" parent="." unique_id=396370466 instance=ExtResource("8_xy4tn")]
+position = Vector2(-694.00006, -5091)
+
+[node name="Saw81" parent="." unique_id=735577248 instance=ExtResource("8_xy4tn")]
+position = Vector2(-856.00006, -5293.0005)
+
+[node name="Saw82" parent="." unique_id=887355177 instance=ExtResource("8_xy4tn")]
+position = Vector2(-544.00006, -5301.0005)
+
+[node name="Saw83" parent="." unique_id=1597102837 instance=ExtResource("8_xy4tn")]
+position = Vector2(-649.00006, -4777.0005)
+
+[node name="Saw84" parent="." unique_id=408049711 instance=ExtResource("8_xy4tn")]
+position = Vector2(-344.00003, -5008)
+
 [node name="Saw75" parent="." unique_id=439222270 instance=ExtResource("8_xy4tn")]
 position = Vector2(-22, -4454.0005)
 
@@ -901,6 +953,9 @@ position = Vector2(671, -3150)
 [node name="Lightning19" parent="." unique_id=965237228 instance=ExtResource("10_5j5gb")]
 position = Vector2(134, -4099)
 
+[node name="Lightning21" parent="." unique_id=1870373718 instance=ExtResource("10_5j5gb")]
+position = Vector2(-427, -4775)
+
 [node name="Lightning20" parent="." unique_id=1240323308 instance=ExtResource("10_5j5gb")]
 position = Vector2(448, -4203)
 
@@ -944,24 +999,28 @@ position = Vector2(338, -4472)
 position = Vector2(166, -4430)
 
 [node name="enemypar8" parent="." unique_id=267304101 instance=ExtResource("21_c5gc3")]
-position = Vector2(56, -4449)
+position = Vector2(58, -4464)
 
 [node name="enemypar2" parent="." unique_id=1520589500 instance=ExtResource("21_c5gc3")]
 position = Vector2(131, -4039)
 
 [node name="antidash" parent="." unique_id=1910620314 instance=ExtResource("22_6e4cv")]
+visible = false
 position = Vector2(-339, -4567)
 
 [node name="CollisionShape2D" parent="antidash/Trigger" parent_id_path=PackedInt32Array(1910620314, 1032229157) index="0" unique_id=851820646]
-position = Vector2(-117.5, -52.5)
+position = Vector2(-273, -517.5)
 shape = SubResource("RectangleShape2D_6e4cv")
 
 [node name="Line2D" parent="antidash" index="1" unique_id=1946670855]
-closed = true
 width = 5.0
 
 [node name="Sprite2D" parent="antidash" index="2" unique_id=2035597142]
 position = Vector2(61.999996, 49.999996)
+
+[node name="Node2D3" parent="." unique_id=1874491667 instance=ExtResource("20_ycv2e")]
+position = Vector2(-700, -5210)
+jumpforce = -600
 
 [editable path="Player"]
 [editable path="Caillou2"]

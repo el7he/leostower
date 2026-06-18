@@ -58,6 +58,7 @@ var _is_jumping         : bool  = false
 @onready var bruithit: AudioStreamPlayer2D = $bruithit
 @onready var bruitdeath: AudioStreamPlayer2D = $bruitdeath
 @onready var inputmapping: Control = $GUI/Inputmapping
+@export var death_texture: Texture2D = load("res://player/monkeydead.png")
 
 var time_elapsed : float
 var banananumber : int =0;
@@ -333,7 +334,7 @@ func sprite_dir() ->float:
 func die():
 	super()
 	#sprite_2d.visible=falseqq
-	sprite_2d.texture=load("res://player/monkeydead.png")
+	sprite_2d.texture=death_texture
 	max_speed=0
 	bruitdeath.play()
 	jump_force=0

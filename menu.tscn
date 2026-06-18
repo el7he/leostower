@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ccpiuqds28x0p"]
+
+[ext_resource type="Script" uid="uid://cu4q4lp0230hd" path="res://menu.gd" id="1_4hy44"]
+[ext_resource type="Texture2D" uid="uid://xnebf6y5yjth" path="res://Sprites/Silkong menu.png" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://bci3au70m1wt2" path="res://Sprites/logo.webp" id="2_ouk20"]
+[ext_resource type="AudioStream" uid="uid://bw2aqx81r5b74" path="res://merde.mp3" id="3_mae5d"]
+
+[node name="Menu" type="Control" unique_id=1498362662]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4hy44")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1990286508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_lti8b")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2004908329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=586949252]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1006270884]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_ouk20")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="New Game" type="Button" parent="MarginContainer/VBoxContainer" unique_id=648779352]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer" unique_id=355758432]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2065010344]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Options
+"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1513603312]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Credits
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1639802064]
+stream = ExtResource("3_mae5d")
+volume_db = -4.86
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
