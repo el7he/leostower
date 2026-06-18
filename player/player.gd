@@ -32,6 +32,7 @@ class_name Player
 @export var jump_cut_factor    : float = 0.4      # coupe la vélocité quand on relâche tôt
 @export var coyote_time        : float = 0.10     # secondes après avoir quitté le sol
 @export var jump_buffer_time   : float = 0.12     # secondes avant de toucher le sol
+@export var pogo_height : int = -850
 
 # ── Wall slide / wall jump (optionnel) ───────────────────────
 @export_group("Wall Mechanics")
@@ -164,7 +165,7 @@ func swordattack() ->void:
 
 
 func pogo() -> void : 
-	_execute_jump(-850)
+	_execute_jump(pogo_height)
 
 # ── Timers ───────────────────────────────────────────────────
 

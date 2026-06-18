@@ -18,9 +18,16 @@
 [ext_resource type="PackedScene" uid="uid://bek6688hrjrg5" path="res://movingplatform.tscn" id="13_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://dr1y04f3reyxr" path="res://caillou.png" id="15_3l65w"]
 [ext_resource type="Texture2D" uid="uid://05r5ke2kgkwu" path="res://flag.png" id="15_rjtee"]
+[ext_resource type="PackedScene" uid="uid://cf2esyx7htmym" path="res://silkongenergy.tscn" id="19_nauge"]
+[ext_resource type="PackedScene" uid="uid://c6k00pjqx0xsl" path="res://helpercloud.tscn" id="20_ycv2e"]
+[ext_resource type="PackedScene" uid="uid://da4yf1u3rsjvh" path="res://life/enemies/pogopogo.tscn" id="21_c5gc3"]
+[ext_resource type="PackedScene" uid="uid://b352i6r8a0e04" path="res://antidash.tscn" id="22_6e4cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx85b"]
 size = Vector2(62.05981, 103.50001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nauge"]
+size = Vector2(87.97125, 100.36775)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j5gb"]
 radius = 12.542737
@@ -46,6 +53,9 @@ size = Vector2(36, 38)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjtee"]
 size = Vector2(1999.1067, 2198.023)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6e4cv"]
+size = Vector2(477, 261)
+
 [node name="Scene" type="Node2D" unique_id=1764518895]
 
 [node name="Heliopolis" type="Sprite2D" parent="." unique_id=342178201]
@@ -69,6 +79,7 @@ air_acceleration = 1600.0
 gravity_down = 1500.0
 max_fall_speed = 700.0
 jump_force = -560.0
+pogo_height = -450
 wall_jump_force = Vector2(220, -450)
 custom_cris = ExtResource("4_beq0j")
 
@@ -232,8 +243,16 @@ position = Vector2(-367, -2409)
 index = 5
 
 [node name="checkpoint6" parent="." unique_id=106733034 instance=ExtResource("7_n8vhr")]
-position = Vector2(1747, -2933)
+position = Vector2(1735, -2935)
 index = 6
+
+[node name="checkpoint7" parent="." unique_id=1800067963 instance=ExtResource("7_n8vhr")]
+position = Vector2(-52, -4038)
+index = 7
+
+[node name="checkpoint8" parent="." unique_id=84493098 instance=ExtResource("7_n8vhr")]
+position = Vector2(-178, -4510)
+index = 8
 
 [node name="Caillou10" parent="." unique_id=1581256641 instance=ExtResource("5_mx85b")]
 position = Vector2(-72.15999, -90.99999)
@@ -259,6 +278,18 @@ scale = Vector2(0.18557529, 0.028000033)
 position = Vector2(104.341, -2362)
 scale = Vector2(0.092787646, 0.028000033)
 
+[node name="Caillou39" parent="." unique_id=1259041265 instance=ExtResource("5_mx85b")]
+position = Vector2(116.00001, -3081)
+scale = Vector2(0.092787646, 0.028000033)
+
+[node name="Caillou42" parent="." unique_id=1446752546 instance=ExtResource("5_mx85b")]
+position = Vector2(-95, -3980)
+scale = Vector2(0.092787646, 0.028000033)
+
+[node name="Caillou43" parent="." unique_id=356413532 instance=ExtResource("5_mx85b")]
+position = Vector2(-125, -4458)
+scale = Vector2(0.092787646, 0.028000033)
+
 [node name="Caillou33" parent="." unique_id=765057043 instance=ExtResource("5_mx85b")]
 position = Vector2(1268.8352, -2369.0002)
 scale = Vector2(0.1901803, 0.028000033)
@@ -273,8 +304,12 @@ rotation = -1.5707964
 scale = Vector2(0.03380749, 0.23717578)
 
 [node name="Caillou35" parent="." unique_id=142499463 instance=ExtResource("5_mx85b")]
-position = Vector2(1294.0001, -2843)
-scale = Vector2(0.03380749, 0.23717578)
+position = Vector2(1294.0001, -2868.6672)
+scale = Vector2(0.03380749, 0.25917935)
+
+[node name="CollisionShape2D" parent="Caillou35/StaticBody2D3" parent_id_path=PackedInt32Array(142499463, 1196613256) index="0" unique_id=131410714]
+position = Vector2(-1.1284485, 0.22543335)
+shape = SubResource("RectangleShape2D_nauge")
 
 [node name="Caillou31" parent="." unique_id=1994910274 instance=ExtResource("5_mx85b")]
 position = Vector2(565.99994, -2518)
@@ -283,6 +318,11 @@ scale = Vector2(0.17275834, 0.028000033)
 
 [node name="Caillou32" parent="." unique_id=1909421331 instance=ExtResource("5_mx85b")]
 position = Vector2(372.00006, -2764)
+rotation = -1.5462112
+scale = Vector2(0.17275834, 0.028000033)
+
+[node name="Caillou40" parent="." unique_id=1125392849 instance=ExtResource("5_mx85b")]
+position = Vector2(-130, -3329)
 rotation = -1.5462112
 scale = Vector2(0.17275834, 0.028000033)
 
@@ -396,6 +436,30 @@ scale = Vector2(0.13537088, 0.1421317)
 texture = ExtResource("9_usj0q")
 
 [node name="CollisionShape2D" parent="Caillou30/StaticBody2D3" parent_id_path=PackedInt32Array(1403941565, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou37" parent="." unique_id=1071548080 instance=ExtResource("5_mx85b")]
+position = Vector2(1360, -3023.0002)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou37/StaticBody2D3" parent_id_path=PackedInt32Array(1071548080, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou41" parent="." unique_id=1420054286 instance=ExtResource("5_mx85b")]
+position = Vector2(64, -3352.0002)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou41/StaticBody2D3" parent_id_path=PackedInt32Array(1420054286, 1196613256) index="0" unique_id=131410714]
+shape = SubResource("CircleShape2D_5j5gb")
+
+[node name="Caillou38" parent="." unique_id=362224460 instance=ExtResource("5_mx85b")]
+position = Vector2(672, -3102.0002)
+scale = Vector2(0.13537088, 0.1421317)
+texture = ExtResource("9_usj0q")
+
+[node name="CollisionShape2D" parent="Caillou38/StaticBody2D3" parent_id_path=PackedInt32Array(362224460, 1196613256) index="0" unique_id=131410714]
 shape = SubResource("CircleShape2D_5j5gb")
 
 [node name="Lightning11" parent="." unique_id=2011014080 instance=ExtResource("10_5j5gb")]
@@ -662,6 +726,119 @@ position = Vector2(383, -2934.0002)
 [node name="Saw33" parent="." unique_id=2093427243 instance=ExtResource("8_xy4tn")]
 position = Vector2(485.00003, -3031.0002)
 
+[node name="Saw41" parent="." unique_id=2082001841 instance=ExtResource("8_xy4tn")]
+position = Vector2(123.00006, -3121.0002)
+
+[node name="Saw44" parent="." unique_id=399691832 instance=ExtResource("8_xy4tn")]
+position = Vector2(-183, -3453)
+
+[node name="Saw50" parent="." unique_id=461312861 instance=ExtResource("8_xy4tn")]
+position = Vector2(-396, -3456.0002)
+
+[node name="Saw51" parent="." unique_id=373481206 instance=ExtResource("8_xy4tn")]
+position = Vector2(-490.00003, -3550)
+
+[node name="Saw52" parent="." unique_id=1190213756 instance=ExtResource("8_xy4tn")]
+position = Vector2(-515.00006, -3661.0002)
+
+[node name="Saw59" parent="." unique_id=197032009 instance=ExtResource("8_xy4tn")]
+position = Vector2(-252.00003, -3874.0002)
+
+[node name="Saw61" parent="." unique_id=581224463 instance=ExtResource("8_xy4tn")]
+position = Vector2(-228.00002, -3974.0002)
+
+[node name="Saw67" parent="." unique_id=1623898552 instance=ExtResource("8_xy4tn")]
+position = Vector2(221.99998, -3953.0002)
+
+[node name="Saw68" parent="." unique_id=812377705 instance=ExtResource("8_xy4tn")]
+position = Vector2(440, -3984.0005)
+
+[node name="Saw69" parent="." unique_id=873657003 instance=ExtResource("8_xy4tn")]
+position = Vector2(541, -4066.0005)
+
+[node name="Saw70" parent="." unique_id=1869291495 instance=ExtResource("8_xy4tn")]
+position = Vector2(633, -4132)
+
+[node name="Saw71" parent="." unique_id=1978423603 instance=ExtResource("8_xy4tn")]
+position = Vector2(804, -4206.0005)
+
+[node name="Saw72" parent="." unique_id=985955484 instance=ExtResource("8_xy4tn")]
+position = Vector2(909.00006, -4294)
+
+[node name="Saw73" parent="." unique_id=2014797455 instance=ExtResource("8_xy4tn")]
+position = Vector2(932.00006, -4417)
+
+[node name="Saw74" parent="." unique_id=429297308 instance=ExtResource("8_xy4tn")]
+position = Vector2(666.00006, -4446.0005)
+
+[node name="Saw76" parent="." unique_id=1587141754 instance=ExtResource("8_xy4tn")]
+position = Vector2(161.00003, -4354)
+
+[node name="Saw62" parent="." unique_id=369587621 instance=ExtResource("8_xy4tn")]
+position = Vector2(-448, -3976)
+
+[node name="Saw63" parent="." unique_id=863128185 instance=ExtResource("8_xy4tn")]
+position = Vector2(-506.00003, -3873.0002)
+
+[node name="Saw64" parent="." unique_id=852563747 instance=ExtResource("8_xy4tn")]
+position = Vector2(-516, -3776.0005)
+
+[node name="Saw65" parent="." unique_id=1311327680 instance=ExtResource("8_xy4tn")]
+position = Vector2(-230, -3761)
+
+[node name="Saw66" parent="." unique_id=1389531043 instance=ExtResource("8_xy4tn")]
+position = Vector2(-4, -3933.0005)
+
+[node name="Saw60" parent="." unique_id=1962823720 instance=ExtResource("8_xy4tn")]
+position = Vector2(-427, -4109)
+
+[node name="Saw75" parent="." unique_id=439222270 instance=ExtResource("8_xy4tn")]
+position = Vector2(-22, -4454.0005)
+
+[node name="Saw53" parent="." unique_id=1385663156 instance=ExtResource("8_xy4tn")]
+position = Vector2(-396.00006, -3351.0002)
+
+[node name="Saw54" parent="." unique_id=1113547535 instance=ExtResource("8_xy4tn")]
+position = Vector2(-404.00003, -3230.0002)
+
+[node name="Saw55" parent="." unique_id=1095195158 instance=ExtResource("8_xy4tn")]
+position = Vector2(-178.00003, -3331.0002)
+
+[node name="Saw56" parent="." unique_id=923679953 instance=ExtResource("8_xy4tn")]
+position = Vector2(-172, -3216.0002)
+
+[node name="Saw57" parent="." unique_id=678530890 instance=ExtResource("8_xy4tn")]
+position = Vector2(-256, -3128.0002)
+
+[node name="Saw58" parent="." unique_id=1803181573 instance=ExtResource("8_xy4tn")]
+position = Vector2(-361, -3140.0002)
+
+[node name="Saw42" parent="." unique_id=943281437 instance=ExtResource("8_xy4tn")]
+position = Vector2(425, -3164)
+
+[node name="Saw43" parent="." unique_id=1298476791 instance=ExtResource("8_xy4tn")]
+position = Vector2(622, -2993.0002)
+
+[node name="Saw45" parent="." unique_id=1536921314 instance=ExtResource("8_xy4tn")]
+position = Vector2(60.000023, -3393.0002)
+scale = Vector2(0.15877436, 0.15877436)
+
+[node name="Saw47" parent="." unique_id=306776438 instance=ExtResource("8_xy4tn")]
+position = Vector2(-108.99999, -3353)
+scale = Vector2(0.15877436, 0.15877436)
+
+[node name="Saw48" parent="." unique_id=1314017328 instance=ExtResource("8_xy4tn")]
+position = Vector2(-235, -3502)
+scale = Vector2(0.15877436, 0.15877436)
+
+[node name="Saw49" parent="." unique_id=608779471 instance=ExtResource("8_xy4tn")]
+position = Vector2(-334, -3498.0002)
+scale = Vector2(0.15877436, 0.15877436)
+
+[node name="Saw46" parent="." unique_id=1555558672 instance=ExtResource("8_xy4tn")]
+position = Vector2(64, -3318)
+scale = Vector2(0.15877436, 0.15877436)
+
 [node name="Saw30" parent="." unique_id=2087138124 instance=ExtResource("8_xy4tn")]
 position = Vector2(819, -2691.0002)
 
@@ -679,6 +856,13 @@ position = Vector2(1505, -2622)
 
 [node name="Saw38" parent="." unique_id=1376963929 instance=ExtResource("8_xy4tn")]
 position = Vector2(1322, -2856)
+
+[node name="Saw39" parent="." unique_id=582412267 instance=ExtResource("8_xy4tn")]
+position = Vector2(1228.0001, -3055)
+
+[node name="Saw40" parent="." unique_id=1200204900 instance=ExtResource("8_xy4tn")]
+position = Vector2(1074.0001, -3037)
+rotation = 1.7346885
 
 [node name="Saw35" parent="." unique_id=484439320 instance=ExtResource("8_xy4tn")]
 position = Vector2(1033.0001, -2740.0002)
@@ -711,10 +895,73 @@ visible = false
 [node name="Lightning16" parent="." unique_id=35044865 instance=ExtResource("10_5j5gb")]
 position = Vector2(41, -2426)
 
+[node name="Lightning17" parent="." unique_id=810811559 instance=ExtResource("10_5j5gb")]
+position = Vector2(671, -3150)
+
+[node name="Lightning19" parent="." unique_id=965237228 instance=ExtResource("10_5j5gb")]
+position = Vector2(134, -4099)
+
+[node name="Lightning20" parent="." unique_id=1240323308 instance=ExtResource("10_5j5gb")]
+position = Vector2(448, -4203)
+
+[node name="Lightning18" parent="." unique_id=1216764928 instance=ExtResource("10_5j5gb")]
+position = Vector2(1336, -3053)
+
 [node name="Caillou29" type="Sprite2D" parent="." unique_id=15173919]
 position = Vector2(302, -2361.5)
 scale = Vector2(0.08551068, 0.027003802)
 texture = ExtResource("15_3l65w")
+
+[node name="DashRefund" parent="." unique_id=244281329 instance=ExtResource("19_nauge")]
+position = Vector2(945, -3253)
+
+[node name="DashRefund2" parent="." unique_id=1534435659 instance=ExtResource("19_nauge")]
+position = Vector2(804, -4545)
+
+[node name="Node2D" parent="." unique_id=407081840 instance=ExtResource("20_ycv2e")]
+position = Vector2(-289, -3241)
+jumpforce = -1350
+
+[node name="Node2D2" parent="." unique_id=732671707 instance=ExtResource("20_ycv2e")]
+position = Vector2(804, -4323)
+
+[node name="enemypar" parent="." unique_id=2122569932 instance=ExtResource("21_c5gc3")]
+position = Vector2(307, -4044)
+
+[node name="enemypar3" parent="." unique_id=756880363 instance=ExtResource("21_c5gc3")]
+position = Vector2(410, -4120)
+
+[node name="enemypar4" parent="." unique_id=1748044354 instance=ExtResource("21_c5gc3")]
+position = Vector2(462, -4183)
+
+[node name="enemypar5" parent="." unique_id=638368092 instance=ExtResource("21_c5gc3")]
+position = Vector2(514, -4249)
+
+[node name="enemypar6" parent="." unique_id=1729867950 instance=ExtResource("21_c5gc3")]
+position = Vector2(338, -4472)
+
+[node name="enemypar7" parent="." unique_id=45475157 instance=ExtResource("21_c5gc3")]
+position = Vector2(166, -4430)
+
+[node name="enemypar8" parent="." unique_id=267304101 instance=ExtResource("21_c5gc3")]
+position = Vector2(56, -4449)
+
+[node name="enemypar2" parent="." unique_id=1520589500 instance=ExtResource("21_c5gc3")]
+position = Vector2(131, -4039)
+
+[node name="antidash" parent="." unique_id=1910620314 instance=ExtResource("22_6e4cv")]
+position = Vector2(-339, -4567)
+
+[node name="CollisionShape2D" parent="antidash/Trigger" parent_id_path=PackedInt32Array(1910620314, 1032229157) index="0" unique_id=851820646]
+position = Vector2(-117.5, -52.5)
+shape = SubResource("RectangleShape2D_6e4cv")
+
+[node name="Line2D" parent="antidash" index="1" unique_id=1946670855]
+closed = true
+width = 5.0
+
+[node name="Sprite2D" parent="antidash" index="2" unique_id=2035597142]
+position = Vector2(61.999996, 49.999996)
 
 [editable path="Player"]
 [editable path="Caillou2"]
@@ -724,6 +971,7 @@ texture = ExtResource("15_3l65w")
 [editable path="Saw/piege"]
 [editable path="Saw24"]
 [editable path="Saw24/piege"]
+[editable path="Caillou35"]
 [editable path="Caillou11"]
 [editable path="Caillou12"]
 [editable path="Caillou13"]
@@ -732,6 +980,9 @@ texture = ExtResource("15_3l65w")
 [editable path="Caillou16"]
 [editable path="Caillou19"]
 [editable path="Caillou30"]
+[editable path="Caillou37"]
+[editable path="Caillou41"]
+[editable path="Caillou38"]
 [editable path="Lightning12"]
 [editable path="Lightning15"]
 [editable path="Lightning13"]
@@ -757,3 +1008,4 @@ texture = ExtResource("15_3l65w")
 [editable path="LightningGroup4/Lightning16"]
 [editable path="LTPNJ2"]
 [editable path="movingplatform2"]
+[editable path="antidash"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c6k00pjqx0xsl"]
+
+[ext_resource type="Script" uid="uid://dgn645jitgcxn" path="res://helpercloud.gd" id="1_hkjc4"]
+[ext_resource type="Texture2D" uid="uid://bu1atbipxg3pw" path="res://Sprites/helpercloud.png" id="2_hkjc4"]
+[ext_resource type="AudioStream" uid="uid://d20kdrqkur4wv" path="res://sounds/dragon-studio-gust-of-wind-511325.mp3" id="3_r532c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ww074"]
+
+[node name="Node2D" type="Node2D" unique_id=244281329]
+script = ExtResource("1_hkjc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1848877187]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_hkjc4")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=1976986036]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=2145611950]
+shape = SubResource("CircleShape2D_ww074")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=614524471]
+stream = ExtResource("3_r532c")
+volume_db = 24.0
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

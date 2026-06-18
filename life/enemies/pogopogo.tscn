@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://da4yf1u3rsjvh"]
+
+[ext_resource type="PackedScene" uid="uid://df1cwrhx28ecv" path="res://life/enemies/enemypar.tscn" id="1_81h7n"]
+[ext_resource type="Texture2D" uid="uid://d0t62lgfau48l" path="res://Sprites/angeleses-png-2734006.png" id="2_dmsb3"]
+
+[node name="enemypar" unique_id=1241671982 instance=ExtResource("1_81h7n")]
+lifemax = 1.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1324127357]
+scale = Vector2(0.03018269, 0.031928796)
+texture = ExtResource("2_dmsb3")

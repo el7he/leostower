@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b352i6r8a0e04"]
+
+[ext_resource type="Script" uid="uid://cfnurp7g7bubk" path="res://antidash.gd" id="1_qxrnr"]
+[ext_resource type="Texture2D" uid="uid://l2v4shy1sl77" path="res://Sprites/no dashing.png" id="2_b7md6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6qe4"]
+
+[node name="antidash" type="Node2D" unique_id=1910620314]
+script = ExtResource("1_qxrnr")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=1032229157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=851820646]
+shape = SubResource("RectangleShape2D_q6qe4")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1946670855]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2035597142]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_b7md6")
