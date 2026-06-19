@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ddi3p70facnkh"]
+
+[ext_resource type="Script" uid="uid://byc0t8glwian4" path="res://jump_orb.gd" id="1_0uohg"]
+[ext_resource type="Texture2D" uid="uid://uqmqq4yx68hr" path="res://star.png" id="2_ppg2q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6iidb"]
+radius = 34.132095
+
+[node name="JumpOrb" type="Area2D" unique_id=1669984896]
+script = ExtResource("1_0uohg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95182315]
+position = Vector2(10.999992, 5.0000114)
+scale = Vector2(0.0929687, 0.11648869)
+texture = ExtResource("2_ppg2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237803591]
+position = Vector2(14, 7)
+shape = SubResource("CircleShape2D_6iidb")

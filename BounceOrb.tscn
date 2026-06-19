@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c22cuj814rve5"]
+
+[ext_resource type="Script" uid="uid://dkw5vid1lb3gi" path="res://bounce_orb.gd" id="1_v6nmo"]
+[ext_resource type="Texture2D" uid="uid://cvj2yjmm3bn7x" path="res://star2.png" id="2_iwqvc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5l55s"]
+radius = 24.5153
+
+[node name="BounceOrb" type="Area2D" unique_id=114736900]
+script = ExtResource("1_v6nmo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1159760324]
+position = Vector2(5, -4)
+scale = Vector2(0.06835937, 0.076435246)
+texture = ExtResource("2_iwqvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059430282]
+position = Vector2(5, -4)
+shape = SubResource("CircleShape2D_5l55s")

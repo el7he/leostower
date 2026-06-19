@@ -1,0 +1,404 @@
+[gd_scene format=3 uid="uid://ke2wfmky4yxu"]
+
+[ext_resource type="PackedScene" uid="uid://cye08femprdbg" path="res://caillou.tscn" id="1_yqcwl"]
+[ext_resource type="PackedScene" uid="uid://4s8nt5qsra6c" path="res://player/player.tscn" id="2_87c3k"]
+[ext_resource type="Texture2D" uid="uid://dnxogn5vtmbvk" path="res://cieleuuucieleuucieleuuu.png" id="2_e8d6v"]
+[ext_resource type="PackedScene" uid="uid://104pf6pksn6" path="res://pieges/saw.tscn" id="4_qdyna"]
+[ext_resource type="PackedScene" uid="uid://bggych0aorprl" path="res://pieges/piege.tscn" id="6_qdyna"]
+[ext_resource type="PackedScene" uid="uid://nm56o10uge4p" path="res://pieges/meteorite/fallingrock.tscn" id="7_62oaq"]
+[ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="9_5r80b"]
+[ext_resource type="PackedScene" uid="uid://ddi3p70facnkh" path="res://jump_orb.tscn" id="9_anwir"]
+[ext_resource type="PackedScene" uid="uid://c22cuj814rve5" path="res://BounceOrb.tscn" id="9_ci20y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62oaq"]
+size = Vector2(145.0971, 23.416645)
+
+[node name="Leonivo" type="Node2D" unique_id=1819031176]
+
+[node name="Player" parent="." unique_id=1241671982 instance=ExtResource("2_87c3k")]
+z_index = 1
+position = Vector2(249, 123)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1251268448]
+position = Vector2(-10, 19)
+zoom = Vector2(1.635, 1.635)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1205159512]
+repeat_size = Vector2(700, 380)
+repeat_times = 40
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=928694722]
+position = Vector2(-147, 438)
+texture = ExtResource("2_e8d6v")
+
+[node name="Saw8" parent="." unique_id=1972260605 instance=ExtResource("4_qdyna")]
+position = Vector2(614.00006, 205)
+rotation = 1.0471976
+scale = Vector2(0.43999997, 0.43999997)
+
+[node name="Saw18" parent="." unique_id=1599357611 instance=ExtResource("4_qdyna")]
+position = Vector2(39, -115)
+
+[node name="Saw13" parent="." unique_id=1495289090 instance=ExtResource("4_qdyna")]
+position = Vector2(952, 484.00006)
+
+[node name="Saw12" parent="." unique_id=127148598 instance=ExtResource("4_qdyna")]
+position = Vector2(1166.0001, 296)
+
+[node name="Saw4" parent="." unique_id=2009776410 instance=ExtResource("4_qdyna")]
+position = Vector2(1138, -136)
+
+[node name="Saw7" parent="." unique_id=1392647559 instance=ExtResource("4_qdyna")]
+position = Vector2(918.99994, 318.99997)
+rotation = -1.3089969
+scale = Vector2(0.4399999, 0.4399999)
+
+[node name="Saw6" parent="." unique_id=531574875 instance=ExtResource("4_qdyna")]
+position = Vector2(255, 1056)
+rotation = -0.36911154
+
+[node name="Saw20" parent="." unique_id=196516521 instance=ExtResource("4_qdyna")]
+position = Vector2(2402, 329.00003)
+
+[node name="Saw9" parent="." unique_id=45713541 instance=ExtResource("4_qdyna")]
+position = Vector2(957.00006, -219.00002)
+
+[node name="Saw5" parent="." unique_id=150674423 instance=ExtResource("4_qdyna")]
+position = Vector2(1021.00006, 101)
+
+[node name="Saw15" parent="." unique_id=861742951 instance=ExtResource("4_qdyna")]
+position = Vector2(949, 1051)
+
+[node name="Saw" parent="." unique_id=63921838 instance=ExtResource("4_qdyna")]
+position = Vector2(627.0001, 671)
+rotation = 1.5707964
+
+[node name="Saw19" parent="." unique_id=226941593 instance=ExtResource("4_qdyna")]
+position = Vector2(2084.0002, 12)
+
+[node name="Saw17" parent="." unique_id=281369140 instance=ExtResource("4_qdyna")]
+position = Vector2(24.000002, -6.9999847)
+
+[node name="Saw2" parent="." unique_id=1815360057 instance=ExtResource("4_qdyna")]
+position = Vector2(407, 579.00006)
+
+[node name="Saw16" parent="." unique_id=1510888619 instance=ExtResource("4_qdyna")]
+position = Vector2(18.00003, 134.00006)
+
+[node name="Saw3" parent="." unique_id=1773170746 instance=ExtResource("4_qdyna")]
+position = Vector2(757.00006, -109.00001)
+
+[node name="Saw10" parent="." unique_id=1209096018 instance=ExtResource("4_qdyna")]
+position = Vector2(1122.0001, 695.00006)
+
+[node name="Caillou6" parent="." unique_id=31341220 instance=ExtResource("1_yqcwl")]
+position = Vector2(330.00006, 206.00002)
+scale = Vector2(0.31211403, 0.037719674)
+
+[node name="Caillou8" parent="." unique_id=1579096625 instance=ExtResource("1_yqcwl")]
+position = Vector2(1255, 32)
+scale = Vector2(0.091007575, 0.5923704)
+
+[node name="Caillou9" parent="." unique_id=103703273 instance=ExtResource("1_yqcwl")]
+position = Vector2(891, 712.46594)
+scale = Vector2(0.19422331, 0.037998717)
+
+[node name="Caillou10" parent="." unique_id=1756799396 instance=ExtResource("1_yqcwl")]
+position = Vector2(603.3691, 1109.5074)
+scale = Vector2(0.3758964, 0.059244677)
+
+[node name="Caillou11" parent="." unique_id=1352915499 instance=ExtResource("1_yqcwl")]
+position = Vector2(966.00006, 45)
+rotation = 0.2617994
+scale = Vector2(0.0327791, 0.037719674)
+
+[node name="Caillou12" parent="." unique_id=1239667448 instance=ExtResource("1_yqcwl")]
+position = Vector2(967, 12.999998)
+rotation = -0.2617994
+scale = Vector2(0.025178209, 0.037719678)
+
+[node name="Caillou13" parent="." unique_id=1541922605 instance=ExtResource("1_yqcwl")]
+position = Vector2(966, -18)
+rotation = 0.2617994
+scale = Vector2(0.015439455, 0.027861124)
+
+[node name="Caillou14" parent="." unique_id=1982069676 instance=ExtResource("1_yqcwl")]
+position = Vector2(966.00006, -49)
+rotation = -0.5235988
+scale = Vector2(0.0077197277, 0.012644664)
+
+[node name="Caillou15" parent="." unique_id=1222021282 instance=ExtResource("1_yqcwl")]
+position = Vector2(966, -221)
+scale = Vector2(0.18485747, 0.039327044)
+
+[node name="Caillou7" parent="." unique_id=558397841 instance=ExtResource("1_yqcwl")]
+position = Vector2(963.00006, 249.99998)
+scale = Vector2(0.042643584, 0.19586143)
+
+[node name="piege2" parent="." unique_id=1021273370 instance=ExtResource("6_qdyna")]
+position = Vector2(349, 711)
+scale = Vector2(27.640005, 1)
+
+[node name="CollisionShape2D" parent="piege2/Area2D" parent_id_path=PackedInt32Array(1021273370, 1801494616) index="0" unique_id=52655442]
+position = Vector2(182.10101, 491.12494)
+scale = Vector2(2.9999995, 2.9999971)
+shape = SubResource("RectangleShape2D_62oaq")
+
+[node name="Saw11" parent="." unique_id=1662423416 instance=ExtResource("4_qdyna")]
+position = Vector2(545, 861.9999)
+rotation = -0.36911154
+
+[node name="fallingrock" parent="." unique_id=627689432 instance=ExtResource("7_62oaq")]
+position = Vector2(181, 633)
+
+[node name="fallingrock2" parent="." unique_id=1229016337 instance=ExtResource("7_62oaq")]
+position = Vector2(546, 275)
+
+[node name="Saw14" parent="." unique_id=414315124 instance=ExtResource("4_qdyna")]
+position = Vector2(764, 281.00003)
+
+[node name="fallingrock3" parent="." unique_id=1488679077 instance=ExtResource("7_62oaq")]
+position = Vector2(566, 133)
+
+[node name="fallingrock4" parent="." unique_id=1172059851 instance=ExtResource("7_62oaq")]
+position = Vector2(618, 632)
+
+[node name="Caillou16" parent="." unique_id=1615044532 instance=ExtResource("1_yqcwl")]
+position = Vector2(7, 15.999954)
+scale = Vector2(0.042643584, 0.19586143)
+
+[node name="Lightning" parent="." unique_id=1313747619 instance=ExtResource("9_5r80b")]
+position = Vector2(522, 131)
+
+[node name="fallingrock5" parent="." unique_id=559722982 instance=ExtResource("7_62oaq")]
+position = Vector2(255, -221)
+
+[node name="Caillou17" parent="." unique_id=1427804117 instance=ExtResource("1_yqcwl")]
+position = Vector2(1321.29, 1090)
+scale = Vector2(0.07003328, 0.037998717)
+
+[node name="fallingrock6" parent="." unique_id=80476514 instance=ExtResource("7_62oaq")]
+position = Vector2(1050, 654)
+
+[node name="JumpOrb" parent="." unique_id=1669984896 instance=ExtResource("9_anwir")]
+position = Vector2(1696, 961)
+
+[node name="Caillou18" parent="." unique_id=855303572 instance=ExtResource("1_yqcwl")]
+position = Vector2(2012, 986)
+scale = Vector2(0.07003328, 0.037998717)
+
+[node name="fallingrock7" parent="." unique_id=785387325 instance=ExtResource("7_62oaq")]
+position = Vector2(1755, 559)
+
+[node name="JumpOrb2" parent="." unique_id=1215380989 instance=ExtResource("9_anwir")]
+position = Vector2(2215, 787)
+
+[node name="Caillou19" parent="." unique_id=1469981706 instance=ExtResource("1_yqcwl")]
+position = Vector2(2461.0002, 530)
+scale = Vector2(0.058294572, 0.16173406)
+
+[node name="JumpOrb3" parent="." unique_id=1604774346 instance=ExtResource("9_anwir")]
+position = Vector2(1987, 444)
+
+[node name="Caillou20" parent="." unique_id=1235287292 instance=ExtResource("1_yqcwl")]
+position = Vector2(1807, 440)
+scale = Vector2(0.07003328, 0.037998717)
+
+[node name="fallingrock8" parent="." unique_id=1680105387 instance=ExtResource("7_62oaq")]
+position = Vector2(1755, 559)
+
+[node name="fallingrock9" parent="." unique_id=1604752077 instance=ExtResource("7_62oaq")]
+position = Vector2(1590, 8)
+
+[node name="BounceOrb2" parent="." unique_id=749444246 instance=ExtResource("9_ci20y")]
+position = Vector2(1630, 282)
+
+[node name="JumpOrb4" parent="." unique_id=577617924 instance=ExtResource("9_anwir")]
+position = Vector2(1748, 6)
+
+[node name="fallingrock10" parent="." unique_id=1742338670 instance=ExtResource("7_62oaq")]
+position = Vector2(1397, -154)
+
+[node name="fallingrock11" parent="." unique_id=1445406948 instance=ExtResource("7_62oaq")]
+position = Vector2(1220, -18)
+
+[node name="fallingrock12" parent="." unique_id=1734599410 instance=ExtResource("7_62oaq")]
+position = Vector2(1219, -60)
+
+[node name="fallingrock13" parent="." unique_id=859363419 instance=ExtResource("7_62oaq")]
+position = Vector2(1190, -216)
+
+[node name="fallingrock14" parent="." unique_id=1761260463 instance=ExtResource("7_62oaq")]
+position = Vector2(1259, -177)
+
+[node name="fallingrock15" parent="." unique_id=89357357 instance=ExtResource("7_62oaq")]
+position = Vector2(1226, -334)
+
+[node name="fallingrock16" parent="." unique_id=567981210 instance=ExtResource("7_62oaq")]
+position = Vector2(1215, -508)
+
+[node name="fallingrock17" parent="." unique_id=597262738 instance=ExtResource("7_62oaq")]
+position = Vector2(1198, -613)
+
+[node name="fallingrock18" parent="." unique_id=312431433 instance=ExtResource("7_62oaq")]
+position = Vector2(1300, -442)
+
+[node name="fallingrock19" parent="." unique_id=1031121455 instance=ExtResource("7_62oaq")]
+position = Vector2(1143, -580)
+
+[node name="fallingrock20" parent="." unique_id=1855173438 instance=ExtResource("7_62oaq")]
+position = Vector2(1118, -252)
+
+[node name="fallingrock21" parent="." unique_id=540415544 instance=ExtResource("7_62oaq")]
+position = Vector2(1137, -428)
+
+[node name="fallingrock22" parent="." unique_id=1752121113 instance=ExtResource("7_62oaq")]
+position = Vector2(1248, -638)
+
+[node name="Caillou21" parent="." unique_id=703762300 instance=ExtResource("1_yqcwl")]
+position = Vector2(2005, 28)
+scale = Vector2(0.07003328, 0.037998717)
+
+[node name="BounceOrb3" parent="." unique_id=570240128 instance=ExtResource("9_ci20y")]
+position = Vector2(2260, -107)
+
+[node name="fallingrock23" parent="." unique_id=453289937 instance=ExtResource("7_62oaq")]
+position = Vector2(1767, -404)
+
+[node name="fallingrock24" parent="." unique_id=1814795777 instance=ExtResource("7_62oaq")]
+position = Vector2(2057, -528)
+
+[node name="Caillou22" parent="." unique_id=1000372713 instance=ExtResource("1_yqcwl")]
+position = Vector2(2629.645, -116)
+scale = Vector2(0.0668456, 0.037998717)
+
+[node name="fallingrock25" parent="." unique_id=1313865775 instance=ExtResource("7_62oaq")]
+position = Vector2(2393, -528)
+
+[node name="BounceOrb4" parent="." unique_id=866947066 instance=ExtResource("9_ci20y")]
+position = Vector2(2787, -303)
+
+[node name="BounceOrb5" parent="." unique_id=1705763187 instance=ExtResource("9_ci20y")]
+position = Vector2(2668, -566)
+
+[node name="BounceOrb6" parent="." unique_id=1526192038 instance=ExtResource("9_ci20y")]
+position = Vector2(3002, -768)
+
+[node name="JumpOrb5" parent="." unique_id=962100784 instance=ExtResource("9_anwir")]
+position = Vector2(2768, -1124)
+
+[node name="Caillou23" parent="." unique_id=1712077535 instance=ExtResource("1_yqcwl")]
+position = Vector2(3310.8228, -1149)
+scale = Vector2(0.3355605, 0.037998717)
+
+[node name="fallingrock26" parent="." unique_id=1067789050 instance=ExtResource("7_62oaq")]
+position = Vector2(2564, -710)
+
+[node name="fallingrock27" parent="." unique_id=1274550551 instance=ExtResource("7_62oaq")]
+position = Vector2(2426, -978)
+
+[node name="fallingrock28" parent="." unique_id=186519272 instance=ExtResource("7_62oaq")]
+position = Vector2(2775, -1179)
+
+[node name="fallingrock29" parent="." unique_id=428813160 instance=ExtResource("7_62oaq")]
+position = Vector2(3236, -1586)
+
+[node name="Saw21" parent="." unique_id=55718478 instance=ExtResource("4_qdyna")]
+position = Vector2(3619.0002, -1198)
+
+[node name="Caillou24" parent="." unique_id=1120689885 instance=ExtResource("1_yqcwl")]
+position = Vector2(4317, -1018.00006)
+scale = Vector2(0.06421733, 0.42820406)
+
+[node name="Caillou25" parent="." unique_id=1117548653 instance=ExtResource("1_yqcwl")]
+position = Vector2(4430.853, -168)
+scale = Vector2(0.18446289, 0.06536649)
+
+[node name="JumpOrb6" parent="." unique_id=122639700 instance=ExtResource("9_anwir")]
+position = Vector2(4008, -218)
+
+[node name="fallingrock30" parent="." unique_id=106749290 instance=ExtResource("7_62oaq")]
+position = Vector2(3911, -949)
+
+[node name="fallingrock31" parent="." unique_id=2133266028 instance=ExtResource("7_62oaq")]
+position = Vector2(3933, -1120)
+
+[node name="fallingrock32" parent="." unique_id=2013497382 instance=ExtResource("7_62oaq")]
+position = Vector2(3933, -1413)
+
+[node name="fallingrock33" parent="." unique_id=618771687 instance=ExtResource("7_62oaq")]
+position = Vector2(3980, -1525)
+
+[node name="fallingrock34" parent="." unique_id=83092406 instance=ExtResource("7_62oaq")]
+position = Vector2(3945, -1357)
+
+[node name="fallingrock35" parent="." unique_id=1717809285 instance=ExtResource("7_62oaq")]
+position = Vector2(3906, -1599)
+
+[node name="fallingrock36" parent="." unique_id=981732921 instance=ExtResource("7_62oaq")]
+position = Vector2(3908, -1254)
+
+[node name="fallingrock37" parent="." unique_id=1293609438 instance=ExtResource("7_62oaq")]
+position = Vector2(3956, -1690)
+
+[node name="fallingrock38" parent="." unique_id=478876656 instance=ExtResource("7_62oaq")]
+position = Vector2(4002, -1736)
+
+[node name="fallingrock39" parent="." unique_id=664726980 instance=ExtResource("7_62oaq")]
+position = Vector2(3917, -1836)
+
+[node name="fallingrock40" parent="." unique_id=775100867 instance=ExtResource("7_62oaq")]
+position = Vector2(3879, -1633)
+
+[node name="BounceOrb7" parent="." unique_id=343829967 instance=ExtResource("9_ci20y")]
+position = Vector2(5047, -311)
+
+[node name="Caillou26" parent="." unique_id=206102284 instance=ExtResource("1_yqcwl")]
+position = Vector2(5562, -178.00002)
+scale = Vector2(0.18446289, 0.06536649)
+
+[node name="fallingrock41" parent="." unique_id=230481230 instance=ExtResource("7_62oaq")]
+position = Vector2(4103, -635)
+
+[node name="fallingrock42" parent="." unique_id=26259809 instance=ExtResource("7_62oaq")]
+position = Vector2(4318, -637)
+
+[node name="fallingrock43" parent="." unique_id=603840159 instance=ExtResource("7_62oaq")]
+position = Vector2(5208, -637)
+
+[node name="fallingrock44" parent="." unique_id=1824067010 instance=ExtResource("7_62oaq")]
+position = Vector2(5418, -643)
+
+[node name="BounceOrb8" parent="." unique_id=496648384 instance=ExtResource("9_ci20y")]
+position = Vector2(6135, -270)
+
+[node name="JumpOrb7" parent="." unique_id=1530768215 instance=ExtResource("9_anwir")]
+position = Vector2(6353, -542)
+
+[node name="fallingrock45" parent="." unique_id=512441678 instance=ExtResource("7_62oaq")]
+position = Vector2(5908, -748)
+
+[node name="fallingrock46" parent="." unique_id=1803834327 instance=ExtResource("7_62oaq")]
+position = Vector2(6127, -941)
+
+[node name="Caillou27" parent="." unique_id=782637766 instance=ExtResource("1_yqcwl")]
+position = Vector2(6596, -793.99994)
+scale = Vector2(0.06325302, 0.18870555)
+
+[node name="JumpOrb8" parent="." unique_id=966689078 instance=ExtResource("9_anwir")]
+position = Vector2(6934, -1117)
+
+[node name="Caillou28" parent="." unique_id=1912300893 instance=ExtResource("1_yqcwl")]
+position = Vector2(7227.9995, -1155)
+scale = Vector2(0.06325302, 0.053204004)
+
+[node name="fallingrock47" parent="." unique_id=1458831987 instance=ExtResource("7_62oaq")]
+position = Vector2(6378, -1413)
+
+[node name="fallingrock48" parent="." unique_id=1354255561 instance=ExtResource("7_62oaq")]
+position = Vector2(6987, -1609)
+
+[node name="fallingrock49" parent="." unique_id=378082565 instance=ExtResource("7_62oaq")]
+position = Vector2(6717, -1535)
+
+[editable path="piege2"]

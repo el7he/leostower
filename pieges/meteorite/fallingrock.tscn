@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://nm56o10uge4p"]
+
+[ext_resource type="Script" uid="uid://clpqsq6pku0lv" path="res://pieges/meteorite/fallingrock.gd" id="1_v8db4"]
+[ext_resource type="Texture2D" uid="uid://bn1sikhm0vkxi" path="res://caillouquitombe.png" id="2_d1daw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8db4"]
+radius = 44.04543
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8db4"]
+size = Vector2(187.75, 42.5)
+
+[node name="fallingrock" type="Area2D" unique_id=627689432]
+script = ExtResource("1_v8db4")
+
+[node name="stone" type="RigidBody2D" parent="." unique_id=857393899]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="stone" unique_id=1688462580]
+position = Vector2(210, 245)
+scale = Vector2(0.1642857, 0.20954601)
+texture = ExtResource("2_d1daw")
+
+[node name="trigger" type="Area2D" parent="stone" unique_id=578177333]
+
+[node name="hitbox" type="CollisionShape2D" parent="stone/trigger" unique_id=1673218592]
+position = Vector2(230, 285)
+shape = SubResource("CircleShape2D_v8db4")
+
+[node name="trigger" type="CollisionShape2D" parent="." unique_id=1785613677]
+position = Vector2(233, 370)
+shape = SubResource("RectangleShape2D_v8db4")
