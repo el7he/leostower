@@ -731,7 +731,7 @@ offset_left = -11515.49
 offset_top = 12780.487
 offset_right = -11310.49
 offset_bottom = 12803.487
-text = "< Cave of pain (very hard !)"
+text = "< The Amethyst (very hard !)"
 
 [node name="Label4" type="Label" parent="." unique_id=1963655476]
 offset_left = -11516.484

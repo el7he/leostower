@@ -13,7 +13,8 @@ config_version=5
 config/name="Silkong"
 run/main_scene="uid://ccpiuqds28x0p"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://xnebf6y5yjth"
+config/icon="uid://cnjql07s7u86"
 
 [autoload]
 

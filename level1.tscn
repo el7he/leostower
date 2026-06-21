@@ -992,6 +992,9 @@ position = Vector2(462, -4183)
 [node name="enemypar5" parent="." unique_id=638368092 instance=ExtResource("21_c5gc3")]
 position = Vector2(514, -4249)
 
+[node name="enemypar9" parent="." unique_id=1239698022 instance=ExtResource("21_c5gc3")]
+position = Vector2(579, -4257)
+
 [node name="enemypar6" parent="." unique_id=1729867950 instance=ExtResource("21_c5gc3")]
 position = Vector2(338, -4472)
 
@@ -1005,7 +1008,6 @@ position = Vector2(58, -4464)
 position = Vector2(131, -4039)
 
 [node name="antidash" parent="." unique_id=1910620314 instance=ExtResource("22_6e4cv")]
-visible = false
 position = Vector2(-339, -4567)
 
 [node name="CollisionShape2D" parent="antidash/Trigger" parent_id_path=PackedInt32Array(1910620314, 1032229157) index="0" unique_id=851820646]
@@ -1021,6 +1023,13 @@ position = Vector2(61.999996, 49.999996)
 [node name="Node2D3" parent="." unique_id=1874491667 instance=ExtResource("20_ycv2e")]
 position = Vector2(-700, -5210)
 jumpforce = -600
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=892186931]
+offset_left = -879.0
+offset_top = -5512.0
+offset_right = -450.0
+offset_bottom = -5472.0
+text = "Congregations, you just beat the game"
 
 [editable path="Player"]
 [editable path="Caillou2"]

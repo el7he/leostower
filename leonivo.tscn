@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c8rptiqhfydwq" path="res://lightning.tscn" id="9_5r80b"]
 [ext_resource type="PackedScene" uid="uid://ddi3p70facnkh" path="res://jump_orb.tscn" id="9_anwir"]
 [ext_resource type="PackedScene" uid="uid://c22cuj814rve5" path="res://BounceOrb.tscn" id="9_ci20y"]
+[ext_resource type="PackedScene" uid="uid://dsa5my2y475j" path="res://checkpoint/checkpoint.tscn" id="10_ci20y"]
+[ext_resource type="PackedScene" uid="uid://drig5lm1ij4xj" path="res://porte/porte.tscn" id="11_anwir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62oaq"]
 size = Vector2(145.0971, 23.416645)
@@ -401,4 +403,22 @@ position = Vector2(6987, -1609)
 [node name="fallingrock49" parent="." unique_id=378082565 instance=ExtResource("7_62oaq")]
 position = Vector2(6717, -1535)
 
+[node name="checkpoint" parent="." unique_id=979885743 instance=ExtResource("10_ci20y")]
+position = Vector2(359, 141)
+
+[node name="checkpoint2" parent="." unique_id=1379353577 instance=ExtResource("10_ci20y")]
+position = Vector2(712, 1019)
+index = 2
+
+[node name="porte2" parent="." unique_id=1192886224 instance=ExtResource("11_anwir")]
+position = Vector2(7225, -1250)
+scenetoload = "res://level1.tscn"
+
+[node name="checkpoint3" parent="." unique_id=420432628 instance=ExtResource("10_ci20y")]
+position = Vector2(3162, -1214)
+index = 3
+
 [editable path="piege2"]
+[editable path="checkpoint"]
+[editable path="checkpoint2"]
+[editable path="checkpoint3"]
