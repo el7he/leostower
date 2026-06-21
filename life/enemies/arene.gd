@@ -7,6 +7,7 @@ class_name arena
 var baseenemyspawn : Vector2
 var currentstep : int = 0
 var enemypath : String = ''
+var playervar : Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +38,7 @@ func spawnboss() -> void :
 		get_tree().current_scene.add_child(nouvelle_instance)
 		nouvelle_instance.global_position = baseenemyspawn
 		if nouvelle_instance is enemy :
+			enemyarena = nouvelle_instance
 			nouvelle_instance.begin_boss()
 		nouvelle_instance.arene = self
 		#nouvelle_instance.begin_projectile(self,shotspeed)
@@ -45,6 +47,8 @@ func open() -> void :
 	porte1.open()
 	porte2.open()
 	currentstep = 2
+	playervar.is_in_arena=false
+	playervar.arenavar=null
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
@@ -52,6 +56,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			if currentstep==0:
 				currentstep = 1
 				if porte1 is arenedoor && porte2 is arenedoor : 
+					playervar = body
+					playervar.is_in_arena=true
+					playervar.arenavar = self
 					porte1.close()
 					porte2.close()
 					spawnboss()

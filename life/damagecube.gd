@@ -27,7 +27,7 @@ func setdisabled(disabled2 : bool) -> void :
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is lifecharacter:
 		if body != exception:
-			body.take_damage(damage_value);
+			body.take_damage(damage_value,exception);
 			if body.life>0 && iscontinue:
 				delayonhit()
 			

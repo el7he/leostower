@@ -30,6 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://drig5lm1ij4xj" path="res://porte/porte.tscn" id="28_8n00c"]
 [ext_resource type="PackedScene" uid="uid://dq5trphj7or61" path="res://téléporteur.tscn" id="29_kgn2n"]
 [ext_resource type="PackedScene" uid="uid://c3gigvnclulrg" path="res://backgroundmusic.tscn" id="30_yg42a"]
+[ext_resource type="PackedScene" uid="uid://dc1j0s8k3xwep" path="res://pieges/questionboss/questionboss.tscn" id="31_qp1xc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yg42a"]
+font_size = 41
 
 [node name="Scene" type="Node2D" unique_id=1764518895]
 position = Vector2(377, -245.99998)
@@ -41,9 +45,10 @@ position = Vector2(1415.0001, 324)
 scale = Vector2(0.44000065, 0.44000065)
 texture = ExtResource("2_kbll4")
 
-[node name="Player" parent="." unique_id=1241671982 instance=ExtResource("3_4l28a")]
+[node name="Player" parent="." unique_id=1241671982 node_paths=PackedStringArray("afterboss") instance=ExtResource("3_4l28a")]
 z_index = 1
 position = Vector2(14030.059, 17516.27)
+afterboss = NodePath("../afterboss")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=377399300]
 position = Vector2(0.4868708, -85.767265)
@@ -144,6 +149,18 @@ scale = Vector2(0.76267165, 0.035154633)
 position = Vector2(12204.808, 15209.171)
 scale = Vector2(0.18196677, 0.035154633)
 
+[node name="Caillou76" parent="." unique_id=1671067651 instance=ExtResource("5_1sts7")]
+position = Vector2(11943.205, 15209.171)
+scale = Vector2(0.18196677, 0.035154633)
+
+[node name="Caillou85" parent="." unique_id=847553570 instance=ExtResource("5_1sts7")]
+position = Vector2(11808.652, 15154.333)
+scale = Vector2(0.035, 0.023)
+
+[node name="Caillou84" parent="." unique_id=1008079391 instance=ExtResource("5_1sts7")]
+position = Vector2(12455.468, 15209.171)
+scale = Vector2(0.18196677, 0.035154633)
+
 [node name="Caillou56" parent="." unique_id=607936615 instance=ExtResource("5_1sts7")]
 position = Vector2(11249.908, 15209.171)
 scale = Vector2(0.5798415, 0.035154633)
@@ -154,6 +171,24 @@ scale = Vector2(0.5798415, 0.035154633)
 
 [node name="Caillou63" parent="." unique_id=1897683044 instance=ExtResource("5_1sts7")]
 position = Vector2(7912.7324, 15203.141)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou86" parent="." unique_id=1892180688 instance=ExtResource("5_1sts7")]
+position = Vector2(7912.7324, 11940.445)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou87" parent="." unique_id=2023247881 instance=ExtResource("5_1sts7")]
+position = Vector2(7912.7324, 11353.622)
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou88" parent="." unique_id=1416198430 instance=ExtResource("5_1sts7")]
+position = Vector2(8392.174, 11660.096)
+rotation = 1.5707964
+scale = Vector2(0.5798415, 0.035154633)
+
+[node name="Caillou89" parent="." unique_id=1215790657 instance=ExtResource("5_1sts7")]
+position = Vector2(7356.703, 11660.096)
+rotation = 1.5707964
 scale = Vector2(0.5798415, 0.035154633)
 
 [node name="Caillou64" parent="." unique_id=1422923165 instance=ExtResource("5_1sts7")]
@@ -224,7 +259,7 @@ scale = Vector2(0.30785507, 0.109174095)
 [node name="Caillou73" parent="." unique_id=48761752 instance=ExtResource("5_1sts7")]
 position = Vector2(-9830.49, 13960.163)
 rotation = -12.566371
-scale = Vector2(0.2881328, 0.035154633)
+scale = Vector2(0.48707014, 0.035154633)
 
 [node name="Caillou77" parent="." unique_id=2008086976 instance=ExtResource("5_1sts7")]
 position = Vector2(-8135.545, 13034.711)
@@ -242,9 +277,19 @@ rotation = -12.566371
 scale = Vector2(0.03, 0.03)
 
 [node name="Caillou79" parent="." unique_id=143433695 instance=ExtResource("5_1sts7")]
-position = Vector2(-11278.754, 13032.7)
+position = Vector2(-11174.312, 13032.7)
 rotation = -12.566371
-scale = Vector2(0.24834526, 0.035154633)
+scale = Vector2(0.20853832, 0.035154633)
+
+[node name="Caillou82" parent="." unique_id=768499576 instance=ExtResource("5_1sts7")]
+position = Vector2(-11567.214, 13036.72)
+rotation = -12.566371
+scale = Vector2(0.20853832, 0.035154633)
+
+[node name="Caillou83" parent="." unique_id=1655223207 instance=ExtResource("5_1sts7")]
+position = Vector2(-11676.629, 12866.902)
+rotation = -12.566371
+scale = Vector2(-0.209, 0.035)
 
 [node name="Caillou70" parent="." unique_id=1829571190 instance=ExtResource("5_1sts7")]
 position = Vector2(-10281.084, 14169.168)
@@ -255,11 +300,6 @@ scale = Vector2(0.80536, 0.035154633)
 position = Vector2(-7683.956, 13307.021)
 rotation = -10.995575
 scale = Vector2(0.80536, 0.035154633)
-
-[node name="Caillou71" parent="." unique_id=1372217716 instance=ExtResource("5_1sts7")]
-position = Vector2(-10113.975, 14352.048)
-rotation = -14.137167
-scale = Vector2(0.4074853, 0.035154633)
 
 [node name="Caillou29" parent="." unique_id=125922501 instance=ExtResource("5_1sts7")]
 position = Vector2(12417.67, 17153.525)
@@ -293,46 +333,10 @@ position = Vector2(12821.515, 17217.834)
 rotation = -1.5707964
 scale = Vector2(0.24837922, 0.035154633)
 
-[node name="Caillou17" parent="." unique_id=705973159 instance=ExtResource("5_1sts7")]
-position = Vector2(5340.5654, 1589.6478)
-scale = Vector2(0.55088925, 0.035154633)
-
-[node name="Caillou23" parent="." unique_id=359937217 instance=ExtResource("5_1sts7")]
-position = Vector2(5340.5654, 1589.6478)
-scale = Vector2(0.55088925, 0.035154633)
-
-[node name="Caillou21" parent="." unique_id=1975842295 instance=ExtResource("5_1sts7")]
-position = Vector2(4343.7974, 2000.625)
-scale = Vector2(0.24837922, 0.035154633)
-
-[node name="Caillou22" parent="." unique_id=596882311 instance=ExtResource("5_1sts7")]
-position = Vector2(3599.7717, 2000.6251)
-scale = Vector2(0.24837922, 0.035154633)
-
-[node name="Caillou12" parent="." unique_id=2031765916 instance=ExtResource("5_1sts7")]
-position = Vector2(3854.411, 1566.5366)
-scale = Vector2(-0.109707996, 0.035154633)
-
-[node name="Caillou10" parent="." unique_id=288603218 instance=ExtResource("5_1sts7")]
-position = Vector2(3599.771, 1111.3467)
-scale = Vector2(0.24837922, 0.035154633)
-
-[node name="Caillou11" parent="." unique_id=100843434 instance=ExtResource("5_1sts7")]
-position = Vector2(2953.225, 1093.2596)
-scale = Vector2(0.24837922, 0.035154633)
-
 [node name="Caillou14" parent="." unique_id=1625951625 instance=ExtResource("5_1sts7")]
 position = Vector2(2232.0776, 881.2396)
 rotation = 1.5707964
 scale = Vector2(0.24837922, 0.035154633)
-
-[node name="Caillou13" parent="." unique_id=1444239283 instance=ExtResource("5_1sts7")]
-position = Vector2(2359.397, 1088.2355)
-scale = Vector2(0.12901682, 0.035154633)
-
-[node name="Caillou16" parent="." unique_id=484209857 instance=ExtResource("5_1sts7")]
-position = Vector2(2548.3877, 867.17194)
-scale = Vector2(0.089, 0.035)
 
 [node name="Caillou15" parent="." unique_id=1771779089 instance=ExtResource("5_1sts7")]
 position = Vector2(2137.582, 657.1616)
@@ -345,16 +349,6 @@ scale = Vector2(0.32795423, 0.035154633)
 [node name="Caillou18" parent="." unique_id=737407028 instance=ExtResource("5_1sts7")]
 position = Vector2(1850.1176, 657.16156)
 scale = Vector2(0.12901682, 0.035154633)
-
-[node name="Caillou9" parent="." unique_id=1417161006 instance=ExtResource("5_1sts7")]
-position = Vector2(3826.5605, 1328.3907)
-rotation = 1.5707964
-scale = Vector2(0.24837922, 0.035154633)
-
-[node name="Caillou20" parent="." unique_id=1153406170 instance=ExtResource("5_1sts7")]
-position = Vector2(4017.5405, 1144.5062)
-rotation = 4.712389
-scale = Vector2(0.24837922, 0.035154633)
 
 [node name="piege" parent="." unique_id=1079666792 instance=ExtResource("6_8ers3")]
 position = Vector2(1241.3691, 18022.707)
@@ -402,19 +396,6 @@ index = 9
 [node name="checkpoint13" parent="." unique_id=1872824393 instance=ExtResource("7_rl5rp")]
 position = Vector2(-10661.054, 12963.367)
 index = 10
-
-[node name="fly" parent="." unique_id=773182916 instance=ExtResource("15_hutp1")]
-position = Vector2(3362.0415, 961.62634)
-boss_salve_number = Array[int]([])
-boss_salve_cadence = Array[int]([])
-
-[node name="Saw" parent="." unique_id=1972260605 instance=ExtResource("11_1sts7")]
-position = Vector2(3743.0066, 1071.1533)
-scale = Vector2(0.2212771, 0.29165143)
-
-[node name="Saw2" parent="." unique_id=1910687217 instance=ExtResource("11_1sts7")]
-position = Vector2(2273.854, 1012.8729)
-scale = Vector2(0.2212771, 0.29165143)
 
 [node name="Saw6" parent="." unique_id=319762496 instance=ExtResource("11_1sts7")]
 position = Vector2(2011.2567, 612.949)
@@ -504,13 +485,6 @@ scale = Vector2(0.221, 0.392)
 position = Vector2(2208.2048, 413.9918)
 scale = Vector2(0.221, 0.392)
 
-[node name="Saw4" parent="." unique_id=476900783 instance=ExtResource("11_1sts7")]
-position = Vector2(2678.6917, 863.15265)
-scale = Vector2(0.2212771, 0.29165143)
-
-[node name="piegecamion" parent="." unique_id=571795275 instance=ExtResource("10_d1wkb")]
-position = Vector2(2748.3198, 988.75684)
-
 [node name="piegecamion2" parent="." unique_id=1938240632 instance=ExtResource("10_d1wkb")]
 position = Vector2(7326.8633, 16079.357)
 
@@ -520,43 +494,6 @@ position = Vector2(9627.574, 16059.261)
 [node name="piegetrigger3" parent="." unique_id=316017362 instance=ExtResource("10_d1wkb")]
 position = Vector2(384.94382, 441.1222)
 scale = Vector2(1, 2.728315)
-
-[node name="piegetrigger2" parent="." unique_id=1625648916 instance=ExtResource("10_d1wkb")]
-position = Vector2(3115.3594, 983.7327)
-rotation = -1.5707964
-scale = Vector2(1.8753245, 1)
-
-[node name="Node2D" type="Node2D" parent="." unique_id=727052631]
-position = Vector2(-607.7537, 321.54697)
-
-[node name="Arene" parent="Node2D" unique_id=1516630575 node_paths=PackedStringArray("porte1", "porte2", "enemyarena") instance=ExtResource("12_8ers3")]
-position = Vector2(-3.9786987, 35.16919)
-scale = Vector2(1.0026064, 11.337907)
-porte1 = NodePath("../areneDoor")
-porte2 = NodePath("../areneDoor3")
-enemyarena = NodePath("../robinet")
-
-[node name="areneDoor3" parent="Node2D" unique_id=317935427 instance=ExtResource("13_rl5rp")]
-position = Vector2(416.77374, -101.48831)
-scale = Vector2(1.1132076, -9.022274)
-
-[node name="areneDoor" parent="Node2D" unique_id=1437960072 instance=ExtResource("13_rl5rp")]
-position = Vector2(-404.83734, -46.222412)
-scale = Vector2(1.1132076, -9.022274)
-
-[node name="Caillou8" parent="Node2D" unique_id=1961414702 instance=ExtResource("5_1sts7")]
-position = Vector2(-0.99468994, -281.35358)
-scale = Vector2(0.4870992, 0.03515463)
-
-[node name="Caillou6" parent="Node2D" unique_id=878228463 instance=ExtResource("5_1sts7")]
-position = Vector2(-6.3101196, 259.53033)
-scale = Vector2(0.4870992, 0.03515463)
-
-[node name="robinet" parent="Node2D" unique_id=1416138769 instance=ExtResource("14_txm7a")]
-position = Vector2(-2.9840698, -41.19821)
-scale = Vector2(1, 0.99999994)
-boss_salve_number = Array[int]([])
-boss_salve_cadence = Array[int]([])
 
 [node name="Node2D3" type="Node2D" parent="." unique_id=1766278887]
 position = Vector2(-8922.341, 12779.481)
@@ -617,6 +554,7 @@ position = Vector2(-6.3101196, 259.53033)
 scale = Vector2(0.4870992, 0.03515463)
 
 [node name="robinet" parent="Node2D4" unique_id=119544925 instance=ExtResource("14_txm7a")]
+position = Vector2(0, -75.362564)
 boss_salve_number = Array[int]([])
 boss_salve_cadence = Array[int]([])
 
@@ -661,7 +599,7 @@ position = Vector2(9059.418, 2869.6174)
 scale = Vector2(1.1974788, 0.07989678)
 
 [node name="Caillou22" parent="Node2D2" unique_id=1299763499 instance=ExtResource("5_1sts7")]
-position = Vector2(10198.784, 3639.2273)
+position = Vector2(10224.914, 3389.027)
 rotation = 1.5707964
 scale = Vector2(0.5644974, 0.07989678)
 
@@ -683,42 +621,6 @@ scale = Vector2(0.5644974, 0.07989678)
 
 [node name="cursor" type="Sprite2D" parent="CursorLayer" unique_id=265950721]
 texture = ExtResource("16_aah3b")
-
-[node name="triggerpar" parent="." unique_id=1757240860 instance=ExtResource("19_jv317")]
-position = Vector2(4247.313, 1924.2574)
-
-[node name="triggerpar3" parent="." unique_id=503760341 instance=ExtResource("21_vqvl6")]
-position = Vector2(5425.022, 996.79565)
-rotation = 0.081036
-
-[node name="enemyflybasket" parent="." unique_id=634481259 instance=ExtResource("22_ggyf6")]
-position = Vector2(5869.647, 1128.4288)
-
-[node name="Chinois" parent="." unique_id=1959747063 instance=ExtResource("23_yo8x4")]
-position = Vector2(5899.488, 1494.1885)
-scale = Vector2(1, 4.537017)
-
-[node name="triggerpar4" parent="." unique_id=2068712071 instance=ExtResource("24_ccfgc")]
-position = Vector2(4889.8804, 1504.2368)
-rotation = 1.5707964
-
-[node name="Nuage" parent="." unique_id=123721758 instance=ExtResource("25_nhaw6")]
-position = Vector2(4690.9434, 1481.1256)
-
-[node name="Nuage2" parent="." unique_id=1460008167 instance=ExtResource("25_nhaw6")]
-position = Vector2(4859.0454, 1394.71)
-
-[node name="Nuage3" parent="." unique_id=1729288704 instance=ExtResource("25_nhaw6")]
-position = Vector2(5001.2856, 1336.4296)
-
-[node name="Nuage4" parent="." unique_id=1894445445 instance=ExtResource("25_nhaw6")]
-position = Vector2(5127.611, 1422.8452)
-
-[node name="Nuage5" parent="." unique_id=1968660129 instance=ExtResource("25_nhaw6")]
-position = Vector2(5295.713, 1336.4296)
-
-[node name="Nuage6" parent="." unique_id=370098964 instance=ExtResource("25_nhaw6")]
-position = Vector2(5437.953, 1278.1492)
 
 [node name="fly2" parent="." unique_id=67851133 instance=ExtResource("15_hutp1")]
 position = Vector2(12158.058, 16926.434)
@@ -808,7 +710,7 @@ rotation = 1.5707964
 scale = Vector2(1.7957494, 1)
 
 [node name="porte" parent="." unique_id=1456788149 instance=ExtResource("28_8n00c")]
-position = Vector2(-11831.8, 13026.671)
+position = Vector2(-12082.461, 13163.328)
 
 [node name="Label" type="Label" parent="." unique_id=2001097468]
 offset_left = -11379.218
@@ -825,15 +727,26 @@ offset_bottom = 17380.506
 text = "Bosses have 3 attacks : Left, Right, Center"
 
 [node name="Label2" type="Label" parent="." unique_id=681331369]
-offset_left = -11379.218
-offset_top = 12952.313
-offset_right = -11254.218
-offset_bottom = 12975.313
+offset_left = -11515.49
+offset_top = 12780.487
+offset_right = -11310.49
+offset_bottom = 12803.487
 text = "< Cave of pain (very hard !)"
 
+[node name="Label4" type="Label" parent="." unique_id=1963655476]
+offset_left = -11516.484
+offset_top = 12952.313
+offset_right = -11311.484
+offset_bottom = 12975.313
+text = "< KOCMOC"
+
 [node name="porte2" parent="." unique_id=1947350919 instance=ExtResource("28_8n00c")]
-position = Vector2(-11422.983, 12960.352)
+position = Vector2(-11557.267, 12788.526)
 scenetoload = "res://level1.tscn"
+
+[node name="porte3" parent="." unique_id=145004193 instance=ExtResource("28_8n00c")]
+position = Vector2(-11554.282, 12960.352)
+scenetoload = "res://leonivo.tscn"
 
 [node name="Chinois3" parent="." unique_id=777553454 instance=ExtResource("23_yo8x4")]
 position = Vector2(-11045.003, 12917.1455)
@@ -882,6 +795,20 @@ autreteleporteur = NodePath("../téléporteur4")
 position = Vector2(9.196442, -90.50253)
 rotation = 1.5724885
 
+[node name="Node2D12" type="Node2D" parent="." unique_id=93828682]
+position = Vector2(-10253.233, 14675.603)
+rotation = -1.5724885
+scale = Vector2(0.99999994, 1)
+
+[node name="téléporteur" parent="Node2D12" unique_id=1712356983 node_paths=PackedStringArray("autreteleporteur") instance=ExtResource("29_kgn2n")]
+position = Vector2(-228.15234, 33.433594)
+rotation = 1.5724885
+autreteleporteur = NodePath("../téléporteur4")
+
+[node name="téléporteur4" parent="Node2D12" unique_id=1037412211 instance=ExtResource("29_kgn2n")]
+position = Vector2(790.7137, 53.06331)
+rotation = 1.5724885
+
 [node name="Node2D11" type="Node2D" parent="." unique_id=1128225535]
 position = Vector2(-7785.414, 13665.746)
 rotation = -1.5724885
@@ -926,3 +853,22 @@ rotation = 1.5724885
 
 [node name="Backgroundmusic" parent="." unique_id=65074349 instance=ExtResource("30_yg42a")]
 position = Vector2(-10816.225, 11940.444)
+
+[node name="afterboss" type="Node2D" parent="." unique_id=825570681]
+position = Vector2(7891.845, 11858.049)
+scale = Vector2(0.5798415, 0.03515463)
+
+[node name="Label5" type="Label" parent="." unique_id=2016578849]
+offset_left = 7759.5522
+offset_top = 11603.826
+offset_right = 8049.5522
+offset_bottom = 11660.826
+text = "Skip the boss ?"
+label_settings = SubResource("LabelSettings_yg42a")
+
+[node name="Questionboss" parent="." unique_id=1965671037 instance=ExtResource("31_qp1xc")]
+position = Vector2(7479.0503, 11853.024)
+isyes = true
+
+[node name="Questionboss2" parent="." unique_id=1158341662 instance=ExtResource("31_qp1xc")]
+position = Vector2(8266.843, 11867.093)

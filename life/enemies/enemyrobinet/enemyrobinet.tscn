@@ -9,12 +9,12 @@
 script = ExtResource("2_wpxwn")
 isboss = true
 boss_salve_number = Array[int]([3, 6, 2])
-boss_salve_cadence = Array[float]([1.0, 0.4, 2.0])
-lifemax = 22.0
+boss_salve_cadence = Array[float]([1.5, 0.41, 2.5])
+lifemax = 15.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1324127357]
 position = Vector2(1, 12)
-scale = Vector2(0.12, 0.127)
+scale = Vector2(0.17, 0.18)
 texture = ExtResource("2_0yce1")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=506887627]
@@ -24,3 +24,6 @@ scale = Vector2(2.0001092, 1.7182277)
 position = Vector2(-1, 0)
 stream = ExtResource("5_6l0ta")
 volume_db = 13.0
+
+[node name="Damagecube" parent="." index="4" unique_id=1373159643]
+scale = Vector2(1.3201823, 1.3114737)

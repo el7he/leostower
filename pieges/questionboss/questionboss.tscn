@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dc1j0s8k3xwep"]
+
+[ext_resource type="Script" uid="uid://wrja0ba1n6g2" path="res://pieges/questionboss/questionboss.gd" id="1_r0ey2"]
+[ext_resource type="Texture2D" uid="uid://campjwiy7p75b" path="res://pieges/square.png" id="2_qx45m"]
+[ext_resource type="AudioStream" uid="uid://dwcvtv4r1cyib" path="res://pieges/questionboss/343130__inspectorj__ticking-clock-a.wav" id="3_qx45m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0ey2"]
+font_size = 27
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peeor"]
+size = Vector2(13.410085, 13.472561)
+
+[node name="Questionboss" type="Node2D" unique_id=1965671037]
+script = ExtResource("1_r0ey2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=462807615]
+scale = Vector2(3.6842098, 3.6562493)
+texture = ExtResource("2_qx45m")
+
+[node name="Label" type="Label" parent="." unique_id=129939055]
+offset_left = -28.0
+offset_top = -90.0
+offset_right = 45.0
+offset_bottom = 31.0
+text = "YES
+"
+label_settings = SubResource("LabelSettings_r0ey2")
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=372924083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=352435044]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_peeor")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=204745586]
+stream = ExtResource("3_qx45m")
+
+[node name="rire" type="AudioStreamPlayer" parent="." unique_id=1900215972]
+stream = ExtResource("3_qx45m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

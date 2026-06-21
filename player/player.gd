@@ -7,7 +7,7 @@ class_name Player
 #              smooth acceleration, snappy direction changes,
 #              optional wall-slide & wall-jump (toggle below)
 # ============================================================
-
+@export var afterboss : Node2D
 # ── Feature toggles ──────────────────────────────────────────
 @export var enable_wall_mechanics : bool = true
 
@@ -61,6 +61,7 @@ var _is_jumping         : bool  = false
 @onready var inputmapping: Control = $GUI/Inputmapping
 @export var death_texture: Texture2D = load("res://player/monkeydead.png")
 
+
 var time_elapsed : float
 var banananumber : int =0;
 var isinrotation : bool = false;
@@ -72,6 +73,9 @@ var isinpogo:bool = false
 var hasdashedinair : bool = false
 var gamepaused : bool = false
 var is_stunned : bool = false
+var gobackbossposition : Vector2
+var is_in_arena : bool = false
+var arenavar : arena
 
 func _enter_tree():
 	Gamemanager.playervar = self
@@ -139,9 +143,10 @@ func _get_input_direction() -> float:
 	return Input.get_axis("move_left", "move_right")
 
 
-func take_damage(damage: float) -> void:
-	super(damage)
+func take_damage(damage: float,hitowner2 : lifecharacter) -> void:
+	super(damage,hitowner2)
 	bruithit.play()
+	print(" player hit : ",hitowner2)
 	
 	
 func swordattack() ->void:
@@ -338,16 +343,41 @@ func _update_facing(input_dir: float) -> void:
 func sprite_dir() ->float:
 	return (_facing_dir < 0.0)
 
-func die():
+func die2():
 	super()
-	#sprite_2d.visible=falseqq
-	sprite_2d.texture=death_texture
-	max_speed=0
+	#if isalive : 
+		#sprite_2d.visible=falseqq
 	bruitdeath.play()
-	jump_force=0
-	await get_tree().create_timer(0.3).timeout
-	get_tree().reload_current_scene()
+	if is_in_arena==false:
+		sprite_2d.texture=death_texture
+		max_speed=0
+		
+		jump_force=0
+		await get_tree().create_timer(0.3).timeout
+		get_tree().reload_current_scene()
+	else : 
+		
+		sprite_2d.texture=death_texture
+		await get_tree().create_timer(0.2).timeout
+		isalive=true
+		sprite_2d.texture=load("res://player/monkey.png")
+		arenavar.enemyarena.die()
+		gobackbossposition=global_position
+		set_life(5)
+		#cannotdie=true
+		global_position=afterboss.global_position
+		#hitowner2.die()
+		await get_tree().create_timer(0.1).timeout
+		cannotdie=false
+	
 
+func stopmovingquestionboss() ->Array[float]:
+	var maxspeed2 : float =max_speed
+	var maxjumpforce : float = jump_force
+	max_speed=0
+	jump_force=0
+	return [maxspeed2,maxjumpforce]
+	
 func set_life(new_life: float) -> void:
 	super(new_life)
 	lifebar.value = new_life*10;
@@ -372,3 +402,25 @@ func hidepause(gettreebool : bool = true) -> void :
 	inputmapping.visible=false
 	if gettreebool:
 		get_tree().root.get_viewport().set_input_as_handled()
+		
+		
+func onhit(hitowner2 : lifecharacter) -> void:
+	super(hitowner2)
+	'''
+	if hitowner2 is enemy :
+		if hitowner2.isboss==true:
+			print("boss ! ",life)
+			if life==1:
+				gobackbossposition=global_position
+				set_life(5)
+				cannotdie=true
+				global_position=afterboss.global_position
+				hitowner2.die()
+				await get_tree().create_timer(0.1).timeout
+				cannotdie=false
+				#await get_tree().create_timer(3.1).timeout
+				#global_position = gobackbossposition
+			pass
+	#print("hitzer",hitowner2.)
+	pass
+	'''

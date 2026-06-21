@@ -97,8 +97,8 @@ func _physics_process(delta: float) -> void:
 func onlanding() ->void:
 	pass
 	
-func take_damage(damage: float) -> void:
-	super(damage)
+func take_damage(damage: float,hitowner2 : lifecharacter) -> void:
+	super(damage,hitowner2)
 	wet_splat_2d.play()
 	
 	
